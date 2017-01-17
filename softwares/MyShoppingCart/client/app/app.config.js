@@ -1,14 +1,17 @@
 /**
  * Created by vanchanagiri shravya on 1/16/2017.
  */
-(function(){
-    angular.module("")
+(function() {
+    angular.module("shoppingCart")
+        .config(function ($stateProvider, $locationProvider) {
 
-        .cofig('config',config);
+            $locationProvider.html5Mode(true);
 
-    config.$inject=[];
-
-    function config(){
-
-    }
+            $stateProvider.state('mobile', {
+                url: '/mobiles',
+                templateUrl: 'partials/mobiles.html',
+                controller: 'MobileController',
+                controllerAs: 'mc'
+            })
+        })
 })();
