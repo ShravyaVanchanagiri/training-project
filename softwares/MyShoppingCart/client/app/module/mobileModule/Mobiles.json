@@ -3,6 +3,7 @@
     "id": "ELEC_PRD_1",
     "name": "SAMSUNG Galaxy 1",
     "price": 5500,
+    "image": "images/SamGal1.jpg",
     "description": "SAMSUNG Galaxy 1 is a smart phone and blah blah",
     "type": "electronics",
     "subType": "mobile",
@@ -11,6 +12,7 @@
     "modelName": "Galaxy 1",
     "color": "Gold",
     "battery": "2600 mAh Li-Ion Battery",
+    "ratingProduct": 3,
     "camera": {
       "front": "5MP",
       "rear": "8MP"
@@ -46,6 +48,7 @@
     "id": "ELEC_PRD_2",
     "name": "SAMSUNG Galaxy 2",
     "price": 7500,
+    "image": "images/SamGal2.jpg",
     "description": "SAMSUNG Galaxy 2 is a smart phone and blah blah",
     "type": "electronics",
     "subType": "mobile",
@@ -54,6 +57,7 @@
     "modelName": "Galaxy 2",
     "color": "Gold",
     "battery": "2600 mAh Li-Ion Battery",
+    "ratingProduct": 5,
     "camera": {
       "front": "5MP",
       "rear": "8MP"
@@ -89,6 +93,7 @@
     "id": "ELEC_PRD_3",
     "name": "SAMSUNG Galaxy On3",
     "price": 15500,
+    "image": "images/SamGalon3.jpg",
     "description": "SAMSUNG Galaxy On3 is a smart phone and blah blah",
     "type": "electronics",
     "subType": "mobile",
@@ -97,6 +102,7 @@
     "modelName": "Galaxy On3",
     "color": "Gold",
     "battery": "2600 mAh Li-Ion Battery",
+    "ratingProduct": 4,
     "camera": {
       "front": "5MP",
       "rear": "8MP"
@@ -129,9 +135,10 @@
     ]
   },
   {
-    "id":"ELEC_PRD_4",
+    "id": "ELEC_PRD_4",
     "name": "SAMSUNG NOTEBOOK",
     "price": 35500,
+    "image": "images/notebook.jpg",
     "description": "SAMSUNG NOTEBOOK is a smart phone and blah blah",
     "type": "electronics",
     "subType": "laptop",
@@ -140,6 +147,7 @@
     "modelName": "Galaxy Note 3",
     "color": "Gold",
     "battery": "12600 mAh Li-Ion Battery",
+    "ratingProduct": 5,
     "comments": [
       {
         "text": "Worst notebook",
@@ -166,4 +174,96 @@
         "amount": 2000
       }
     ]
-  }]
+  },
+
+  {
+    "id": "ELEC_PRD_5",
+    "name": "Lenovo G500",
+    "price": 32000,
+    "image": "images/g500_.jpg",
+    "description": "Lenovo G500 is a laptop with i3 configuration",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "Lenovo",
+    "RAM": "4GB",
+    "modelName": "G500",
+    "color": "Black",
+    "battery": "2600 mAh Li-Ion Battery",
+    "ratingProduct" : 5,
+    "camera": {
+      "front": "13MP",
+      "rear": "12MP"
+    },
+    "comments": [
+      {
+        "text": "Excellent Laptop",
+        "rating": "3.5",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "worst laptop",
+        "rating": "2.5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 20
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_6",
+    "name": "Lenovo G500",
+    "price": 32000,
+    "image": "images/g500_.jpg",
+    "description": "Lenovo G500 is a laptop with i3 configuration",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "Lenovo",
+    "RAM": "4GB",
+    "modelName": "G500",
+    "color": "Black",
+    "battery": "2600 mAh Li-Ion Battery",
+    "ratingProduct": 5,
+    "camera": {
+      "front": "13MP",
+      "rear": "12MP"
+    },
+    "comments": [
+      {
+        "text": "Excellent Laptop",
+        "rating": "3.5",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "worst laptop",
+        "rating": "2.5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 20
+      }
+    ]
+  }
+]

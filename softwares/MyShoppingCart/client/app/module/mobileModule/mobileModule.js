@@ -3,4 +3,5 @@
  */
 (function(){
     angular.module('mobiles',[]);
+    console.log("mobile module");
 })();

@@ -4,6 +4,12 @@
 (function(){
     angular.module('shoppingCart',[
         "ui.router",
-        "mobiles"
+        "mobiles",
+        "search",
+        "ui.select",
+        "ngSanitize",
+        "home",
+        "ngRoute",
+        "product"
     ])
 })();

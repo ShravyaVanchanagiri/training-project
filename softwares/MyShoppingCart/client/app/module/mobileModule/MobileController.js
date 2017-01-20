@@ -11,6 +11,8 @@
         function MobileController($http,MobileService,$rootScope){
             var vm = this;
             console.log("mobilessssssssssss");
+            console.log("dataaaaaaaaaaaaaaaaaaaaaaaa from mobile controller");
+
             vm.mobilesData = [];
             MobileService.getAllMobiles();
         }

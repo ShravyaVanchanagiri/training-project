@@ -1,0 +1,40 @@
+<br>
+<!--<div>
+<div  ng-repeat="data in jsonData">
+    <a ui-sref="productDetails({id:data.id})">
+        <div class="my-col-50">
+            <img src="{{data.image}}" class="image">
+            <h4>{{data.name}}</h4>
+            <br><br>
+        </div>
+    </a>
+</div>
+</div>-->
+<br>
+
+<center><h2><i><font color="#00008b"> TOP RATED PRODUCTS</font></i></h2></center>
+<br>
+<div ng-repeat="data in jsonData | orderBy:'-ratingProduct' | limitTo:5  ">
+    <a ui-sref="productDetails({id:data.id})">
+        <div class="my-col-50">
+            <img src="{{data.image}}" class="image">
+            <h4>{{data.name}}</h4>
+            <h4>Cost:{{data.price}}</h4>
+            <h5>Rating:{{data.ratingProduct}}</h5>
+            <br><br>
+        </div>
+    </a>
+</div>
+
+<!--
+<div ng-controller="searchController">
+    <input type="text" ng-model="searchText" />
+
+    <div ng-show="search.products.length > 0">
+        <ul  ng-repeat="item in search.products">
+            <li>{{ item.name }}</li>
+        </ul>
+    </div>
+</div>
+-->
+

@@ -35,7 +35,6 @@
   padding: 1em;
   color:#CCC;
   background:#333;
-  position:fixed;
   bottom:0px;
   left:0px;
   right:0px;
@@ -48,6 +47,28 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
+}
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+.image{
+  width:  250px;
+  height: 200px;
+}
+.my-col-50{float:left;width:20%;}
+
+input[type=text]:focus {
+  width: 100%;
 }
 
 .dropdown {
