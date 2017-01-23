@@ -9,15 +9,24 @@
         MobileService.$inject = ['$http', '$rootScope','uitService'];
 
         function MobileService($http, $rootScope, uitService) {
+            var vm=this;
+            vm.mobiles=[];
             var mobileService = {
                 getAllMobiles: getAllMobiles
             };
             return mobileService;
 
-
             function getAllMobiles() {
-                var data= uitService.returnJson();
-                console.log(data);
+                //var data= uitService.returnJson();
+                //console.log($rootScope.jsonData);
+                for(var i=0;i<$rootScope.jsonData.length;i++){
+                    if($rootScope.jsonData[i].subType == "mobile" ){
+                        vm.mobiles=$rootScope.jsonData[i];
+                        console.log("..................................");
+                        console.log(vm.mobiles);
+                        return vm.mobiles;
+                    }
+                }
             }
         }
     })();

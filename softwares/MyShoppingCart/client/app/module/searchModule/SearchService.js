@@ -15,14 +15,10 @@
             };
             return searchService;
 
-
             function getAllData(){
                 var data= uitService.returnJson();
 
             }
-
-
-
         }
     }
 )();

@@ -10,18 +10,18 @@
     productDetailsService.$inject = ['$http', '$rootScope','uitService'];
 
     function productDetailsService($http, $rootScope, uitService) {
-        var vm=this;
+
         var productService = {
             getProductDetails: getProductDetails,
-            getSelectedProduct: getSelectedProduct
+            getSelectedProduct: getSelectedProduct,
+            getSimilarProduct: getSimilarProducts,
         };
         return productService;
         function getProductDetails(id){
             for(var i=0;i<$rootScope.jsonData.length;i++){
                 if($rootScope.jsonData[i].id == id ){
-                    vm.productDetails=$rootScope.jsonData[i];
-                    console.log(vm.productDetails);
-
+                    return $rootScope.jsonData[i];
+                    console.log($rootScope.jsonData[i]);
                 }
             }
         }
@@ -29,11 +29,24 @@
         function getSelectedProduct(id){
             for(var i=0;i<$rootScope.jsonData.length;i++){
                 if($rootScope.jsonData[i].id == id ){
-                    vm.productDetails=$rootScope.jsonData[i];
-                    console.log(vm.productDetails);
-                    return vm.productDetails;
+                    return $rootScope.jsonData[i];
+                    console.log($rootScope.jsonData[i]);
                 }
             }
+        }
+
+        function getSimilarProducts( productType ){
+            var similarProducts = [];
+            for(var i=0;i<$rootScope.jsonData.length;i++){
+                console.log("in similar product loop");
+                if($rootScope.jsonData[i].subType == productType){
+                    similarProducts.push($rootScope.jsonData[i]);
+                    console.log("Data in similar products");
+                }
+
+            }
+            console.log("outside the loop");
+            return similarProducts;
         }
     }
 })();

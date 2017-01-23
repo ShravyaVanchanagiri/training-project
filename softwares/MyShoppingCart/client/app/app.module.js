@@ -10,6 +10,7 @@
         "ngSanitize",
         "home",
         "ngRoute",
+        "ngRateIt",
         "product"
     ])
 })();

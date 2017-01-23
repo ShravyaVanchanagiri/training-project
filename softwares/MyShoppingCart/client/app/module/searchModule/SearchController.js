@@ -10,6 +10,7 @@
 
         function SearchController($http,searchService,$rootScope){
             var vm = this;
+
             console.log("dataaaaa from seach controller");
             searchService.getAllData();
 

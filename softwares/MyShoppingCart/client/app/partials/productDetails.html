@@ -1,12 +1,34 @@
 <div>
-    <center>
         <br>
-        <center><h1><i>{{pc.productDetails.name}}</i></h1></center>
-        <img src="{{pc.productDetails.image}}" class="image">
-        <h4>Cost:{{pc.productDetails.price}}</h4>
-        <h4>Cost:{{pc.productDetails.RAM}}</h4>
-        <h4>Cost:{{pc.productDetails.color}}</h4>
-        <h4>Cost:{{pc.productDetails.battery}}</h4>
-        <h5>Rating:{{pc.productDetails.ratingProduct}}</h5>
-    </center>
+
+        <div style="width:50%; height:50%; float:left">
+                <img src="{{pc.productDetails.image}}" class="imageInProductViewPage">
+        </div>
+        <div style="width:50%; height:50%; float:right">
+                <h1><i>{{pc.productDetails.name}}</i></h1>
+                <h4>Cost:{{pc.productDetails.price}}</h4>
+                <h4>Cost:{{pc.productDetails.RAM}}</h4>
+                <h4>Cost:{{pc.productDetails.color}}</h4>
+                <h4>Cost:{{pc.productDetails.battery}}</h4>
+                <h5>Rating:{{pc.productDetails.ratingProduct}}</h5>
+                <div ng-rate-it ng-model=""></div>
+                <div style="width: 100px">{{pc.productDetails.ratingProduct}} Stars</div>
+        </div>
+    <!--<jk-rating-stars max-rating="5" rating="ctrl.rating" read-only="ctrl.readOnly" on-rating="ctrl.onRating(rating)" >
+    </jk-rating-stars>-->
 </div>
+<div ng-repeat="data in pc.similarProducts">
+    <img src="{{data.image}}">
+</div>
+<!--
+<div ng-repeat="data in jsonData | orderBy:'-ratingProduct' | limitTo:5  ">
+    <a ui-sref="productDetails({id:data.id})">
+        <div class="my-col-50">
+            <img src="{{data.image}}" class="image">
+            <h4>{{data.name}}</h4>
+            <h4>Cost:{{data.price}}</h4>
+            <h5>Rating:{{data.ratingProduct}}</h5>
+            <br><br>
+        </div>
+    </a>
+</div>-->

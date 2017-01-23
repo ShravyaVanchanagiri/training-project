@@ -16,9 +16,13 @@
         console.log($stateParams.id);
         var vm=this;
         var id=$stateParams.id;
+        vm.readOnly = true;
         //call some method to get selected product
         /*vm.selectedProduct = productDetailsService.getSelectedProduct($stateParams.id);*/
         vm.productDetails=productDetailsService.getSelectedProduct($stateParams.id);
+        vm.similarProducts=productDetailsService.getSimilarProduct(vm.productDetails.subType);
+        console.log("in similar products controller");
+        console.log(vm.similarProducts);
     }
 })();
 

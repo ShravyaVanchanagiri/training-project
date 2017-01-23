@@ -1,11 +1,11 @@
 <div ng-controller="SearchController as sc">
-    <ui-select ng-model="sc.selected" reset-search-input="false" style="width: 800px;" theme="selectize">
+    <ui-select ng-model="sc.selected" reset-search-input="false" style="width: 800px;" theme="bootstrap" ng-change="sc.change(sc.selected)">
         <ui-select-match  placeholder="Select or search a product ..." >
             <span ng-bind="$select.selected.name"></span>
         </ui-select-match>
         <ui-select-choices  refresh="sc.refreshProds($select.search)" refresh-delay="0"
                             repeat="item in sc.productList | filter: $select.search track by $index">
-            <span ng-bind="item.name"></span>     <!--{{$select.search}}-->
+            <a ui-sref="productDetails({id:item.id})"><span ng-bind="item.name"></span></a>    <!--{{$select.search}}-->
 
         </ui-select-choices>
     </ui-select>
