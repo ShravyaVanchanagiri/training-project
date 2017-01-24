@@ -395,5 +395,716 @@
         "amount":2000
       }
     ]
+  },
+  {
+    "id": "ELEC_PRD_10",
+    "name": "Motorola X force",
+    "price": 24999,
+    "image": "images/motoxforce.jpg",
+    "description": "The world’s first smartphone with a shatterproof display. ",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "Motorola",
+    "RAM": "3GB",
+    "modelName": "Moto X force",
+    "color": "Black",
+    "battery": "3760 mAh Lithium-ion Battery",
+    "ratingProduct": 4.5,
+    "camera": {
+      "front": "5MP",
+      "rear": "21MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_11",
+    "name": "Jupiter IO 3",
+    "price": 24999,
+    "image": "images/jupitor.png",
+    "description": "the Jupiter Io4 delivers a best-in-class experience across the entire cellular vaping spectrum.",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "Jupitor",
+    "RAM": "3GB",
+    "modelName": "IO 3",
+    "color": "Black",
+    "battery": "3760 mAh Lithium-ion Battery",
+    "ratingProduct": 3.5,
+    "camera": {
+      "front": "5MP",
+      "rear": "21MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_12",
+    "name": "LG G5 (Titan, 32 GB)",
+    "price": 34990,
+    "image": "images/LGg5.jpg",
+    "description": "A modular smartphone is made out of separate components, which enables users to replace or upgrade certain functions independently",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "LG",
+    "RAM": "4GB",
+    "modelName": "G5",
+    "color": "black",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 4,
+    "camera": {
+      "front": "8MP",
+      "rear": "16MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_13",
+    "name": "Saygus V Squared - Two microSD card slots",
+    "price": 34990,
+    "image": "images/Saygus.jpg",
+    "description": " - Two microSD card slots",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "Saygus",
+    "RAM": "4GB",
+    "modelName": "G5",
+    "color": "black",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 4.5,
+    "camera": {
+      "front": "8MP",
+      "rear": "16MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_14",
+    "name": "LG V10",
+    "price": 21499,
+    "image": "images/LG-V10.jpg",
+    "description": "New Launched LG V10 4G - 4Gb Ram 64Gb Rom 16Mp Camera Marshmallow 6.0",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "LG",
+    "RAM": "4GB",
+    "modelName": "V10",
+    "color": "black",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 4.5,
+    "camera": {
+      "front": "5MP",
+      "rear": "16MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_15",
+    "name": "Yotaphone 2",
+    "price": 8999,
+    "image": "images/Yotaphone.png",
+    "description": "Yota Phone C9660 | Dual Display | 32gb Memory | Smart Phone",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "Yotaphone",
+    "RAM": "2GB",
+    "modelName": "C9660",
+    "color": "black",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 2.5,
+    "camera": {
+      "front": "1MP",
+      "rear": "13MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_16",
+    "name": "Samsung Galaxy S7 edge",
+    "price": 50900,
+    "image": "images/samsungs7edge.jpg",
+    "description": "The latest in the lineup is the Galaxy S7 Edge which features a display that curves on both sides. The spilling display",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "SAMSUNG",
+    "RAM": "4GB",
+    "modelName": "Galaxy s7 edge",
+    "color": "black",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 4.5,
+    "camera": {
+      "front": "8MP",
+      "rear": "12MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_17",
+    "name": "Blackphone 2",
+    "price": 50900,
+    "image": "images/blackphone.jpg",
+    "description": "Focused on encryption, the Blackphone 2, has been designed to be a truly private device.",
+    "subType": "mobile",
+    "brand": "Blackphone",
+    "RAM": "4GB",
+    "modelName": "Blackphone2",
+    "color": "black",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 3.2,
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_18",
+    "name": "Oppo F1 Plus",
+    "price": 50900,
+    "image": "images/oppo.jpg",
+    "description": "Focused on encryption, the Blackphone 2, has been designed to be a truly private device.",
+    "subType": "mobile",
+    "brand": "Oppo",
+    "RAM": "4GB",
+    "modelName": "F1 plus",
+    "color": "gold",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 3.2,
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_19",
+    "name": "Moto E3 Power",
+    "price": 7999,
+    "image": "images/motoe3.jpg",
+    "description": "Focused on encryption, the Blackphone 2, has been designed to be a truly private device.",
+    "subType": "mobile",
+    "brand": "Motorola",
+    "RAM": "3GB",
+    "modelName": "e3 power",
+    "color": "Black",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 4.2,
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_20",
+    "name": "Moto G Play, 4th Gen",
+    "price": 8999,
+    "image": "images/moto-g4play.jpg",
+    "description": "Focused on encryption, the Blackphone 2, has been designed to be a truly private device.",
+    "subType": "mobile",
+    "brand": "Motorola",
+    "RAM": "3GB",
+    "modelName": "G4 Playr",
+    "color": "Black",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 4.5,
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_21",
+    "name": "Apple iPhone 6 (Space Grey, 16 GB)",
+    "price": 27990,
+    "image": "images/iphone6.jpg",
+    "description": "Focused on encryption, the Blackphone 2, has been designed to be a truly private device.",
+    "subType": "mobile",
+    "brand": "Apple",
+    "RAM": "4GB",
+    "modelName": "Iphone 6",
+    "color": "Silver",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 4.9,
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_22",
+    "name": "Intex Aqua Q7N",
+    "price": 2899,
+    "image": "images/intexaqua.jpeg",
+    "description": "Focused on encryption, the Blackphone 2, has been designed to be a truly private device.",
+    "subType": "mobile",
+    "brand": "Intex",
+    "RAM": "2GB",
+    "modelName": "Aqua Q7N",
+    "color": "White",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 3.2,
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_23",
+    "name": "Intex Cloud Matte 5 Inch Lollipop 3G Smartphone",
+    "price": 2899,
+    "image": "images/intexcloud.jpg",
+    "description": "Focused on encryption, the Blackphone 2, has been designed to be a truly private device.",
+    "subType": "mobile",
+    "brand": "Intex",
+    "RAM": "2GB",
+    "modelName": "Cloud Matte 5",
+    "color": "Black",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 3.2,
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_24",
+    "name": "Samsung Galaxy J2 Pro",
+    "price": 9490,
+    "image": "images/samJ2Pro.jpg",
+    "description": "Focused on encryption, the Blackphone 2, has been designed to be a truly private device.",
+    "subType": "mobile",
+    "brand": "SAMSUNG",
+    "RAM": "3GB",
+    "modelName": "J2 Prp",
+    "color": "GOLD",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 3.2,
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_25",
+    "name": "Motorola Droid RAZR XT907",
+    "price": 4799,
+    "image": "images/motorola-droid.jpg",
+    "description": "Focused on encryption, the Blackphone 2, has been designed to be a truly private device.",
+    "subType": "mobile",
+    "brand": "Motorola",
+    "RAM": "1GB",
+    "modelName": "Droid RAZR XT907",
+    "color": "Black",
+    "battery": "2800 mAh Li-Ion Battery",
+    "ratingProduct": 4.0,
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Waste phone",
+        "rating": "1",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": "10"
+      }
+    ]
   }
 ]

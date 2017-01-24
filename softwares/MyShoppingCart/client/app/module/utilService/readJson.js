@@ -6,25 +6,25 @@
 
         .factory('uitService',uitService);
 
-    uitService.$inject=["$rootScope","$http"];
+    uitService.$inject=["$rootScope","$http","$q"];
 
-    function uitService($rootScope,$http){
+    function uitService($rootScope,$http,$q){
         return{
             returnJson:returnJson
         };
-
         function returnJson(){
+            var deffered=$q.defer();
             $http.get('module/mobileModule/Mobiles.json')
                 .then(function (res) {
                     console.log(".....Service method...........");
                     $rootScope.jsonData = res.data;
                     console.log($rootScope.jsonData);
-                }, function (err) {
+                    deffered.resolve($rootScope.jsonData);
+                },function (error) {
                     /*error code*/
+                    deffered.reject('There was an error in getting data');
                 });
-            return $rootScope.jsonData;
+            return deffered.promise;
         }
-
-
     }
 })();

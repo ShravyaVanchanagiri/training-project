@@ -8,23 +8,38 @@
     angular.module('product')
         .controller("productDetailsController", productDetailsController);
 
-    productDetailsController.$inject = ['$http', '$rootScope','$stateParams','productDetailsService'];
 
-    function productDetailsController($http , $rootScope,$stateParams,productDetailsService) {
+    productDetailsController.$inject = ['$http', '$rootScope', '$stateParams', 'productDetailsService'];
+    //$scope.value=150;
+
+    function productDetailsController($http, $rootScope, $stateParams, productDetailsService) {
         productDetailsService.getProductDetails();
-        console.log(".............................................product controller");
-        console.log($stateParams.id);
-        var vm=this;
-        var id=$stateParams.id;
+
+        var vm = this;
+        console.log("eachProjectDetailController");
+        var id = $stateParams.id;
         vm.readOnly = true;
-        //call some method to get selected product
-        /*vm.selectedProduct = productDetailsService.getSelectedProduct($stateParams.id);*/
-        vm.productDetails=productDetailsService.getSelectedProduct($stateParams.id);
-        vm.similarProducts=productDetailsService.getSimilarProduct(vm.productDetails.subType);
-        console.log("in similar products controller");
-        console.log(vm.similarProducts);
+        vm.currentPage = 0;
+        vm.pageSize = 4;
+
+
+        /*vm.numberOfPages=10;*/
+        vm.productDetails = productDetailsService.getSelectedProduct($stateParams.id);
+        vm.similarProducts = productDetailsService.getSimilarProduct(vm.productDetails.subType, vm.productDetails.name);
+        //vm.numberOfPages =  vm.similarProducts.length/vm.pageSize;
+        console.log(".......................................................................................");
+        console.log(vm.similarProducts.name);
+        vm.numberOfPages=vm.similarProducts.length/vm.pageSize;
+        /*function numberOfPages(){
+            console.log("//////////////////////////////////////////////////");
+            console.log(vm.similarProducts.length);
+            return Math.ceil(vm.similarProducts.length/vm.pageSize);
+        }*/
     }
 })();
+
+
+
 
 
 

@@ -1,34 +1,68 @@
-<div>
-        <br>
+<br><br>
+<div class="row">
+    <div class="col-sm-6">
+        <img src="{{pc.productDetails.image}}" class="imageInProductViewPage">
+        <!--<button class="button button5">BUY NOW</button>
+        <button class="button button5">ADD TO CART</button>-->
+    </div>
+    <div class="col-sm-6">
+        <h1><i>{{pc.productDetails.name}}</i></h1>
+        <h4>Price:{{pc.productDetails.price | currency : '&#8377;'}}</h4>
+        <h4>RAM:{{pc.productDetails.RAM}}</h4>
+        <h4>COLOR:{{pc.productDetails.color}}</h4>
+        <h4>Battery:{{pc.productDetails.battery}}</h4>
+        <h4>Model name:{{pc.productDetails.description}}</h4>
+        <h4>Brand:{{pc.productDetails.brand}}</h4>
+        <h5>Rating:{{pc.productDetails.ratingProduct}}</h5>
+        <ng-rate-it ng-model="pc.productDetails.ratingProduct" read-only="pc.readOnly"></ng-rate-it>
+    </div>
+</div>
 
-        <div style="width:50%; height:50%; float:left">
-                <img src="{{pc.productDetails.image}}" class="imageInProductViewPage">
+<center><h2><i><font color="#00008b">PRODUCTS SIMILAR TO THE ABOVE {{pc.productDetails.subType | uppercase}}</font></i>
+</h2></center>
+<br>
+
+<!--<div class="row">
+    <div ng-repeat="data in pc.similarProducts">
+        <div class="col-md-3">
+            <a ui-sref="productDetails({id:data.id})">
+                <img class="image1" src="{{data.image}}">
+                <h4><i>{{data.name}}</i></h4>
+                <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
+                <ng-rate-it ng-model="data.ratingProduct" read-only="pc.readOnly"></ng-rate-it>
+            </a>
         </div>
-        <div style="width:50%; height:50%; float:right">
-                <h1><i>{{pc.productDetails.name}}</i></h1>
-                <h4>Cost:{{pc.productDetails.price}}</h4>
-                <h4>Cost:{{pc.productDetails.RAM}}</h4>
-                <h4>Cost:{{pc.productDetails.color}}</h4>
-                <h4>Cost:{{pc.productDetails.battery}}</h4>
-                <h5>Rating:{{pc.productDetails.ratingProduct}}</h5>
-                <div ng-rate-it ng-model=""></div>
-                <div style="width: 100px">{{pc.productDetails.ratingProduct}} Stars</div>
-        </div>
-    <!--<jk-rating-stars max-rating="5" rating="ctrl.rating" read-only="ctrl.readOnly" on-rating="ctrl.onRating(rating)" >
-    </jk-rating-stars>-->
-</div>
-<div ng-repeat="data in pc.similarProducts">
-    <img src="{{data.image}}">
-</div>
-<!--
-<div ng-repeat="data in jsonData | orderBy:'-ratingProduct' | limitTo:5  ">
-    <a ui-sref="productDetails({id:data.id})">
-        <div class="my-col-50">
-            <img src="{{data.image}}" class="image">
-            <h4>{{data.name}}</h4>
-            <h4>Cost:{{data.price}}</h4>
-            <h5>Rating:{{data.ratingProduct}}</h5>
-            <br><br>
-        </div>
-    </a>
+    </div>
 </div>-->
+
+<div class="row">
+    <div class="col-md-3" ng-repeat="data in pc.similarProducts | navigationFilter:pc.currentPage*pc.pageSize | limitTo: pc.pageSize">
+       <div class="col-md-7">
+                <img src="{{data.image}}" class="image1">
+        </div>
+    </div>
+    <button ng-disabled="pc.currentPage == 0"
+            ng-click="pc.currentPage=pc.currentPage-1">Previous
+    </button>
+    <span ng-show="pc.numberOfPages > 0"> {{pc.currentPage+1}}/{{pc.numberOfPages}}</span>
+    <button ng-disabled="pc.currentPage >= pc.similarProducts.length/pc.pageSize - 1"
+            ng-click="pc.currentPage=pc.currentPage+1"> Next
+    </button>
+
+</div>
+
+<!--<div>
+    <ul>
+        <li ng-repeat="item in pc.similarProducts | navigationFilter:pc.currentPage*pc.pageSize | limitTo: pc.pageSize">
+           <img src="{{item.image}}">
+        </li>
+    </ul>
+    <button ng-disabled="pc.currentPage == 0" ng-click="pc.currentPage=pc.currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{pc.numberOfPages()}}
+    <button ng-disabled="pc.currentPage >= pc.similarProducts.length/pc.pageSize - 1" ng-click="pc.currentPage=pc.currentPage+1">
+        Next
+    </button>
+</div>-->
+

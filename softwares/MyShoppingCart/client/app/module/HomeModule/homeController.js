@@ -10,16 +10,12 @@
     function homeController($http, homeService, $rootScope) {
         var vm = this;
         vm.test = "Coming here";
-        vm.fetchData = fetchData;
-        console.log("dataaaaaaa from seach controller");
-        //homeService.getAllData();
-
-
-        //vm.products = $rootScope.jsonData;
-        //fetch top 5 records from rootScope
-        //vm.topRecords = getTopRatedProducts();
-        function fetchData(filterString) {
-            console.log("fetch data" + vm.selected);
-        }
+        //vm.fetchData = fetchData;
+        console.log("HOME CONTROLLER");
+        console.log($rootScope.jsonData);
+        vm.mobiles=homeService.getMobiles($rootScope.jsonData.subType);
+        //vm.laptops=homeService.getLaptops($rootScope.jsonData.subType);
+        console.log("ALL TYPES OF MOBILES");
+        console.log(vm.mobiles);
     }
 })();

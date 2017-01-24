@@ -9,7 +9,7 @@
         MobileController.$inject=['$http','MobileService','$rootScope'];
 
         function MobileController($http,MobileService,$rootScope){
-            var vm = this;
+
             console.log("mobilessssssssssss");
             console.log("dataaaaaaaaaaaaaaaaaaaaaaaa from mobile controller");
 

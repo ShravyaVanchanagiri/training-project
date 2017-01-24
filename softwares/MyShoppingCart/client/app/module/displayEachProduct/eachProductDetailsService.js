@@ -14,7 +14,7 @@
         var productService = {
             getProductDetails: getProductDetails,
             getSelectedProduct: getSelectedProduct,
-            getSimilarProduct: getSimilarProducts,
+            getSimilarProduct: getSimilarProducts
         };
         return productService;
         function getProductDetails(id){
@@ -35,17 +35,13 @@
             }
         }
 
-        function getSimilarProducts( productType ){
+        function getSimilarProducts( productType,productName ){
             var similarProducts = [];
             for(var i=0;i<$rootScope.jsonData.length;i++){
-                console.log("in similar product loop");
-                if($rootScope.jsonData[i].subType == productType){
+                if(($rootScope.jsonData[i].subType == productType) && ($rootScope.jsonData[i].name != productName )){
                     similarProducts.push($rootScope.jsonData[i]);
-                    console.log("Data in similar products");
                 }
-
             }
-            console.log("outside the loop");
             return similarProducts;
         }
     }

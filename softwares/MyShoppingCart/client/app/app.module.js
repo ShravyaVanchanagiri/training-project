@@ -1,8 +1,8 @@
 /**
  * Created by vanchanagiri shravya on 1/16/2017.
  */
-(function(){
-    angular.module('shoppingCart',[
+(function () {
+    angular.module('shoppingCart', [
         "ui.router",
         "mobiles",
         "search",
@@ -11,6 +11,8 @@
         "home",
         "ngRoute",
         "ngRateIt",
-        "product"
+        "product",
+        "angular-elevate-zoom",
+        "ui-rangeSlider"
     ])
 })();

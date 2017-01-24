@@ -10,7 +10,9 @@
 
     function homeService($http, $rootScope,uitService) {
         var homeService = {
-            getAllData: getAllData
+            getAllData: getAllData,
+            getMobiles: getMobiles,
+            getLaptops: getLaptops
         };
         return homeService;
 
@@ -19,6 +21,24 @@
           var data= uitService.returnJson();
             console.log(data);
             console.log("data");
+        }
+        function getMobiles(type){
+            var mobiles=[];
+            for(i=0;i<$rootScope.jsonData.length;i++){
+                if($rootScope.jsonData[i].subType == "mobile"){
+                    mobiles.push($rootScope.jsonData[i]);
+                }
+            }
+            return mobiles;
+        }
+        function getLaptops(type){
+            var laptops=[];
+            for(i=0;i<$rootScope.jsonData.length;i++){
+                if($rootScope.jsonData[i].subType == "laptop"){
+                    laptops.push($rootScope.jsonData[i]);
+                }
+            }
+            return laptops;
         }
     }
 })();

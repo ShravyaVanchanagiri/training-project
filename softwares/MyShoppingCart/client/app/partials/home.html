@@ -11,19 +11,48 @@
 </div>
 </div>-->
 <br>
-<center><h2><i><font color="#00008b"> TOP RATED PRODUCTS</font></i></h2></center>
+<center><h2><i><font color="#00008b"> Top Rated Products</font></i></h2></center>
 <br>
 <div ng-repeat="data in jsonData | orderBy:'-ratingProduct' | limitTo:5  ">
     <a ui-sref="productDetails({id:data.id})">
         <div class="my-col-50">
-            <img src="{{data.image}}" class="image">
+            <img src="{{data.image}}" class="image1">
             <h4>{{data.name}}</h4>
-            <h4>Cost:{{data.price}}</h4>
-            <h5>Rating:{{data.ratingProduct}}</h5>
+            <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
+            <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
             <br><br>
         </div>
     </a>
 </div>
+<br>
+<center><h2><i><font color="#00008b">Buy latest mobiles & Get amazing Offers</font></i></h2></center>
+<br>
+
+<div ng-repeat="data in hc.mobiles | orderBy:'-ratingProduct' | limitTo:5 ">
+    <div class="my-col-50">
+        <a ui-sref="productDetails({id:data.id})">
+            <img class="image1" src="{{data.image}}">
+            <h4><i>{{data.name}}</i></h4>
+            <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
+            <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
+        </a>
+    </div>
+</div>
+<!--
+<br>
+<center><h2><i><font color="#00008b">Buy latest Laptops & Get amazing Offers</font></i></h2></center>
+<br>
+
+<div ng-repeat="data in hc.laptops">
+    <div class="my-col-50">
+        <a ui-sref="productDetails({id:data.id})">
+            <img class="image" src="{{data.image}}">
+            <h4><i>{{data.name}}</i></h4>
+            <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
+            <ng-rate-it ng-model="data.ratingProduct" read-only="pc.readOnly"></ng-rate-it>
+        </a>
+    </div>
+</div>-->
 
 <!--
 <div ng-controller="searchController">
