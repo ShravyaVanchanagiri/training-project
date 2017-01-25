@@ -17,28 +17,20 @@
         <ng-rate-it ng-model="pc.productDetails.ratingProduct" read-only="pc.readOnly"></ng-rate-it>
     </div>
 </div>
-
+<hr>
 <center><h2><i><font color="#00008b">PRODUCTS SIMILAR TO THE ABOVE {{pc.productDetails.subType | uppercase}}</font></i>
 </h2></center>
 <br>
 
-<!--<div class="row">
-    <div ng-repeat="data in pc.similarProducts">
-        <div class="col-md-3">
-            <a ui-sref="productDetails({id:data.id})">
-                <img class="image1" src="{{data.image}}">
-                <h4><i>{{data.name}}</i></h4>
-                <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
-                <ng-rate-it ng-model="data.ratingProduct" read-only="pc.readOnly"></ng-rate-it>
-            </a>
-        </div>
-    </div>
-</div>-->
 
 <div class="row">
-    <div class="col-md-3" ng-repeat="data in pc.similarProducts | navigationFilter:pc.currentPage*pc.pageSize | limitTo: pc.pageSize">
-       <div class="col-md-7">
-                <img src="{{data.image}}" class="image1">
+    <div class="col-md-3"
+         ng-repeat="data in pc.similarProducts | navigationFilter:pc.currentPage*pc.pageSize | limitTo: pc.pageSize">
+        <div class="col-md-7">
+            <img src="{{data.image}}" class="image1">
+            <h1><i>{{data.name}}</i></h1>
+            <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
+            <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
         </div>
     </div>
     <button ng-disabled="pc.currentPage == 0"
@@ -51,18 +43,4 @@
 
 </div>
 
-<!--<div>
-    <ul>
-        <li ng-repeat="item in pc.similarProducts | navigationFilter:pc.currentPage*pc.pageSize | limitTo: pc.pageSize">
-           <img src="{{item.image}}">
-        </li>
-    </ul>
-    <button ng-disabled="pc.currentPage == 0" ng-click="pc.currentPage=pc.currentPage-1">
-        Previous
-    </button>
-    {{currentPage+1}}/{{pc.numberOfPages()}}
-    <button ng-disabled="pc.currentPage >= pc.similarProducts.length/pc.pageSize - 1" ng-click="pc.currentPage=pc.currentPage+1">
-        Next
-    </button>
-</div>-->
 
