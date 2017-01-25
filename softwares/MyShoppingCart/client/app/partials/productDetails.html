@@ -28,7 +28,7 @@
          ng-repeat="data in pc.similarProducts | navigationFilter:pc.currentPage*pc.pageSize | limitTo: pc.pageSize">
         <div class="col-md-7">
             <img src="{{data.image}}" class="image1">
-            <h1><i>{{data.name}}</i></h1>
+            <h5><i>{{data.name}}</i></h5>
             <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
             <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
         </div>

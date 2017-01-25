@@ -38,9 +38,11 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div ng-include="'views/header.html'"></div>
+<!--<div ng-include="'views/header.html'"></div>-->
+<header-directive></header-directive>
 <div ui-view></div>
-<div ng-include="'views/footer.html'"></div>
+<footer-directive></footer-directive>
+<!--<div ng-include="'views/footer.html'"></div>-->
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -84,5 +86,7 @@
 
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
+<script src="module/HomeModule/headerDirective.js"></script>
+<script src="module/searchModule/searchIncludeDirective.js"></script>
 
 
