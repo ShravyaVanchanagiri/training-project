@@ -1,0 +1,19 @@
+<div ng-controller="SearchController as sc">
+    <ui-select ng-model="sc.selected" sortable="true" reset-search-input="false" style="width: 800px;" theme="bootstrap"
+               ng-change="sc.change(sc.selected)" onSelect="sc.selectedData(sc.selected)">
+        <ui-select-match placeholder="Select or search a product ...">
+            <span ng-bind="$select.selected.name"></span>
+        </ui-select-match>
+        <ui-select-choices refresh="sc.refreshProds($select.search)" refresh-delay="0"
+                           repeat="item in sc.productList | filter: $select.search track by $index">
+            <a class="nounderline" ui-sref="productDetails({id:item.id})">
+                <span ng-bind="item.name"></span><br>
+
+                <p>Price:<span ng-bind="item.price | currency : '&#8377;'"></span></p>
+                <ng-rate-it ng-model="item.ratingProduct" read-only="true"></ng-rate-it>
+            </a>    <!--{{$select.search}}-->
+        </ui-select-choices>
+    </ui-select>
+</div>
+
+
