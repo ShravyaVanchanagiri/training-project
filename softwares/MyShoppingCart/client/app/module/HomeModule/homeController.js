@@ -14,8 +14,7 @@
         console.log("HOME CONTROLLER");
         console.log($rootScope.jsonData);
         vm.mobiles=homeService.getMobiles($rootScope.jsonData.subType);
-        //vm.laptops=homeService.getLaptops($rootScope.jsonData.subType);
-        console.log("ALL TYPES OF MOBILES");
-        console.log(vm.mobiles);
+        vm.laptops=homeService.getLaptops($rootScope.jsonData.subType);
+        vm.comics=homeService.getComics($rootScope.jsonData.subType);
     }
 })();

@@ -12,7 +12,8 @@
         var homeService = {
             getAllData: getAllData,
             getMobiles: getMobiles,
-            getLaptops: getLaptops
+            getLaptops: getLaptops,
+            getComics: getComics
         };
         return homeService;
 
@@ -39,6 +40,15 @@
                 }
             }
             return laptops;
+        }
+        function getComics(type){
+            var comics=[];
+            for(i=0;i<$rootScope.jsonData.length;i++){
+                if($rootScope.jsonData[i].subType == "comic"){
+                    comics.push($rootScope.jsonData[i]);
+                }
+            }
+            return comics;
         }
     }
 })();

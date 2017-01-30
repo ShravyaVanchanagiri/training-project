@@ -1106,5 +1106,881 @@
         "percentage": "10"
       }
     ]
+  },
+  {
+    "id":"ELEC_PRD_26",
+    "name":"Lenovo G50-80 (80E502Q8IH)",
+    "price":27300,
+    "image":"images/lenovoG50-80.jpg",
+    "description":"Core i3 (5th Gen)/4 GB/1 TB/39.62 cm (15.6)/DOS",
+    "type":"electronics",
+    "subType":"laptop",
+    "brand":"Lenovo",
+    "RAM":"4GB",
+    "modelName":"G50-80",
+    "color":"Black",
+    "battery":"12600 mAh Li-Ion Battery",
+    "ratingProduct":3.4,
+    "comments":[
+      {
+        "text":"Average",
+        "rating":"3",
+        "commentedOn":"13/01/2017",
+        "username":"Shravya"
+      },
+      {
+        "text":"Awesome Laptop",
+        "rating":"5",
+        "commentedOn":"15/01/2017",
+        "username":"Ram"
+      },
+      {
+        "text":"Worth price. The notebook does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating":"4",
+        "commentedOn":"14/01/2017",
+        "username":"Divya"
+      }
+    ],
+    "offers":[
+      {
+        "type":"exchange",
+        "amount":2000
+      }
+    ]
+  },
+  {
+    "id":"ELEC_PRD_27",
+    "name":"Acer Aspire ES1-571-558Z ",
+    "price":27900,
+    "image":"images/acerAspire.jpg",
+    "description":"Core i5 (4th Gen)/4 GB/1 TB/39.62 cm (15.6)/Linux",
+    "type":"electronics",
+    "subType":"laptop",
+    "brand":"Acer",
+    "RAM":"4GB",
+    "modelName":"GES1-571-558Z",
+    "color":"Diamond Black",
+    "battery":"12600 mAh Li-Ion Battery",
+    "ratingProduct":3.2,
+    "comments":[
+      {
+        "text":"Average",
+        "rating":"3",
+        "commentedOn":"13/01/2017",
+        "username":"Shravya"
+      },
+      {
+        "text":"Awesome Laptop",
+        "rating":"5",
+        "commentedOn":"15/01/2017",
+        "username":"Ram"
+      },
+      {
+        "text":"Worth price. The notebook does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating":"4",
+        "commentedOn":"14/01/2017",
+        "username":"Divya"
+      }
+    ],
+    "offers":[
+      {
+        "type":"exchange",
+        "amount":2000
+      }
+    ]
+  },
+  {
+    "id":"ELEC_PRD_28",
+    "name":"SAMSUNG 750 EVO 250 GB Desktop",
+    "price":6276,
+    "image":"images/SamSolidStateDrive.jpg",
+    "description":"Laptop Internal Hard Drive (MZ-750250BW)",
+    "type":"electronics",
+    "subType":"laptop",
+    "brand":"SAMSUNG",
+    "RAM":"250 GB",
+    "modelName":"750 EVO 250 GB Desktop",
+    "color":"Black",
+    "battery":"12600 mAh Li-Ion Battery",
+    "ratingProduct":4.7,
+    "comments":[
+      {
+        "text":"Average",
+        "rating":"3",
+        "commentedOn":"13/01/2017",
+        "username":"koushik"
+      },
+      {
+        "text":"Awesome Laptop",
+        "rating":"5",
+        "commentedOn":"15/01/2017",
+        "username":"Ramu"
+      },
+      {
+        "text":"Worth price. The notebook does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating":"4",
+        "commentedOn":"14/01/2017",
+        "username":"Divya"
+      }
+    ],
+    "offers":[
+      {
+        "type":"exchange",
+        "amount":2000
+      }
+    ]
+  },
+  {
+    "id":"ELEC_PRD_29",
+    "name":"Dell Vostro 3558 Notebook",
+    "price":29549,
+    "image":"images/DELL-Vostro.jpg",
+    "description":"(Z555103UIN9) (Core i3 (5th Gen)/(4 GB/1 TB HDD/39.62 cm (15.6)/Ubuntu)",
+    "type":"electronics",
+    "subType":"laptop",
+    "brand":"Dell",
+    "RAM":"4 GB",
+    "modelName":"750 EVO 250 GB Desktop",
+    "color":"Black",
+    "battery":"12600 mAh Li-Ion Battery",
+    "ratingProduct":4.7,
+    "comments":[
+      {
+        "text":"Average",
+        "rating":"3",
+        "commentedOn":"13/01/2017",
+        "username":"koushik"
+      },
+      {
+        "text":"Awesome Laptop",
+        "rating":"5",
+        "commentedOn":"15/01/2017",
+        "username":"Ramu"
+      },
+      {
+        "text":"Worth price. The notebook does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating":"4",
+        "commentedOn":"14/01/2017",
+        "username":"Divya"
+      }
+    ],
+    "offers":[
+      {
+        "type":"exchange",
+        "amount":2000
+      }
+    ]
+  },
+  {
+    "id":"ELEC_PRD_30",
+    "name":"HP 15-ac650tu Notebook",
+    "price":32999,
+    "image":"HP.jpg",
+    "description":"Intel 4th Gen. Core i5- 4210U/ 4GB RAM/ 1TB HDD/ 15.6/ DOS",
+    "type":"electronics",
+    "subType":"laptop",
+    "brand":"HP",
+    "RAM":"4 GB",
+    "modelName":"15-ac650tu Notebook",
+    "color":"Black",
+    "battery":"12600 mAh Li-Ion Battery",
+    "ratingProduct":4.2,
+    "comments":[
+      {
+        "text":"Average",
+        "rating":"3",
+        "commentedOn":"13/01/2017",
+        "username":"koushik"
+      },
+      {
+        "text":"Awesome Laptop",
+        "rating":"5",
+        "commentedOn":"15/01/2017",
+        "username":"Ramu"
+      },
+      {
+        "text":"Worth price. The notebook does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating":"4",
+        "commentedOn":"14/01/2017",
+        "username":"Divya"
+      }
+    ],
+    "offers":[
+      {
+        "type":"exchange",
+        "amount":2000
+      }
+    ]
+  },
+  {
+    "id":"ELEC_PRD_30",
+    "name":"HP 15-ac650tu Notebook",
+    "price":32999,
+    "image":"HP.jpg",
+    "description":"Intel 4th Gen. Core i5- 4210U/ 4GB RAM/ 1TB HDD/ 15.6/ DOS",
+    "type":"electronics",
+    "subType":"laptop",
+    "brand":"HP",
+    "RAM":"4 GB",
+    "modelName":"15-ac650tu Notebook",
+    "color":"Black",
+    "battery":"12600 mAh Li-Ion Battery",
+    "ratingProduct":4.2,
+    "comments":[
+      {
+        "text":"Average",
+        "rating":"3",
+        "commentedOn":"13/01/2017",
+        "username":"koushik"
+      },
+      {
+        "text":"Awesome Laptop",
+        "rating":"5",
+        "commentedOn":"15/01/2017",
+        "username":"Ramu"
+      },
+      {
+        "text":"Worth price. The notebook does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating":"4",
+        "commentedOn":"14/01/2017",
+        "username":"Divya"
+      }
+    ],
+    "offers":[
+      {
+        "type":"exchange",
+        "amount":2000
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_1",
+    "name": "Marvel Black Widow Joins the Mighty Avengers ",
+    "price": 125,
+    "image": "images/marvel_avenger_.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 4.5,
+    "Author": "Clarissa S. Wong",
+    "Features": {
+      "Language": "English",
+      "ISBN": " 9789351037354",
+      "Pages" : "24",
+      "PublicationYear" : 2015
+    },
+    "comments": [
+      {
+        "text": "nice book",
+        "rating": "3",
+        "commentedOn": "15/01/2016",
+        "username": "shravya"
+      },
+      {
+        "text": "worst book",
+        "rating": "5",
+        "commentedOn": "03/02/2015",
+        "username": "Siri"
+      },
+      {
+        "text": "Worth price.",
+        "rating": "3",
+        "commentedOn": "13/08/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_2",
+    "name": "The Avengers - The S.H.I.E.L.D. Files",
+    "price": 90,
+    "image": "images/avg.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 3.4,
+    "Author": "Scott Peterson",
+    "Features": {
+      "Language": "English",
+      "ISBN": "9789351037439",
+      "Pages" : "24",
+      "PublicationYear" : 2015
+    },
+    "comments": [
+      {
+        "text": "nice book",
+        "rating": "3.8",
+        "commentedOn": "01/10/2016",
+        "username": "Alex"
+      },
+      {
+        "text": "Ok...",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Ammu"
+      },
+      {
+        "text": "Hated it!",
+        "rating": "2",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_3",
+    "name": "The Amazing Spider - Man : Beware the Lizard",
+    "price": 60,
+    "image": "images/asm.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 3.2,
+    "Author": "Nachie Castro",
+    "Features": {
+      "Language": "English",
+      "ISBN": "9789351037453",
+      "Pages" : "24",
+      "PublicationYear" : 2015
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_4",
+    "name": "Ben 10",
+    "price": 56,
+    "image": "images/ben.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 5,
+    "Author": "Benn",
+    "Features": {
+      "Language": "English",
+      "ISBN": "9780143332688",
+      "Pages" : "24",
+      "PublicationYear" : 2012
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_5",
+    "name": "Mighty Raju In The Great Pirate ",
+    "price": 224,
+    "image": "images/gp.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 5,
+    "Author": " Chotta Bheem",
+    "Features": {
+      "Language": "English",
+      "ISBN": "9789382818014",
+      "Pages" : "24",
+      "PublicationYear" : 2014
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_6",
+    "name": "TREASURE ISLAND",
+    "price": 224,
+    "image": "images/ti.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 3.8,
+    "Author": "Pegasus",
+    "Features": {
+      "Language": "English",
+      "ISBN": "8131904725",
+      "Pages" : "16",
+      "PublicationYear" : 2010
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_7",
+    "name": "The Invincible Iron Man VS The Mandarin",
+    "price": 224,
+    "image": "images/imm.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 1.8,
+    "Author": "Scholastic",
+    "Features": {
+      "Language": "English",
+      "ISBN": "9789351032915",
+      "Pages" : "16",
+      "PublicationYear" : 2014
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_8",
+    "name": "Dork Diaries Party Time",
+    "price": 297,
+    "image": "images/dd.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 4.2,
+    "Author": "SIMON",
+    "Features": {
+      "Language": "English",
+      "ISBN": "184738742X",
+      "Pages" : "46",
+      "PublicationYear" : 2010
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_9",
+    "name": "Studying Comics and Graphic Novels ",
+    "price": 1496,
+    "image": "images/cgn.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 3.8,
+    "Author": "Karin Kukkonen",
+    "Features": {
+      "Language": "English",
+      "ISBN": "9781118499924",
+      "Pages" : "182",
+      "PublicationYear" : 2013
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_10",
+    "name": "The Avengers - Breakout!",
+    "price": 125,
+    "image": "images/avgb.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 3.8,
+    "Author": "Michael Siglain",
+    "Features": {
+      "Language": "English",
+      "ISBN": "9789351037446",
+      "Pages" : "24",
+      "PublicationYear" : 2015
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_11",
+    "name": "The Avengers - Breakout!",
+    "price": 125,
+    "image": "images/avgb.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 3.8,
+    "Author": "Michael Siglain",
+    "Features": {
+      "Language": "English",
+      "ISBN": "9789351037446",
+      "Pages" : "24",
+      "PublicationYear" : 2015
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_12",
+    "name": "THE STORY OF WOLVERINE",
+    "price": 125,
+    "image": "images/wol.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 3.8,
+    "Author": "Michael",
+    "Features": {
+      "Language": "English",
+      "ISBN": "9789351035930",
+      "Pages" : "32",
+      "PublicationYear" : 2012
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_13",
+    "name": "MARVEL: SUPERHERO LEGENDS",
+    "price": 275,
+    "image": "images/marvel.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 4,
+    "Author": "Michael",
+    "Features": {
+      "Language": "English",
+      "ISBN": "9789351035800",
+      "Pages" : "32",
+      "PublicationYear" : 2012
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_14",
+    "name": "The Jungle Book",
+    "price": 108,
+    "image": "images/jungle.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 4,
+    "Author": "Rudyard Kipling",
+    "Features": {
+      "Language": "English",
+      "ISBN": "8190751549",
+      "Pages" : "108",
+      "PublicationYear" : 2012
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "Book_PRD_15",
+    "name": "Batman: Killing Joke",
+    "price": 552,
+    "image": "images/bat.jpg",
+    "type": "books",
+    "subType": "comic",
+    "ratingProduct": 4.3,
+    "Author": " Brian Bolland",
+    "Features": {
+      "Language": "English",
+      "ISBN": "1401216676",
+      "Pages" : "64",
+      "PublicationYear" : 2018
+    },
+    "comments": [
+      {
+        "text": "Entertainment book",
+        "rating": "3.2",
+        "commentedOn": "17/01/2017",
+        "username": "Shravya"
+      },
+      {
+        "text": "Simply good",
+        "rating": "3.0",
+        "commentedOn": "11/02/2015",
+        "username": "Grey"
+      },
+      {
+        "text": "Good",
+        "rating": "4",
+        "commentedOn": "19/05/2016",
+        "username": "divya"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
   }
 ]

@@ -1,68 +1,20 @@
 <br>
-<!--<div>
-<div  ng-repeat="data in jsonData">
-    <a ui-sref="productDetails({id:data.id})">
-        <div class="my-col-50">
-            <img src="{{data.image}}" class="image">
-            <h4>{{data.name}}</h4>
-            <br><br>
-        </div>
-    </a>
-</div>
-</div>-->
-<br>
 <center><h2><i><font color="#00008b"> Top Rated Products</font></i></h2></center>
 <br>
-<div ng-repeat="data in jsonData | orderBy:'-ratingProduct' | limitTo:5  ">
-    <a ui-sref="productDetails({id:data.id})">
-        <div class="my-col-50">
-            <img src="{{data.image}}" class="image1">
-            <h4>{{data.name}}</h4>
-            <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
-            <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
-            <br><br>
-        </div>
-    </a>
-</div>
+
+<total-details datas="jsonData"> </total-details>
+
 <br>
 <center><h2><i><font color="#00008b">Buy latest mobiles & Get amazing Offers</font></i></h2></center>
 <br>
 
-<div ng-repeat="data in hc.mobiles | orderBy:'-ratingProduct' | limitTo:5 ">
-    <div class="my-col-50">
-        <a ui-sref="productDetails({id:data.id})">
-            <img class="image1" src="{{data.image}}">
-            <h4><i>{{data.name}}</i></h4>
-            <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
-            <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
-        </a>
-    </div>
-</div>
-<!--
+<total-details datas="hc.mobiles"> </total-details>
+
 <br>
-<center><h2><i><font color="#00008b">Buy latest Laptops & Get amazing Offers</font></i></h2></center>
+<center><h2><i><font color="#00008b">In Laptops</font></i></h2></center>
 <br>
+<total-details datas="hc.laptops"> </total-details>
 
-<div ng-repeat="data in hc.laptops">
-    <div class="my-col-50">
-        <a ui-sref="productDetails({id:data.id})">
-            <img class="image" src="{{data.image}}">
-            <h4><i>{{data.name}}</i></h4>
-            <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
-            <ng-rate-it ng-model="data.ratingProduct" read-only="pc.readOnly"></ng-rate-it>
-        </a>
-    </div>
-</div>-->
-
-<!--
-<div ng-controller="searchController">
-    <input type="text" ng-model="searchText" />
-
-    <div ng-show="search.products.length > 0">
-        <ul  ng-repeat="item in search.products">
-            <li>{{ item.name }}</li>
-        </ul>
-    </div>
-</div>
--->
-
+<center><h2><i><font color="#00008b">In Comic Books</font></i></h2></center>
+<br>
+<total-details datas="hc.comics"> </total-details>

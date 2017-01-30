@@ -13,6 +13,7 @@
         "ngRateIt",
         "product",
         "angular-elevate-zoom",
-        "ui-rangeSlider"
+        "ui-rangeSlider",
+        "displayProducts"
     ])
 })();
