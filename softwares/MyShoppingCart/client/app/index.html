@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="shoppingCart" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="shoppingCart" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="shoppingCart" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="shoppingCart" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/angular-rateit/dist/ng-rateit.css">
+
+  <!--<link href="bower_components/angular-jk-rating-stars/dist/jk-rating-stars.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+
+  <link href="bower_components/angular-ui-select/dist/select.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" type="text/css">
+  <link rel="stylesheet" href="bower_components/angular-rateit/src/style/ng-rateit.css" type="text/css">
+  <script src="bower_components/angular-rangeslider/angular.rangeSlider.js"></script>
+  <link rel="stylesheet" href="bower_components/angular-rangeslider/angular.rangeSlider.css">
+
+
+  <!--<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">-->
+
+  <link rel="stylesheet" href="app.css">
+  <base href = "/">
+</head>
+<body>
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!--<div ng-include="'views/header.html'"></div>-->
+<header-directive></header-directive>
+<div ui-view></div>
+<footer-directive></footer-directive>
+<!--<div ng-include="'views/footer.html'"></div>-->
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-rateit/src/ng-rateit.js"></script>
+<script src="bower_components/angular-elevate-zoom/dist/angular-elevate-zoom.min.js"></script>
+<script src="bower_components/angular-rangeslider/angular.rangeSlider.js"></script>
+
+<script src="bower_components/angular-ui-select/dist/select.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+
+<script src="app.module.js"></script>
+<script src="app.config.js"></script>
+<script src="app.run.js"></script>
+
+<script src="module/mobileModule/mobileModule.js"></script>
+<script src="module/mobileModule/MobileController.js"></script>
+<script src="module/mobileModule/mobileService.js"></script>
+
+<script src="module/searchModule/SearchModule.js"></script>
+<script src="module/searchModule/SearchService.js"></script>
+<script src="module/searchModule/SearchController.js"></script>
+
+<script src="module/displayEachProduct/eachProductDetailsModule.js"></script>
+<script src="module/displayEachProduct/eachProductDetailsService.js"></script>
+<script src="module/displayEachProduct/eachProductDetailsController.js"></script>
+<script src="module/displayEachProduct/navigationFilter.js"></script>
+
+
+<script src="module/HomeModule/homeModule.js"></script>
+<script src="module/HomeModule/homeService.js"></script>
+<script src="module/HomeModule/homeController.js"></script>
+<script src="module/utilService/readJson.js"></script>
+
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="module/HomeModule/headerDirective.js"></script>
+<script src="module/searchModule/searchIncludeDirective.js"></script>
+<script src="module/directives/displayEachProductModule.js"></script>
+<script src="module/directives/displayProductDetails.js"></script>
+<script src="module/directives/totalDetailsDirective.js"></script>
+
