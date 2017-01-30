@@ -23,6 +23,12 @@
                 templateUrl: 'partials/productDetails.html',
                 controller: 'productDetailsController',
                 controllerAs: 'pc'
+            })
+                .state('search',{
+                url:'/home/:id',
+                templateUrl: 'partials/productDetails.html',
+                controller: 'productDetailsController',
+                controllerAs: 'sc'
             });
 
             $urlRouterProvider.otherwise('/home');

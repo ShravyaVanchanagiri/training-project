@@ -6,15 +6,19 @@
         angular.module('search')
             .controller("SearchController",SearchController);
 
-        SearchController.$inject=['$http','searchService','$rootScope'];
+        SearchController.$inject=['$http','searchService','$rootScope','$state'];
 
-        function SearchController($http,searchService,$rootScope){
+        function SearchController($http,searchService,$rootScope, $state){
             var vm = this;
 
             console.log("dataaaaa from seach controller");
             searchService.getAllData();
+            vm.selectedData=selectedData;
 
-
+            function selectedData(selectedValue){
+               /* $state.go(state,selectedValue);*/
+                console.log(selectedValue);
+            }
             //vm.products = $rootScope.jsonData;
             vm.refreshProds = function(valueEntered)
             {

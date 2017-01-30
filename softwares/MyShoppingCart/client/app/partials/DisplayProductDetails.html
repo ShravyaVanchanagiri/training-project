@@ -1,0 +1,9 @@
+<a ui-sref="productDetails({id:data.id})">
+    <div class="my-col-50">
+        <img src="{{data.image}}" class="image1">
+        <h4>{{data.name}}</h4>
+        <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
+        <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
+        <br><br>
+    </div>
+</a>

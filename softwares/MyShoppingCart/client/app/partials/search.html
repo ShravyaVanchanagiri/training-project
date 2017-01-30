@@ -1,6 +1,6 @@
 <div ng-controller="SearchController as sc">
     <ui-select ng-model="sc.selected" sortable="true" reset-search-input="false" style="width: 800px;" theme="bootstrap"
-               ng-change="sc.change(sc.selected)">
+               ng-change="sc.change(sc.selected)" onSelect="sc.selectedData(sc.selected)">
         <ui-select-match placeholder="Select or search a product ...">
             <span ng-bind="$select.selected.name"></span>
         </ui-select-match>
