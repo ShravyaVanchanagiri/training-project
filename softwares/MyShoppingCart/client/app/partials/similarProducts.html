@@ -1,0 +1,21 @@
+<div class="row">#################{{datas}}
+    <div class="col-md-3" ng-repeat="data in datas">
+        <div class="col-md-7">
+            <div class="circle">
+                <a ui-sref="productDetails({id:data.id})">
+                    <img src="{{data.image}}" class="image1">
+                    <h5><i>{{data.name}}</i></h5>
+                </a>
+                <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
+                <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
+            </div>
+        </div>
+    </div>
+    <button ng-disabled="pc.currentPage == 0"
+            ng-click="pc.currentPage=pc.currentPage-1">Previous
+    </button>
+    <span ng-show="pc.numberOfPages > 0"> {{pc.currentPage+1}}/{{pc.numberOfPages}}</span>
+    <button ng-disabled="pc.currentPage >= pc.similarProducts.length/pc.pageSize - 1"
+            ng-click="pc.currentPage=pc.currentPage+1"> Next
+    </button>
+</div>

@@ -13,13 +13,13 @@
             returnJson:returnJson
         };
         function returnJson(){
+
             var deffered=$q.defer();
             $http.get('module/mobileModule/Mobiles.json')
                 .then(function (res) {
-                    console.log(".....Service method...........");
-                    $rootScope.jsonData = res.data;
-                    console.log($rootScope.jsonData);
-                    deffered.resolve($rootScope.jsonData);
+                    console.log('........................19');
+                    console.log(res);
+                    deffered.resolve(res);
                 },function (error) {
                     /*error code*/
                     deffered.reject('There was an error in getting data');

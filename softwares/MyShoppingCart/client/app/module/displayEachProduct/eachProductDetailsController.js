@@ -26,15 +26,11 @@
         /*vm.numberOfPages=10;*/
         vm.productDetails = productDetailsService.getSelectedProduct($stateParams.id);
         vm.similarProducts = productDetailsService.getSimilarProduct(vm.productDetails.subType, vm.productDetails.name);
+        vm.rating=productDetailsService.getRating($stateParams.id);
         //vm.numberOfPages =  vm.similarProducts.length/vm.pageSize;
         console.log(".......................................................................................");
         console.log(vm.similarProducts.name);
         vm.numberOfPages=vm.similarProducts.length/vm.pageSize;
-        /*function numberOfPages(){
-            console.log("//////////////////////////////////////////////////");
-            console.log(vm.similarProducts.length);
-            return Math.ceil(vm.similarProducts.length/vm.pageSize);
-        }*/
     }
 })();
 

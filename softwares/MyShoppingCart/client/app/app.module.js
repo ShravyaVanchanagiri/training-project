@@ -14,6 +14,7 @@
         "product",
         "angular-elevate-zoom",
         "ui-rangeSlider",
-        "displayProducts"
+        "displayProducts",
+        "rating"
     ])
 })();
