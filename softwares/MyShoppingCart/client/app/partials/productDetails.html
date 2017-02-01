@@ -1,6 +1,6 @@
 <br><br>
 <div class="row">
-    <div class="col-sm-6" >
+    <div class="col-sm-6">
         <img src="{{pc.productDetails.image}}" class="imageInProductViewPage">
         <!--<button class="button button5">BUY NOW</button>
         <button class="button button5">ADD TO CART</button>-->
@@ -41,28 +41,5 @@
 </h2></center>
 <br>
 
-<!--<similar-products datas="pc.similarProducts"></similar-products>-->
-<div class="row">
-    <div class="col-md-3" ng-repeat="data in pc.similarProducts | navigationFilter:pc.currentPage*pc.pageSize | limitTo: pc.pageSize">
-        <div class="col-md-7">
-            <div class="circle">
-                <a ui-sref="productDetails({id:data.id})">
-                    <img src="{{data.image}}" class="image1">
-                    <h5><i>{{data.name}}</i></h5>
-                </a>
-                <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
-                <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
-            </div>
-        </div>
-    </div>
-    <button ng-disabled="pc.currentPage == 0"
-            ng-click="pc.currentPage=pc.currentPage-1">Previous
-    </button>
-    <span ng-show="pc.numberOfPages > 0"> {{pc.currentPage+1}}/{{pc.numberOfPages}}</span>
-    <button ng-disabled="pc.currentPage >= pc.similarProducts.length/pc.pageSize - 1"
-            ng-click="pc.currentPage=pc.currentPage+1"> Next
-    </button>
-
-</div>
-
-
+<similar-products similar="pc.similarProducts" current-page='pc.currentPage' page-size='pc.pageSize'
+                  number-of-pages="pc.similarProducts.length/pc.pageSize"></similar-products>
