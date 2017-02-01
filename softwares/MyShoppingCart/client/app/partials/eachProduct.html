@@ -1,9 +1,8 @@
-<br><br>
-<!--<div class="row">
+<div class="row">
     <div class="col-sm-6">
         <img src="{{pc.productDetails.image}}" class="imageInProductViewPage">
-        &lt;!&ndash;<button class="button button5">BUY NOW</button>
-        <button class="button button5">ADD TO CART</button>&ndash;&gt;
+        <!--<button class="button button5">BUY NOW</button>
+        <button class="button button5">ADD TO CART</button>-->
     </div>
     <div class="col-sm-6">
         <h1><i>{{pc.productDetails.name}}</i></h1>
@@ -36,10 +35,4 @@
         </div>
     </div>
 </div>
-<hr>-->
-<center><h2><i><font color="#00008b">PRODUCTS SIMILAR TO THE ABOVE {{pc.productDetails.subType | uppercase}}</font></i>
-</h2></center>
-<br>
-
-<similar-products similar="pc.similarProducts" current-page='pc.currentPage' page-size='pc.pageSize'
-                  number-of-pages="pc.similarProducts.length/pc.pageSize"></similar-products>
+<hr>
