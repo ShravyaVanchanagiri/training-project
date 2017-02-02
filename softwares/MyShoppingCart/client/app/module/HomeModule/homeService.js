@@ -27,6 +27,8 @@
             var mobiles=[];
             for(i=0;i<$rootScope.jsonData.length;i++){
                 if($rootScope.jsonData[i].subType == "mobile"){
+                    console.log("Displaying all mobiles");
+                    console.log($rootScope.jsonData[i]);
                     mobiles.push($rootScope.jsonData[i]);
                 }
             }
@@ -36,6 +38,8 @@
             var laptops=[];
             for(i=0;i<$rootScope.jsonData.length;i++){
                 if($rootScope.jsonData[i].subType == "laptop"){
+                    console.log("Displaying all laptops");
+                    console.log($rootScope.jsonData[i]);
                     laptops.push($rootScope.jsonData[i]);
                 }
             }
@@ -45,6 +49,8 @@
             var comics=[];
             for(i=0;i<$rootScope.jsonData.length;i++){
                 if($rootScope.jsonData[i].subType == "comic"){
+                    console.log("Displaying all comics");
+                    console.log($rootScope.jsonData[i]);
                     comics.push($rootScope.jsonData[i]);
                 }
             }

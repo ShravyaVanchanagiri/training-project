@@ -20,8 +20,10 @@
         function getProductDetails(id){
             for(var i=0;i<$rootScope.jsonData.length;i++){
                 if($rootScope.jsonData[i].id == id ){
-                    return $rootScope.jsonData[i];
+                    console.log("................................");
                     console.log($rootScope.jsonData[i]);
+                    return $rootScope.jsonData[i];
+                    //console.log($rootScope.jsonData[i]);
                 }
             }
         }
@@ -30,7 +32,7 @@
             for(var i=0;i<$rootScope.jsonData.length;i++){
                 if($rootScope.jsonData[i].id == id ){
                     return $rootScope.jsonData[i];
-                    console.log($rootScope.jsonData[i]);
+                    //console.log($rootScope.jsonData[i]);
                 }
             }
         }
