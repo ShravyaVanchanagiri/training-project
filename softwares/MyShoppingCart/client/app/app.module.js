@@ -16,6 +16,7 @@
         "ui-rangeSlider",
         "displayProducts",
         "rating",
-        "laptops"
+        "laptops",
+        "comics"
     ])
 })();

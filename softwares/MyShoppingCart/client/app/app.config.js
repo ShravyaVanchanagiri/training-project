@@ -18,6 +18,11 @@
                 templateUrl: 'partials/laptops.html',
                 controller: 'laptopController',
                 controllerAs: 'lc'
+            }).state('comics', {
+                url: '/comics',
+                templateUrl: 'partials/comics.html',
+                controller: 'comicController',
+                controllerAs: 'cc'
             }).state('home',{
                 url: '/home',
                 templateUrl: 'partials/home.html',
