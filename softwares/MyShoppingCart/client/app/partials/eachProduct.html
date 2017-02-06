@@ -27,11 +27,22 @@
         <ng-rate-it ng-model="pc.rating" read-only="pc.readOnly"></ng-rate-it>
         <h3>People comments and ratings given by them</h3>
 
-        <div ng-repeat="comment in pc.productDetails.comments">
-            <p><b>{{comment.username}}</b>: {{comment.text}}</p>
-            <ng-rate-it ng-model="comment.rating" read-only="true"></ng-rate-it>
-            <p>commented on: {{comment.commentedOn}}</p>
-            <hr>
+
+        <div ng-repeat="comment in pc.productDetails.comments | limitTo : pc.limit" class="comments">
+            <div>
+                <div>
+                    <p><b>{{comment.username}}</b>: {{comment.text}}</p>
+                </div>
+                <div>
+                    <ng-rate-it ng-model="comment.rating" read-only="true"></ng-rate-it>
+                </div>
+                <div>
+                    <p>commented on: {{comment.commentedOn}}</p>
+                </div>
+                ..................................................................
+                <button class="btn btn-default" type="button">Button</button>
+            </div>
+            <button style="...." class="more btn btn-primary btn-block" ng-click="pc.loadMore()"></button>
         </div>
     </div>
 </div>
