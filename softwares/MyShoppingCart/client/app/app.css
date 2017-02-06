@@ -96,6 +96,13 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
 }
+.circle:hover
+{
+    -webkit-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    transform: scale(1.04);
+
+}
 
 .button {
     background-color: #4CAF50; /* Green */
@@ -163,3 +170,5 @@ ul.rating {
 .rating .filled {
     color: blue;
 }
+
+

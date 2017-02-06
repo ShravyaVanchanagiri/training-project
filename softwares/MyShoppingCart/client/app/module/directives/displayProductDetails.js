@@ -14,7 +14,7 @@
             },
             templateUrl: 'partials/DisplayProductDetails.html',
             controller : function($scope){
-                //console.log($scope.data);
+                console.log($scope.data);
             }
         };
         return directive;

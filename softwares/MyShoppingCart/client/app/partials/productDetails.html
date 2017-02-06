@@ -1,6 +1,6 @@
 <br><br>
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6" >
         <img src="{{pc.productDetails.image}}" class="imageInProductViewPage">
         <!--<button class="button button5">BUY NOW</button>
         <button class="button button5">ADD TO CART</button>-->
@@ -8,13 +8,32 @@
     <div class="col-sm-6">
         <h1><i>{{pc.productDetails.name}}</i></h1>
         <h4>Price:{{pc.productDetails.price | currency : '&#8377;'}}</h4>
-        <h4>RAM:{{pc.productDetails.RAM}}</h4>
-        <h4>COLOR:{{pc.productDetails.color}}</h4>
-        <h4>Battery:{{pc.productDetails.battery}}</h4>
-        <h4>Model name:{{pc.productDetails.description}}</h4>
-        <h4>Brand:{{pc.productDetails.brand}}</h4>
-        <h5>Rating:{{pc.productDetails.ratingProduct}}</h5>
-        <ng-rate-it ng-model="pc.productDetails.ratingProduct" read-only="pc.readOnly"></ng-rate-it>
+
+        <div ng-if="pc.productDetails.type == 'electronics'">
+            <h4>RAM:{{pc.productDetails.RAM}}</h4>
+            <h4>COLOR:{{pc.productDetails.color}}</h4>
+            <h4>Battery:{{pc.productDetails.battery}}</h4>
+            <h4>Model name:{{pc.productDetails.description}}</h4>
+            <h4>Brand:{{pc.productDetails.brand}}</h4>
+        </div>
+        <div ng-if="pc.productDetails.type == 'books'">
+            <h4>Author:{{pc.productDetails.Author}}</h4>
+            <h4>Language:{{pc.productDetails.Features.Language}}</h4>
+            <h4>Battery:{{pc.productDetails.Features.ISBN}}</h4>
+            <h4>Model name:{{pc.productDetails.Features.Pages}}</h4>
+            <h4>Brand:{{pc.productDetails.Features.ISBN}}</h4>
+            <h4>Brand:{{pc.productDetails.Features.PublicationYear}}</h4>
+        </div>
+        <h5>Rating:{{pc.rating | number}}</h5>
+        <ng-rate-it ng-model="pc.rating" read-only="pc.readOnly"></ng-rate-it>
+        <h3>People comments and ratings given by them</h3>
+
+        <div ng-repeat="comment in pc.productDetails.comments">
+            <p><b>{{comment.username}}</b>: {{comment.text}}</p>
+            <ng-rate-it ng-model="comment.rating" read-only="true"></ng-rate-it>
+            <p>commented on: {{comment.commentedOn}}</p>
+            <hr>
+        </div>
     </div>
 </div>
 <hr>
@@ -22,17 +41,18 @@
 </h2></center>
 <br>
 
-
+<!--<similar-products datas="pc.similarProducts"></similar-products>-->
 <div class="row">
-    <div class="col-md-3"
-         ng-repeat="data in pc.similarProducts | navigationFilter:pc.currentPage*pc.pageSize | limitTo: pc.pageSize">
+    <div class="col-md-3" ng-repeat="data in pc.similarProducts | navigationFilter:pc.currentPage*pc.pageSize | limitTo: pc.pageSize">
         <div class="col-md-7">
-            <a ui-sref="productDetails({id:data.id})">
-                <img src="{{data.image}}" class="image1">
-                <h5><i>{{data.name}}</i></h5>
-            </a>
-            <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
-            <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
+            <div class="circle">
+                <a ui-sref="productDetails({id:data.id})">
+                    <img src="{{data.image}}" class="image1">
+                    <h5><i>{{data.name}}</i></h5>
+                </a>
+                <h4>Price:{{data.price | currency : '&#8377;'}}</h4>
+                <ng-rate-it ng-model="data.ratingProduct" read-only="true"></ng-rate-it>
+            </div>
         </div>
     </div>
     <button ng-disabled="pc.currentPage == 0"
