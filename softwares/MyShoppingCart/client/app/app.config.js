@@ -13,6 +13,11 @@
                 templateUrl: 'partials/mobiles.html',
                 controller: 'MobileController',
                 controllerAs: 'mc'
+            }).state('laptops', {
+                url: '/laptops',
+                templateUrl: 'partials/laptops.html',
+                controller: 'laptopController',
+                controllerAs: 'lc'
             }).state('home',{
                 url: '/home',
                 templateUrl: 'partials/home.html',

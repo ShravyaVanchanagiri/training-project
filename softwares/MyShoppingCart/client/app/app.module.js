@@ -15,6 +15,7 @@
         "angular-elevate-zoom",
         "ui-rangeSlider",
         "displayProducts",
-        "rating"
+        "rating",
+        "laptops"
     ])
 })();
