@@ -2,31 +2,35 @@
  * Created by vanchanagiri shravya on 1/17/2017.
  */
 (function () {
-        angular.module('mobiles')
-            .service("MobileService", MobileService);
+    angular.module('mobiles')
+        .service("MobileService", MobileService);
 
 
-        MobileService.$inject = ['$http', '$rootScope','uitService'];
+    MobileService.$inject = ['$http', '$rootScope','uitService'];
 
-        function MobileService($http, $rootScope, uitService) {
-            var vm=this;
-            vm.mobiles=[];
-            var mobileService = {
-                getAllMobiles: getAllMobiles
-            };
-            return mobileService;
+    function MobileService($http, $rootScope,uitService) {
+        var homeService = {
+            getAllData: getAllData,
+            getMobiles: getMobiles
+        };
+        return MobileService;
 
-            function getAllMobiles() {
-                //var data= uitService.returnJson();
-                //console.log($rootScope.jsonData);
-                for(var i=0;i<$rootScope.jsonData.length;i++){
-                    if($rootScope.jsonData[i].subType == "mobile" ){
-                        vm.mobiles=$rootScope.jsonData[i];
-                        console.log("..................................");
-                        console.log(vm.mobiles);
-                        return vm.mobiles;
-                    }
+
+        function getAllData() {
+            var data= uitService.returnJson();
+            console.log(data);
+            console.log("data");
+        }
+        function getMobiles(type){
+            var mobiles=[];
+            for(i=0;i<$rootScope.jsonData.length;i++){
+                if($rootScope.jsonData[i].subType == "mobile"){
+                    mobiles.push($rootScope.jsonData[i]);
                 }
             }
+            return mobiles;
         }
-    })();
+    }
+})();
+
+
