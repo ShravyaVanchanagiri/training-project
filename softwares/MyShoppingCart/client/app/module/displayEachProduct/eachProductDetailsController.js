@@ -33,16 +33,22 @@
         console.log(".......................................................................................");
         console.log(vm.similarProducts.name);
         vm.numberOfPages=vm.similarProducts.length/vm.pageSize;
-        console.log("**********************************************************************************");
-        console.log(vm.productDetails);
-        vm.comments=vm.productDetails.comments;
-        vm.limit=1;
-        vm.loadMore=loadMore;
-        //vm.loadMore();
+        vm.pagesShown = 1;
+        vm.pageSize1 = 3;
+        vm.paginationLimit=paginationLimit;
+        vm.hasMoreItemsToShow=hasMoreItemsToShow;
+        vm.showMoreItems = showMoreItems;
 
-        function loadMore() {
-            var increamented = vm.limit + 3;
-            vm.limit = increamented > vm.comments.length ? vm.comments.length : increamented;
+        function paginationLimit(data) {
+            return vm.pageSize1 * vm.pagesShown;
+        };
+
+        function hasMoreItemsToShow() {
+            return vm.pagesShown < (vm.productDetails.comments.length / vm.pageSize1);
+        };
+
+        function showMoreItems() {
+            vm.pagesShown = vm.pagesShown + 1;
         };
     }
 })();

@@ -22,7 +22,14 @@
     content: "|";
     padding-right: 0.3em;
 }
+.nav{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 300px;
+    border:2px solid black;
+    padding: 10px;
 
+}
 .appHeader {
     width: 100%;
     color: #CCC;
