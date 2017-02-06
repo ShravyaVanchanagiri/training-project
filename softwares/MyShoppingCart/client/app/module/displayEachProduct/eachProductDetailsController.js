@@ -21,24 +21,16 @@
         vm.readOnly = true;
         vm.currentPage = 0;
         vm.pageSize = 4;
-
-
-
-
+        
         /*vm.numberOfPages=10;*/
         vm.productDetails = productDetailsService.getSelectedProduct($stateParams.id);
         vm.similarProducts = productDetailsService.getSimilarProduct(vm.productDetails.subType, vm.productDetails.name);
         vm.rating=productDetailsService.getRating($stateParams.id);
-        //vm.numberOfPages =  vm.similarProducts.length/vm.pageSize;
-        console.log(".......................................................................................");
-        console.log(vm.similarProducts.name);
         vm.numberOfPages=vm.similarProducts.length/vm.pageSize;
-        console.log("**********************************************************************************");
-        console.log(vm.productDetails);
         vm.comments=vm.productDetails.comments;
         vm.limit=1;
+        vm.maxLimit=vm.productDetails.comments.length;
         vm.loadMore=loadMore;
-        //vm.loadMore();
 
         function loadMore() {
             var increamented = vm.limit + 3;
