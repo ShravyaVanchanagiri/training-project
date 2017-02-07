@@ -99,6 +99,12 @@ input[type=text] {
     float: left;
     width: 20%;
 }
+@media (min-width: 1000px) and (max-width: 2000px) {
+    .my-col-50 {
+        float: left;
+        width: 50%;
+    }
+}
 
 input[type=text]:focus {
     width: 100%;

@@ -10,7 +10,8 @@
         var directive = {
             restrict:'E',
             scope:{
-                datas : '='
+                datas : '=',
+                limit: '='
             },
             templateUrl: 'partials/TotalDetails.html',
         };
