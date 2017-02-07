@@ -9,6 +9,27 @@
 
     function MobileController($http, homeService, $rootScope, uitService) {
         var vm = this;
+
+        /*$scope.slider = {
+            min: 500,
+            max: 50000,
+            options: {
+                floor: 0,
+                ceil: 450
+            }
+        };*/
+
+        vm.slider = {
+            min: 500,
+            max: 50000,
+            options: {
+                floor: 500,
+                ceil: 50000
+            }
+        };
+
+
+
         vm.test = "Coming here";
         vm.getJsonData=getJsonData;
         vm.getJsonData();

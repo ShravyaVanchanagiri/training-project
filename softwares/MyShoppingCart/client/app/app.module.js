@@ -13,10 +13,10 @@
         "ngRateIt",
         "product",
         "angular-elevate-zoom",
-        "ui-rangeSlider",
         "displayProducts",
         "rating",
         "laptops",
-        "comics"
+        "comics",
+        "rzModule"
     ])
 })();
