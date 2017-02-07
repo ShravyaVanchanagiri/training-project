@@ -6,7 +6,12 @@
         .component('eachProduct', {
 
             bindings: {
-            eachProductData: '='
+                /*eachProductData: '='*/
+                productDetails:'=',
+                rating:'=',
+                paginationLimit:'&',
+                hasMoreItemsToShow:'&',
+                showMoreItems:'&'
             },
             templateUrl: 'partials/eachProduct.html',
             controller: productDetailsController,
@@ -14,6 +19,12 @@
         });
     productDetailsController.$inject = [];
     function productDetailsController() {
+
         var vm = this;
+        vm.productDetails;
+        vm.rating;
+        //vm.showMoreItems;
+
+
     }
 }());

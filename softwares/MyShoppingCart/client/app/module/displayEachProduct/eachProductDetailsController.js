@@ -1,9 +1,6 @@
 /**
  * Created by vanchanagiri shravya on 1/20/2017.
  */
-/**
- * Created by vanchanagiri shravya on 1/18/2017.
- */
 (function () {
     angular.module('product')
         .controller("productDetailsController", productDetailsController);
@@ -21,18 +18,14 @@
         vm.readOnly = true;
         vm.currentPage = 0;
         vm.pageSize = 4;
-
-
-
-
         /*vm.numberOfPages=10;*/
         vm.productDetails = productDetailsService.getSelectedProduct($stateParams.id);
         vm.similarProducts = productDetailsService.getSimilarProduct(vm.productDetails.subType, vm.productDetails.name);
         vm.rating=productDetailsService.getRating($stateParams.id);
-        //vm.numberOfPages =  vm.similarProducts.length/vm.pageSize;
-        console.log(".......................................................................................");
         console.log(vm.similarProducts.name);
         vm.numberOfPages=vm.similarProducts.length/vm.pageSize;
+
+
         vm.pagesShown = 1;
         vm.pageSize1 = 3;
         vm.paginationLimit=paginationLimit;
@@ -40,14 +33,18 @@
         vm.showMoreItems = showMoreItems;
 
         function paginationLimit(data) {
+            console.log("in pagination limit function");
             return vm.pageSize1 * vm.pagesShown;
         };
 
         function hasMoreItemsToShow() {
+            console.log("in hasMoreItemsToShow function");
+            console.log(vm.pagesShown < (vm.productDetails.comments.length / vm.pageSize1));
             return vm.pagesShown < (vm.productDetails.comments.length / vm.pageSize1);
         };
 
         function showMoreItems() {
+            console.log("in ShowMoreItems function");
             vm.pagesShown = vm.pagesShown + 1;
         };
     }

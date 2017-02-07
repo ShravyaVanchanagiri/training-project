@@ -1,9 +1,10 @@
 <br><br>
+<!--
 <div class="row">
     <div class="col-sm-6">
         <img src="{{pc.productDetails.image}}" class="imageInProductViewPage">
-        <!--<button class="button button5">BUY NOW</button>
-        <button class="button button5">ADD TO CART</button>-->
+        &lt;!&ndash;<button class="button button5">BUY NOW</button>
+        <button class="button button5">ADD TO CART</button>&ndash;&gt;
     </div>
     <div class="col-sm-6">
         <h1><i>{{pc.productDetails.name}}</i></h1>
@@ -44,10 +45,14 @@
         </div>
     </div>
 </div>
+-->
+<each-product product-details="pc.productDetails" rating="pc.rating"
+              has-more-items-to-show="pc.hasMoreItemsToShow()" show-more-items="pc.showMoreItems()"
+              pagination-limit="pc.paginationLimit()"></each-product>
 <hr>
 <center><h2><i><font color="#00008b">PRODUCTS SIMILAR TO THE ABOVE {{pc.productDetails.subType | uppercase}}</font></i>
 </h2></center>
 <br>
-
+<!--<each-product eachProductData="pc.productDetails"></each-product>-->
 <similar-products similar="pc.similarProducts" current-page='pc.currentPage' page-size='pc.pageSize'
                   number-of-pages="pc.similarProducts.length/pc.pageSize"></similar-products>

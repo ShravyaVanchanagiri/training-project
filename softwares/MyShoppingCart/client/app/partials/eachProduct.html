@@ -1,35 +1,34 @@
 <div class="row">
     <div class="col-sm-6">
-        <img src="{{pc.productDetails.image}}" class="imageInProductViewPage">
+        <img src="{{spc.productDetails.image}}" class="imageInProductViewPage">
         <!--<button class="button button5">BUY NOW</button>
         <button class="button button5">ADD TO CART</button>-->
     </div>
     <div class="col-sm-6">
-        <h1><i>{{pc.productDetails.name}}</i></h1>
-        <h4>Price:{{pc.productDetails.price | currency : '&#8377;'}}</h4>
+        <h1><i>{{spc.productDetails.name}}</i></h1>
+        <h4>Price:{{spc.productDetails.price | currency : '&#8377;'}}</h4>
 
-        <div ng-if="pc.productDetails.type == 'electronics'">
-            <h4>RAM:{{pc.productDetails.RAM}}</h4>
-            <h4>COLOR:{{pc.productDetails.color}}</h4>
-            <h4>Battery:{{pc.productDetails.battery}}</h4>
-            <h4>Model name:{{pc.productDetails.description}}</h4>
-            <h4>Brand:{{pc.productDetails.brand}}</h4>
+        <div ng-if="spc.productDetails.type == 'electronics'">
+            <h4>RAM:{{spc.productDetails.RAM}}</h4>
+            <h4>COLOR:{{spc.productDetails.color}}</h4>
+            <h4>Battery:{{spc.productDetails.battery}}</h4>
+            <h4>Model name:{{spc.productDetails.description}}</h4>
+            <h4>Brand:{{spc.productDetails.brand}}</h4>
         </div>
-        <div ng-if="pc.productDetails.type == 'books'">
-            <h4>Author:{{pc.productDetails.Author}}</h4>
-            <h4>Language:{{pc.productDetails.Features.Language}}</h4>
-            <h4>Battery:{{pc.productDetails.Features.ISBN}}</h4>
-            <h4>Model name:{{pc.productDetails.Features.Pages}}</h4>
-            <h4>Brand:{{pc.productDetails.Features.ISBN}}</h4>
-            <h4>Brand:{{pc.productDetails.Features.PublicationYear}}</h4>
+        <div ng-if="spc.productDetails.type == 'books'">
+            <h4>Author:{{spc.productDetails.Author}}</h4>
+            <h4>Language:{{spc.productDetails.Features.Language}}</h4>
+            <h4>Battery:{{spc.productDetails.Features.ISBN}}</h4>
+            <h4>Model name:{{spc.productDetails.Features.Pages}}</h4>
+            <h4>Brand:{{spc.productDetails.Features.ISBN}}</h4>
+            <h4>Brand:{{spc.productDetails.Features.PublicationYear}}</h4>
         </div>
-        <h5>Rating:{{pc.rating | number}}</h5>
-        <ng-rate-it ng-model="pc.rating" read-only="pc.readOnly"></ng-rate-it>
+        <h5>Rating:{{spc.rating | number}}</h5>
+        <ng-rate-it ng-model="spc.rating" read-only="true"></ng-rate-it>
         <h3>People comments and ratings given by them</h3>
+        <div class="nav">
 
-
-        <div ng-repeat="comment in pc.productDetails.comments | limitTo : pc.limit" class="comments">
-            <div>
+            <div ng-repeat="comment in spc.productDetails.comments | limitTo : spc.paginationLimit()">
                 <div>
                     <p><b>{{comment.username}}</b>: {{comment.text}}</p>
                 </div>
@@ -39,11 +38,12 @@
                 <div>
                     <p>commented on: {{comment.commentedOn}}</p>
                 </div>
-                ..................................................................
-                <button class="btn btn-default" type="button">Button</button>
             </div>
-            <button style="...." class="more btn btn-primary btn-block" ng-click="pc.loadMore()"></button>
+            <button class="show-more-btn" ng-show="spc.hasMoreItemsToShow()" ng-click="spc.showMoreItems()">Show more</button>
         </div>
     </div>
 </div>
 <hr>
+
+<!--
+<button ng-click="spc.showMoreItems()"> test..</button>-->
