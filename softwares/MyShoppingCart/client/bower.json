@@ -19,6 +19,9 @@
     "angularjs-slider": "^6.0.0",
     "angular-rangeslider": "^0.0.14",
     "angular-carousel": "^1.0.1",
-    "angular-touch": "^1.6.1"
+    "angular-touch": "^1.6.1",
+    "angular-ui-select": "^0.19.6",
+    "angular-rateit": "^3.0.2",
+    "angular-sanitize": "^1.6.1"
   }
 }
