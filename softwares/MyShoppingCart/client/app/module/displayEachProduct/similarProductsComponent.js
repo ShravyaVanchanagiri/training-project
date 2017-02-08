@@ -10,14 +10,14 @@
                 currentPage: '=',
                 pageSize: '=',
                 numberOfPages: '='
-
             },
             templateUrl: 'partials/similarProducts.html',
-            controller: productDetailsController,
+            controller: SimilarProductsController,
             controllerAs: 'spc'
         });
-    productDetailsController.$inject = [];
-    function productDetailsController() {
+    SimilarProductsController.$inject = [];
+    function SimilarProductsController() {
         var vm = this;
+        vm.test="test";
     }
 }());

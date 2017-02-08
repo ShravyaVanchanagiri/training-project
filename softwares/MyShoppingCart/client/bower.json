@@ -22,6 +22,7 @@
     "angular-touch": "^1.6.1",
     "angular-ui-select": "^0.19.6",
     "angular-rateit": "^3.0.2",
-    "angular-sanitize": "^1.6.1"
+    "angular-sanitize": "^1.6.1",
+    "checklist-model": "^0.10.0"
   }
 }

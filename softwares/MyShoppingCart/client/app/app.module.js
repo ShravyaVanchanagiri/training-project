@@ -17,6 +17,7 @@
         "rating",
         "laptops",
         "comics",
-        "rzModule"
+        "rzModule",
+        "priceRange"
     ])
 })();

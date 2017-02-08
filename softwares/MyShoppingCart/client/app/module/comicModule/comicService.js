@@ -11,7 +11,8 @@
     function comicService($http, $rootScope,uitService) {
         var comicService = {
             getAllData: getAllData,
-            getComics: getComics
+            getComics: getComics,
+            getProducts: getProducts,
         };
         return comicService;
 
@@ -29,6 +30,24 @@
                 }
             }
             return comics;
+        }
+        function getProducts(min,max,data){
+            $rootScope.min = min;
+            console.log("min value");
+            console.log($rootScope.min);
+
+            $rootScope.max = max;
+            console.log($rootScope.max);
+            var filteredProducts = [];
+            for(var i=0;i<data.length;i++)
+            {
+                var eachProduct = data[i];
+                if(eachProduct.price >= min && eachProduct.price <= max)
+                {
+                    filteredProducts.push(eachProduct);
+                }
+            }
+            return filteredProducts;
         }
     }
 })();

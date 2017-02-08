@@ -7,14 +7,16 @@
             <div class="col-md-12">
                 Min Price:{{mc.slider.min}}<br>
                 Max price:{{mc.slider.max}}
-                <rzslider rz-slider-model="mc.slider.min"
+               <!-- <rzslider rz-slider-model="mc.slider.min"
                         rz-slider-high="mc.slider.max"
-                        rz-slider-options="mc.slider.options"></rzslider>
+                        rz-slider-options="mc.slider.options"></rzslider>-->
+                <price-range min="mc.slider.min" max="mc.slider.max" options="mc.slider.options"></price-range>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <!--input box-->
+
             </div>
         </div>
         <div class="row">

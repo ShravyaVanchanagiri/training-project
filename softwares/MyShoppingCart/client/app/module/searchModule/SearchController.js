@@ -30,7 +30,7 @@
                     {
                         if($rootScope.jsonData[i].name.toUpperCase().includes(valueEntered.toLocaleUpperCase())) {
                             vm.productList.push($rootScope.jsonData[i]);
-                            console.log("in loop refresh");
+                            //console.log("in loop refresh");
                         }
                     }
                 }

@@ -27,8 +27,8 @@
             var mobiles=[];
             for(i=0;i<$rootScope.jsonData.length;i++){
                 if($rootScope.jsonData[i].subType == "mobile"){
-                    console.log("Displaying all mobiles");
-                    console.log($rootScope.jsonData[i]);
+                    /*console.log("Displaying all mobiles");
+                    console.log($rootScope.jsonData[i]);*/
                     mobiles.push($rootScope.jsonData[i]);
                 }
             }
