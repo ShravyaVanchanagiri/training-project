@@ -9,9 +9,10 @@
     MobileService.$inject = ['$http', '$rootScope','uitService'];
 
     function MobileService($http, $rootScope,uitService) {
-        var homeService = {
+        var MobileService = {
             getAllData: getAllData,
-            getMobiles: getMobiles
+            getMobiles: getMobiles,
+            getProducts:getProducts,
         };
         return MobileService;
 
@@ -21,14 +22,33 @@
             console.log(data);
             console.log("data");
         }
+        var mobiles=[];
         function getMobiles(type){
-            var mobiles=[];
+            mobiles=[];
             for(i=0;i<$rootScope.jsonData.length;i++){
                 if($rootScope.jsonData[i].subType == "mobile"){
                     mobiles.push($rootScope.jsonData[i]);
                 }
             }
             return mobiles;
+        }
+        function  getProducts(min,max,data){
+            $rootScope.min = min;
+            console.log("min value");
+            console.log($rootScope.min);
+
+            $rootScope.max = max;
+            console.log($rootScope.max);
+            var filteredProducts = [];
+            for(var i=0;i<data.length;i++)
+            {
+                var eachProduct = data[i];
+                if(eachProduct.price >= min && eachProduct.price <= max)
+                {
+                    filteredProducts.push(eachProduct);
+                }
+            }
+            return filteredProducts;
         }
     }
 })();
