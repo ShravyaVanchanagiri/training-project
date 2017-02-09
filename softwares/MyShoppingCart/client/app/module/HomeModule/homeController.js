@@ -24,6 +24,7 @@
                 vm.mobiles=homeService.getMobiles(vm.data.subType);
                 vm.laptops=homeService.getLaptops(vm.data.subType);
                 vm.comics=homeService.getComics(vm.data.subType);
+                vm.fictions=homeService.getFictions(vm.data.subType);
             }
             function gettingError(error){
                 console.log(error);

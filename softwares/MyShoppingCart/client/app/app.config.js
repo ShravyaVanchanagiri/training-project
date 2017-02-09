@@ -23,6 +23,11 @@
                 templateUrl: 'partials/comics.html',
                 controller: 'comicController',
                 controllerAs: 'cc'
+            }).state('fictions', {
+                url: '/fictions',
+                templateUrl: 'partials/fictions.html',
+                controller: 'fictionController',
+                controllerAs: 'fc'
             }).state('home',{
                 url: '/home',
                 templateUrl: 'partials/home.html',

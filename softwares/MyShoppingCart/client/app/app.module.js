@@ -18,6 +18,7 @@
         "laptops",
         "comics",
         "rzModule",
-        "priceRange"
+        "priceRange",
+        "fictions"
     ])
 })();

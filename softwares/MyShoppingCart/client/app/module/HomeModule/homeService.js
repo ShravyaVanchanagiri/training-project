@@ -13,7 +13,8 @@
             getAllData: getAllData,
             getMobiles: getMobiles,
             getLaptops: getLaptops,
-            getComics: getComics
+            getComics: getComics,
+            getFictions: getFictions,
         };
         return homeService;
 
@@ -55,6 +56,17 @@
                 }
             }
             return comics;
+        }
+        function getFictions(type){
+            var fictions=[];
+            for(i=0;i<$rootScope.jsonData.length;i++){
+                if($rootScope.jsonData[i].subType == "fiction"){
+                    console.log("Displaying all comics");
+                    console.log($rootScope.jsonData[i]);
+                    fictions.push($rootScope.jsonData[i]);
+                }
+            }
+            return fictions;
         }
     }
 })();
