@@ -7,16 +7,15 @@
             <div class="col-md-12">
                 Min Price:{{mc.slider.min}}<br>
                 Max price:{{mc.slider.max}}
-               <!-- <rzslider rz-slider-model="mc.slider.min"
-                        rz-slider-high="mc.slider.max"
-                        rz-slider-options="mc.slider.options"></rzslider>-->
                 <price-range min="mc.slider.min" max="mc.slider.max" options="mc.slider.options"></price-range>
+                <br>
+                <br>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <!--input box-->
-
+                <div ng-dropdown-multiselect="" options="mc.mobileBrands" selected-model="mc.model"
+                     extra-settings="mc.settings" checkboxes="true" ng-click="mc.getCheckedProducts(mc.model)"></div>
             </div>
         </div>
         <div class="row">

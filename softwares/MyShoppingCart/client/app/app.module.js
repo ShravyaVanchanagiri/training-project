@@ -19,6 +19,7 @@
         "comics",
         "rzModule",
         "priceRange",
-        "fictions"
+        "fictions",
+        "angularjs-dropdown-multiselect"
     ])
 })();

@@ -13,6 +13,7 @@
             getAllData: getAllData,
             getMobiles: getMobiles,
             getProducts:getProducts,
+            getBrands: getBrands,
         };
         return MobileService;
 
@@ -49,6 +50,19 @@
                 }
             }
             return filteredProducts;
+        }
+
+        function getBrands(mobile){
+            var brands=[], brandsList=[];
+            for(var i=0;i<mobile.length;i++){
+
+                if (brandsList.indexOf(mobile[i].brand) < 0 ){
+                    var brandObj  = {id:mobile[i].brand, label:mobile[i].brand};
+                    brandsList.push(mobile[i].brand);
+                    brands.push(brandObj);
+                }
+            }
+            return brands;
         }
     }
 })();
