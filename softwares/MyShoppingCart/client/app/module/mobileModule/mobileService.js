@@ -14,6 +14,7 @@
             getMobiles: getMobiles,
             getProducts:getProducts,
             getBrands: getBrands,
+            filterMobiles: filterMobiles
         };
         return MobileService;
 
@@ -34,12 +35,6 @@
             return mobiles;
         }
         function  getProducts(min,max,data){
-            $rootScope.min = min;
-            console.log("min value");
-            console.log($rootScope.min);
-
-            $rootScope.max = max;
-            console.log($rootScope.max);
             var filteredProducts = [];
             for(var i=0;i<data.length;i++)
             {
@@ -63,6 +58,26 @@
                 }
             }
             return brands;
+        }
+
+        function filterMobiles(min, max, brands) {
+            var mobiles = [];
+            //Fiter for brands
+            if(brands.length) {
+                for(var i=0;i< $rootScope.listMobiles.length;i++){
+                    if(brands.indexOf($rootScope.listMobiles[i].brand)>=0){
+                        mobiles.push($rootScope.listMobiles[i]);
+                    }
+                }
+            }else {
+                //When user doesn't select any brand
+                mobiles = $rootScope.listMobiles;
+            }
+
+            //filter for range
+            mobiles =  getProducts(min, max, mobiles);
+
+            return mobiles;
         }
     }
 })();

@@ -5,17 +5,18 @@
         <br>
         <div class="row">
             <div class="col-md-12">
-                Min Price:{{mc.slider.min}}<br>
-                Max price:{{mc.slider.max}}
-                <price-range min="mc.slider.min" max="mc.slider.max" options="mc.slider.options"></price-range>
+                <filter-component min="mc.slider.min" max="mc.slider.max" options="mc.slider.options"
+                                  options="mc.mobileBrands" selected-model="mc.model"
+                                  extra-settings="mc.settings" checkboxes="mc.checkBoxes" ng-click="mc.getCheckedProducts(mc.model)"></filter-component>
                 <br>
                 <br>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div ng-dropdown-multiselect="" options="mc.mobileBrands" selected-model="mc.model"
-                     extra-settings="mc.settings" checkboxes="true" ng-click="mc.getCheckedProducts(mc.model)"></div>
+                <!--<div ng-dropdown-multiselect="" options="mc.mobileBrands" selected-model="mc.model"
+                     extra-settings="mc.settings" checkboxes="true" ng-click="mc.getCheckedProducts(mc.model)"></div>-->
+                <!--filter-component ></filter-component>-->
             </div>
         </div>
         <div class="row">
@@ -23,10 +24,12 @@
                 <!--input box-->
             </div>
         </div>
-        Filter part
+        <!--Filter part-->
     </div>
     <div class="col-md-10">
-        <center><h2><i><font color="#00008b">Mobiles</font></i></h2></center>
+        <span class="text-center">
+            <h2><i><font color="#00008b">Mobiles</font></i></h2></center>
+        </span>
         <total-details datas="mc.mobiles" ></total-details>
     </div>
 </div>

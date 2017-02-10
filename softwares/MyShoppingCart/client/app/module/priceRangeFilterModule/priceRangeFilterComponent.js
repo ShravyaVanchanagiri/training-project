@@ -3,11 +3,16 @@
  */
 (function () {
     angular.module('priceRange')
-        .component('priceRange', {
+        .component('filterComponent', {
             bindings: {
                 options:"=",
                 min:"=",
-                max:"="
+                max:"=",
+                mobileBrands:"=",
+                model:"=",
+                settings:"=",
+                getCheckedProducts:"&",
+                checkBoxes:"="
             },
             templateUrl: 'partials/displayPriceRange.html',
             controller: priceRangeController,
