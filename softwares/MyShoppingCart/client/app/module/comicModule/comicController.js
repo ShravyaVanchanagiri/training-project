@@ -20,8 +20,6 @@
                     vm.comicList = [];
                     vm.comicListcomicList = comicService.getProducts(vm.slider.min, vm.slider.max,$rootScope.listComics);
                     vm.comics=vm.comicListcomicList;
-                    //console.log(vm.mobileList);
-                    //console.log(vm.mobiles);
                 }
             }
         };
