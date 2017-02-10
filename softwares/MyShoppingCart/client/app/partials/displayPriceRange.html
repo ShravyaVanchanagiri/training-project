@@ -1,9 +1,14 @@
+
+
 Min Price:{{prc.min}}<br>
 Max price:{{prc.max}}
+
 <rzslider rz-slider-model="prc.min"
           rz-slider-high="prc.max"
           rz-slider-options="prc.options">
 </rzslider>
 
 <div ng-dropdown-multiselect="" options="prc.mobileBrands" selected-model="prc.model"
-     extra-settings="prc.settings" checkboxes="prc.checkBoxes" ng-click="prc.getCheckedProducts(prc.model)"></div>
+     extra-settings="prc.settings" checkboxes="prc.checkBoxes"
+     ng-click="prc.filterBrands({checklist: prc.model})">
+</div>

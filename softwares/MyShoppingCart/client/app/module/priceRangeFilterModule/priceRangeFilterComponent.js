@@ -9,9 +9,8 @@
                 min:"=",
                 max:"=",
                 mobileBrands:"=",
-                model:"=",
                 settings:"=",
-                getCheckedProducts:"&",
+                filterBrands:"&",
                 checkBoxes:"="
             },
             templateUrl: 'partials/displayPriceRange.html',
@@ -23,6 +22,7 @@
 
     function priceRangeController() {
         var vm = this;
+        vm.model = [];
 
     }
 }());

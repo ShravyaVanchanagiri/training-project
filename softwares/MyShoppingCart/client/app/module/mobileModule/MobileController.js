@@ -12,13 +12,16 @@
         vm.checkBoxes = true;
         vm.getCheckedProducts=getCheckedProducts;
         vm.model = [];
+
         vm.settings = {
             scrollableHeight: '100px',
             scrollable: true,
             enableSearch: true
         };
+
         //selected brands
         vm.brands = [];
+
         vm.slider = {
             min: 500,
             max: 50000,

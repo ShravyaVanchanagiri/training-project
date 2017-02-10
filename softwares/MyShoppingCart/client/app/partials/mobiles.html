@@ -6,8 +6,9 @@
         <div class="row">
             <div class="col-md-12">
                 <filter-component min="mc.slider.min" max="mc.slider.max" options="mc.slider.options"
-                                  options="mc.mobileBrands" selected-model="mc.model"
-                                  extra-settings="mc.settings" checkboxes="mc.checkBoxes" ng-click="mc.getCheckedProducts(mc.model)"></filter-component>
+                                  mobile-brands="mc.mobileBrands"
+                                  settings="mc.settings" check-boxes="true"
+                                  filter-brands="mc.getCheckedProducts(checklist)"></filter-component>
                 <br>
                 <br>
             </div>
@@ -15,8 +16,8 @@
         <div class="row">
             <div class="col-md-12">
                 <!--<div ng-dropdown-multiselect="" options="mc.mobileBrands" selected-model="mc.model"
-                     extra-settings="mc.settings" checkboxes="true" ng-click="mc.getCheckedProducts(mc.model)"></div>-->
-                <!--filter-component ></filter-component>-->
+                     extra-settings="mc.settings" checkboxes="true" ng-click="mc.getCheckedProducts(mc.model)"></div>
+-->
             </div>
         </div>
         <div class="row">
