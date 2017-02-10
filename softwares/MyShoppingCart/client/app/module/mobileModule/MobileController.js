@@ -12,7 +12,6 @@
         vm.checkBoxes = true;
         vm.getCheckedProducts=getCheckedProducts;
         vm.model = [];
-
         vm.settings = {
             scrollableHeight: '100px',
             scrollable: true,

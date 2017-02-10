@@ -5,7 +5,11 @@
         <br>
         <div class="row">
             <div class="col-md-12">
-                <price-range min="lc.slider.min" max="lc.slider.max" options="lc.slider.options"></price-range>
+                <filter-component min="lc.slider.min" max="lc.slider.max" options="lc.slider.options"
+                                  mobile-brands="lc.laptopBrands"
+                                  settings="lc.settings" check-boxes="true"
+                                  filter-brands="lc.getCheckedProducts(checklist)">
+                </filter-component>
             </div>
         </div>
         <div class="row">
