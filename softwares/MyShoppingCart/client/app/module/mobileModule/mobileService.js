@@ -14,7 +14,9 @@
             getMobiles: getMobiles,
             getProducts:getProducts,
             getBrands: getBrands,
-            filterMobiles: filterMobiles
+            filterMobiles: filterMobiles,
+            getDiscounts: getDiscounts,
+            filterProductsByDiscountType: filterProductsByDiscountType,
         };
         return MobileService;
 
@@ -55,12 +57,46 @@
                     var brandObj  = {id:mobile[i].brand, label:mobile[i].brand};
                     brandsList.push(mobile[i].brand);
                     brands.push(brandObj);
+                    console.log("brands");
+                    console.log(brands);
                 }
             }
             return brands;
         }
 
-        function filterMobiles(min, max, brands) {
+        function getDiscounts(mobile){
+            var discounts=[], discountList=[];
+            for(var i=0;i<mobile.length;i++){
+                var product = mobile[i];
+                for(var j=0;j<product.offers.length;j++){
+                    if (discountList.indexOf(product.offers[j].type) < 0 ){
+                        var discountObj  = {id:product.offers[j].type, label:product.offers[j].type};
+                        discountList.push(product.offers[j].type);
+                        discounts.push(discountObj);
+
+                    }
+                }
+            }
+            return discounts;
+        }
+        function filterProductsByDiscountType(mobile,discountType){
+            if(discountType.length){
+                var data=[];
+                for(var i=0;i<mobile.length;i++){
+                    for(var j=0;j<mobile[i].offers.length;j++){
+                        if(discountType.indexOf(mobile[i].offers[j].type)>=0){
+                            data.push(mobile[i]);
+                        }
+                    }
+                }
+            }else{
+                mobiles = $rootScope.listMobiles;
+            }
+
+            return data;
+        }
+
+        function filterMobiles(min, max, brands, discType) {
             var mobiles = [];
             //Fiter for brands
             if(brands.length) {
@@ -76,6 +112,9 @@
 
             //filter for range
             mobiles =  getProducts(min, max, mobiles);
+
+            //filter for discounts types
+            mobiles =  filterProductsByDiscountType(mobiles, discType);
 
             return mobiles;
         }

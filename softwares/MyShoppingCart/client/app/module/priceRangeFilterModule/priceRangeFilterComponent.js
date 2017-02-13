@@ -11,7 +11,9 @@
                 mobileBrands:"=",
                 settings:"=",
                 filterBrands:"&",
-                checkBoxes:"="
+                checkBoxes:"=",
+                mobileDiscounts:"=",
+                filterDiscounts:"&"
             },
             templateUrl: 'partials/displayPriceRange.html',
             controller: priceRangeController,
