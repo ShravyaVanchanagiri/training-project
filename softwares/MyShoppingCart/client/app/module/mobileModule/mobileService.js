@@ -80,8 +80,8 @@
             return discounts;
         }
         function filterProductsByDiscountType(mobile,discountType){
+            var data=[];
             if(discountType.length){
-                var data=[];
                 for(var i=0;i<mobile.length;i++){
                     for(var j=0;j<mobile[i].offers.length;j++){
                         if(discountType.indexOf(mobile[i].offers[j].type)>=0){
@@ -90,7 +90,7 @@
                     }
                 }
             }else{
-                mobiles = $rootScope.listMobiles;
+                data = mobile;
             }
 
             return data;
