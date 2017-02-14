@@ -14,7 +14,9 @@
             getLaptops: getLaptops,
             getProducts: getProducts,
             getBrands: getBrands,
-            filterLaptops: filterLaptops
+            filterLaptops: filterLaptops,
+            getDiscounts: getDiscounts,
+            filterProductsByDiscountType: filterProductsByDiscountType,
         };
         return laptopService;
 
@@ -67,8 +69,39 @@
             }
             return brands;
         }
+        function getDiscounts(laptops){
+            var discounts=[], discountList=[];
+            for(var i=0;i<laptops.length;i++){
+                var product = laptops[i];
+                for(var j=0;j<product.offers.length;j++){
+                    if (discountList.indexOf(product.offers[j].type) < 0 ){
+                        var discountObj  = {id:product.offers[j].type, label:product.offers[j].type};
+                        discountList.push(product.offers[j].type);
+                        discounts.push(discountObj);
 
-        function filterLaptops(min, max, brands) {
+                    }
+                }
+            }
+            return discounts;
+        }
+        function filterProductsByDiscountType(laptops,discountType){
+            var data=[];
+            if(discountType.length){
+                for(var i=0;i<laptops.length;i++){
+                    for(var j=0;j<laptops[i].offers.length;j++){
+                        if(discountType.indexOf(laptops[i].offers[j].type)>=0){
+                            data.push(laptops[i]);
+                        }
+                    }
+                }
+            }else{
+                data = laptops;
+            }
+
+            return data;
+        }
+
+        function filterLaptops(min, max, brands,discType) {
             var laptops = [];
             //Fiter for brands
             if(brands.length) {
@@ -84,6 +117,10 @@
 
             //filter for range
             laptops =  getProducts(min, max, laptops);
+
+
+            //filter for discounts types
+            laptops =  filterProductsByDiscountType(laptops, discType);
 
             return laptops;
         }
