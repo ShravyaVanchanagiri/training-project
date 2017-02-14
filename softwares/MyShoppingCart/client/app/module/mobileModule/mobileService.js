@@ -57,8 +57,6 @@
                     var brandObj  = {id:mobile[i].brand, label:mobile[i].brand};
                     brandsList.push(mobile[i].brand);
                     brands.push(brandObj);
-                    console.log("brands");
-                    console.log(brands);
                 }
             }
             return brands;
