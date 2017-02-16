@@ -11,9 +11,15 @@
             </div>
         </div>
     </div>
-    <button ng-disabled="spc.currentPage == 0" ng-click="spc.currentPage=spc.currentPage-1">Previous</button>
-    <span ng-show="spc.numberOfPages > 0"> {{spc.currentPage+1}}/{{spc.numberOfPages}}</span>
-    <button ng-disabled="spc.currentPage >= spc.similar.length/spc.pageSize - 1"
-            ng-click="spc.currentPage=spc.currentPage+1"> Next
-    </button>
 </div>
+<button class="fa fa-chevron-circle-left fa-2x pull-left"
+        aria-hidden="true"
+        ng-disabled="spc.currentPage == 0"
+        ng-click="spc.currentPage=spc.currentPage-1">
+</button>
+<span ng-show="spc.numberOfPages > 0"></span>
+<button class="fa fa-chevron-circle-right fa-2x pull-right"
+        aria-hidden="true"
+        ng-disabled="spc.currentPage >= spc.similar.length/spc.pageSize - 1"
+        ng-click="spc.currentPage=spc.currentPage+1">
+</button>

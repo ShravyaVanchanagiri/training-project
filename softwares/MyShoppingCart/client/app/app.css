@@ -183,5 +183,8 @@ ul.rating {
 .rating .filled {
     color: blue;
 }
+button:disabled {
+    color:#dddddd;
+}
 
 
