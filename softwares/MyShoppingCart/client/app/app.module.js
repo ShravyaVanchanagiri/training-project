@@ -20,6 +20,7 @@
         "rzModule",
         "priceRange",
         "fictions",
-        "angularjs-dropdown-multiselect"
+        "angularjs-dropdown-multiselect",
+        "zoomPanApp"
     ])
 })();
