@@ -5,7 +5,7 @@
         <button class="button button5">ADD TO CART</button>-->
     </div>
     <div class="col-sm-5">
-        <h2><i>{{spc.productDetails.name}}</i></h2>
+        <h2><i class="text-uppercase">{{spc.productDetails.name}}</i></h2>
         <h4>Price: {{spc.productDetails.price | currency : '&#8377;'}}</h4>
 
         <div ng-if="spc.productDetails.type == 'electronics'">
@@ -27,17 +27,17 @@
         <h3>People comments and ratings given by them</h3>
         <div class="nav">
             <div ng-repeat="comment in spc.productDetails.comments | limitTo : spc.paginationLimit()">
-                <div>
-                    <p><b>{{comment.username}}</b>: {{comment.text}}</p>
-                </div>
-                <div>
-                    <ng-rate-it ng-model="comment.rating" read-only="true"></ng-rate-it>
-                </div>
-                <div>
-                    <p>commented on: {{comment.commentedOn}}</p>
+                <div class="media">
+                    <div class="media-left">
+                        <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{comment.username }} <small><i>{{comment.commentedOn}}</i></small></h4>
+                        <p>{{comment.text}}</p>
+                    </div>
                 </div>
             </div>
-            <button class="show-more-btn" ng-show="spc.hasMoreItemsToShow()" ng-click="spc.showMoreItems()">Show more</button>
+            <button class="show-more-btn btn btn-success" ng-show="spc.hasMoreItemsToShow()" ng-click="spc.showMoreItems()">Show more</button>
         </div>
     </div>
 </div>
