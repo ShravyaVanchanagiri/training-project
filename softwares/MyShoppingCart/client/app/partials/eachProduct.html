@@ -5,12 +5,12 @@
         <button class="button button5">ADD TO CART</button>-->
     </div>
     <div class="col-sm-5">
-        <h1><i>{{spc.productDetails.name}}</i></h1>
-        <h4>Price:{{spc.productDetails.price | currency : '&#8377;'}}</h4>
+        <h2><i>{{spc.productDetails.name}}</i></h2>
+        <h4>Price: {{spc.productDetails.price | currency : '&#8377;'}}</h4>
 
         <div ng-if="spc.productDetails.type == 'electronics'">
             <h4>RAM:{{spc.productDetails.RAM}}</h4>
-            <h4>COLOR:{{spc.productDetails.color}}</h4>
+            <h4>Color:{{spc.productDetails.color}}</h4>
             <h4>Battery:{{spc.productDetails.battery}}</h4>
             <h4>Model name:{{spc.productDetails.description}}</h4>
             <h4>Brand:{{spc.productDetails.brand}}</h4>
@@ -18,16 +18,14 @@
         <div ng-if="spc.productDetails.type == 'books'">
             <h4>Author:{{spc.productDetails.Author}}</h4>
             <h4>Language:{{spc.productDetails.Features.Language}}</h4>
-            <h4>Battery:{{spc.productDetails.Features.ISBN}}</h4>
-            <h4>Model name:{{spc.productDetails.Features.Pages}}</h4>
-            <h4>Brand:{{spc.productDetails.Features.ISBN}}</h4>
-            <h4>Brand:{{spc.productDetails.Features.PublicationYear}}</h4>
+            <h4>ISBN: {{spc.productDetails.Features.ISBN}}</h4>
+            <h4>Number of pages:{{spc.productDetails.Features.Pages}}</h4>
+            <h4>Publication Year: {{spc.productDetails.Features.PublicationYear}}</h4>
         </div>
         <h5>Rating:{{spc.rating | number}}</h5>
         <ng-rate-it ng-model="spc.rating" read-only="true"></ng-rate-it>
         <h3>People comments and ratings given by them</h3>
         <div class="nav">
-
             <div ng-repeat="comment in spc.productDetails.comments | limitTo : spc.paginationLimit()">
                 <div>
                     <p><b>{{comment.username}}</b>: {{comment.text}}</p>
@@ -43,4 +41,3 @@
         </div>
     </div>
 </div>
-<hr>
