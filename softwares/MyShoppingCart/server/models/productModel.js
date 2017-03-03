@@ -2,6 +2,8 @@
  * Created by shravya on 1/3/17.
  */
 var mongoose = require('mongoose');
+require('mongoose-double')(mongoose);
+var SchemaTypes = mongoose.Schema.Types;
 var Schema = mongoose.Schema;
 var productSchema = new Schema({
         id:{
@@ -49,6 +51,9 @@ var productSchema = new Schema({
         },
         battery:{
             type:String
+        },
+        ratingProduct:{
+            type:SchemaTypes.Double
         },
         camera: {
             front:{

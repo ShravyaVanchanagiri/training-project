@@ -24,6 +24,7 @@
     "angular-rateit": "^3.0.2",
     "angular-sanitize": "^1.6.2",
     "checklist-model": "^0.10.0",
-    "angularjs-dropdown-multiselect": "1.11.1"
+    "angularjs-dropdown-multiselect": "1.11.1",
+    "angular-resource": "^1.6.2"
   }
 }

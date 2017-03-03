@@ -36,6 +36,7 @@ fs.readFile('../../client/app/module/mobileModule/Mobiles.json', 'utf8', functio
                 model:prods[i].modelName,
                 color:prods[i].color,
                 battery:prods[i].battery,
+                ratingProduct:prods[i].ratingProduct,
                 camera:prods[i].camera
             })
             prod.save(function (err) {
@@ -44,5 +45,16 @@ fs.readFile('../../client/app/module/mobileModule/Mobiles.json', 'utf8', functio
                 }
             })
         }
+
+        productModel.find({}, function (err, products) {
+            console.log("fIND ..inside function");
+            if (err) {
+                console.log("error");
+            } else {
+
+                // object of all the users
+                console.log(products);
+            }
+        })
     }
 });

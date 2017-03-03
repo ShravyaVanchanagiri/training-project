@@ -10,9 +10,16 @@ var router= function(app){
     res.render(path.join(__dirname, '../../client/app/index'));
 
   });
-  app.get('/getProducts', productRotes.listTopRatedProducts);
+  app.get('/topProducts', productRotes.listTopRatedProducts);
+  app.get('/topMobiles', productRotes.listMobiles);
+  app.get('/topLaptops',productRotes.listLaptops);
+  app.get('/topComics',productRotes.listComics);
+  app.get('/topFictions',productRotes.listFictions);
+  app.get('/eachProduct',productRotes.displayEachProduct);
+  app.get('/products', productRotes.searchProducts);
+  app.get('/getProducts/:id',productRotes.getProductsById);
 
-}
+};
 /*var products=require('../../product');*/
 
 /* GET home page. */

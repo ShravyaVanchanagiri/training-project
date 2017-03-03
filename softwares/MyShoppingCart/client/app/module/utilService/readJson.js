@@ -13,7 +13,6 @@
             returnJson:returnJson
         };
         function returnJson(){
-
             var deffered=$q.defer();
             $http.get('module/mobileModule/Mobiles.json')
                 .then(function (res) {

@@ -13,7 +13,7 @@
                 datas : '=',
                 limit: '='
             },
-            templateUrl: 'partials/TotalDetails.html',
+            templateUrl: 'partials/TotalDetails.html'
         };
         return directive;
     }

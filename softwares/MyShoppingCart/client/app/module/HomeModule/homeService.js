@@ -6,64 +6,91 @@
         .service("homeService", homeService);
 
 
-    homeService.$inject = ['$http', '$rootScope','uitService'];
+    homeService.$inject = ['$http','api','$q', '$rootScope','uitService'];
 
-    function homeService($http, $rootScope,uitService) {
+    function homeService($http,api,$q, $rootScope,uitService) {
         var homeService = {
             getAllData: getAllData,
             getMobiles: getMobiles,
             getLaptops: getLaptops,
             getComics: getComics,
-            getFictions: getFictions,
+            getFictions: getFictions
         };
         return homeService;
 
 
-        function getAllData() {
-          var data= uitService.returnJson();
-            console.log(data);
-            console.log("data");
-        }
-        function getMobiles(type){
-            var mobiles=[];
-            for(i=0;i<$rootScope.jsonData.length;i++){
-                if($rootScope.jsonData[i].subType == "mobile"){
-                    /*console.log("Displaying all mobiles");
-                    console.log($rootScope.jsonData[i]);*/
-                    mobiles.push($rootScope.jsonData[i]);
-                }
+        function getAllData(){
+                return api.getAllTopProducts().$promise;
             }
-            return mobiles;
+        function getMobiles(type){
+            return api.getAllMobileList().$promise;
         }
         function getLaptops(type){
-            var laptops=[];
-            for(i=0;i<$rootScope.jsonData.length;i++){
-                if($rootScope.jsonData[i].subType == "laptop"){
-                    console.log("Displaying all laptops");
-                    console.log($rootScope.jsonData[i]);
-                    laptops.push($rootScope.jsonData[i]);
-                }
-            }
-            return laptops;
+            return api.getAllLaptopList().$promise;
         }
         function getComics(type){
-            var comics=[];
-            for(i=0;i<$rootScope.jsonData.length;i++){
-                if($rootScope.jsonData[i].subType == "comic"){
-                    comics.push($rootScope.jsonData[i]);
-                }
-            }
-            return comics;
+            return api.getAllComicList().$promise;
         }
         function getFictions(type){
-            var fictions=[];
-            for(i=0;i<$rootScope.jsonData.length;i++){
-                if($rootScope.jsonData[i].subType == "fiction"){
-                    fictions.push($rootScope.jsonData[i]);
-                }
-            }
-            return fictions;
+            return api.getAllFictionList().$promise;
         }
     }
 })();
 
+
+
+/*
+(function(){
+    angular.module('admin')
+
+        .factory('addAdminPayeeService',addAdminPayeeService);
+    addAdminPayeeService.$inject=['api','$q','loginService'];
+
+
+    function addAdminPayeeService(api,$q,loginService){
+
+
+        var service={
+            getAllBanks:getAllBanks,
+            submitAdminPayee:submitAdminPayee,
+            getAllPayee:getAllPayee,
+            editPayee:editPayee,
+            deletePayee:deletePayee
+        };
+
+        return service;
+
+        /!**
+         * this fuction delete payee based on id
+         * *!/
+        function deletePayee(query){
+            return api.deletePayee({id:query}).$promise;
+        }
+        /!**
+         * this fuction edit payee based on id
+         * *!/
+        function editPayee(query){
+            return api.editPayee({q:query,id:query.id}).$promise;
+        }
+        /!**
+         * this fuction return all payee list
+         * *!/
+        function getAllPayee(query){
+            return api.getPayees(query).$promise;
+        }
+        function getAllBanks(){
+            addAdminPayeeService.getAllBanks().then(adminPayeeSuccess).catch(adminPayeeFailure);
+
+            function adminPayeeSuccess(response){
+                angular.forEach(response.data,function(data){
+                    vm.allBanks.push({key:data.bankName,value:data._id});
+                });
+                vm.allBanks;
+            }
+
+            function adminPayeeFailure(failure){
+
+            }
+        }
+
+*/

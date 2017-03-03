@@ -7,36 +7,28 @@
         .service("productDetailsService", productDetailsService);
 
 
-    productDetailsService.$inject = ['$http', '$rootScope', 'uitService'];
+    productDetailsService.$inject = ['$http','api','$q', '$rootScope', 'uitService'];
 
-    function productDetailsService($http, $rootScope, uitService) {
+    function productDetailsService($http,api,$q,$rootScope, uitService) {
 
         var productService = {
-            getProductDetails: getProductDetails,
             getSelectedProduct: getSelectedProduct,
-            getSimilarProduct: getSimilarProducts,
-            getRating: getRating
+            /*getSimilarProduct: getSimilarProducts,
+            getRating: getRating*/
         };
         return productService;
-        function getProductDetails(id) {
-            for (var i = 0; i < $rootScope.jsonData.length; i++) {
-                if ($rootScope.jsonData[i].id == id) {
-                    return $rootScope.jsonData[i];
-                    console.log($rootScope.jsonData[i]);
-                }
-            }
-        }
 
         function getSelectedProduct(id) {
-            for (var i = 0; i < $rootScope.jsonData.length; i++) {
+            /*for (var i = 0; i < $rootScope.jsonData.length; i++) {
                 if ($rootScope.jsonData[i].id == id) {
                     return $rootScope.jsonData[i];
                     console.log($rootScope.jsonData[i]);
                 }
-            }
+            }*/
+            return api.getSelectedProduct({id:id}).$promise;
         }
 
-        function getSimilarProducts(productType, productName) {
+        /*function getSimilarProducts(productType, productName) {
             var similarProducts = [];
             for (var i = 0; i < $rootScope.jsonData.length; i++) {
                 if (($rootScope.jsonData[i].subType == productType) && ($rootScope.jsonData[i].name != productName )) {
@@ -59,6 +51,6 @@
             }
             console.log(rating);
             return rating;
-        }
+        }*/
     }
 })();

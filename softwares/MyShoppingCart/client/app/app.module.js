@@ -21,6 +21,7 @@
         "priceRange",
         "fictions",
         "angularjs-dropdown-multiselect",
-        "zoomPanApp"
+        "zoomPanApp",
+        "ngResource"
     ])
 })();

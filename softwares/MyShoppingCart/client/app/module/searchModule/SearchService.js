@@ -11,11 +11,18 @@
 
         function searchService($http,$rootScope,uitService){
             var searchService={
-                getAllData:getAllData
+                getAllData:getAllData,
+                getProducts:getProducts
             };
             return searchService;
 
             function getAllData(){
+                var data= uitService.returnJson();
+
+            }
+
+            function getProducts(query){
+                //url
                 var data= uitService.returnJson();
 
             }

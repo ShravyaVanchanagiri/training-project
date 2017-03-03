@@ -5,13 +5,17 @@
     angular.module('mobiles')
         .controller("MobileController", MobileController);
 
-    MobileController.$inject = ['$http', 'homeService', '$rootScope','uitService','MobileService'];
+    MobileController.$inject = ['$http', 'homeService', '$rootScope','uitService','MobileService', 'searchService'];
 
-    function MobileController($http, homeService, $rootScope, uitService, MobileService) {
+    function MobileController($http, homeService, $rootScope, uitService, MobileService, searchService) {
         var vm = this;
         vm.checkBoxes = true;
         vm.getCheckedProducts=getCheckedProducts;
         vm.getProductsFilterByDisc=getProductsFilterByDisc;
+        //load mobiles from server
+        vm.loadMobiles= loadMobiles;
+        loadMobiles();
+
         vm.model = [];
         vm.settings = {
             scrollableHeight: '100px',
@@ -76,6 +80,16 @@
 
             vm.mobiles = MobileService.filterMobiles(vm.slider.min, vm.slider.max, vm.brands, vm.discounts);
         }
+
+        /*function loadMobiles() {
+            searchService.getProducts({type:"electronics",subType:"mobile"}).then(function(response){
+                if(response.status === 200) {
+                    vm.mobiles = response.data;
+                }
+            },function (error){
+
+            })
+        }*/
     }
 })();
 

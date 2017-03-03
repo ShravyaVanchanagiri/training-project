@@ -9,26 +9,73 @@
 
     function homeController($http, homeService, $rootScope, uitService) {
         var vm = this;
+        vm.topProducts = [];
+        vm.topMobiles = [];
+        vm.topLaptops=[];
+        vm.topComics=[];
+        vm.topFictions=[];
         vm.test = "Coming here";
-        vm.getJsonData=getJsonData;
-        vm.getJsonData();
-        function getJsonData(){
-            uitService.returnJson().then(gettingSuccess).catch(gettingError);
-            function gettingSuccess(response){
-                console.log('...................20');
-                console.log(response.data)
-                $rootScope.jsonData=response.data;
-                vm.data=response.data
-                console.log('............................home controller');
-                console.log(vm.data);
-                vm.mobiles=homeService.getMobiles(vm.data.subType);
-                vm.laptops=homeService.getLaptops(vm.data.subType);
-                vm.comics=homeService.getComics(vm.data.subType);
-                vm.fictions=homeService.getFictions(vm.data.subType);
+
+        //vm.getJsonData=getJsonData;
+        vm.getAllProducts=getAllProducts;
+        vm.getAllProducts();
+        vm.getAllMobiles=getAllMobiles;
+        vm.getAllMobiles();
+        vm.getAllLaptops=getAllLaptops;
+        vm.getAllLaptops();
+        vm.getAllComics=getAllComics;
+        vm.getAllComics();
+        vm.getAllFictions=getAllFictions;
+        vm.getAllFictions();
+        function getAllProducts(){
+            homeService.getAllData().then(success).catch(failure);
+
+            function success(response){
+                vm.topProducts = response.data;
             }
-            function gettingError(error){
-                console.log(error);
+
+            function failure(failure){
+
             }
         }
+        function getAllMobiles(){
+            homeService.getMobiles().then(success).catch(failure);
+
+            function success(response){
+                vm.topMobiles = response.data;
+            }
+
+            function failure(failure){
+
+            }
+        }
+        function getAllLaptops(){
+            homeService.getLaptops().then(success).catch(failure);
+            function success(response){
+                vm.topLaptops = response.data;
+            }
+            function failure(failure){
+
+            }
+        }
+        function getAllComics(){
+            homeService.getLaptops().then(success).catch(failure);
+            function success(response){
+                vm.topComics = response.data;
+            }
+            function failure(failure){
+
+            }
+        }
+        function getAllFictions(){
+            homeService.getLaptops().then(success).catch(failure);
+            function success(response){
+                vm.topFictions= response.data;
+            }
+            function failure(failure){
+
+            }
+        }
+
     }
 })();
