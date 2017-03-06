@@ -47,6 +47,14 @@
             'getSelectedProduct':{
                 method : 'GET',
                 url: '/getProducts/:id'
+            },
+            'getSimilarProduct':{
+                method : 'GET',
+                url: '/similarProducts'
+            },
+            'getAllMobiles':{
+                method : 'GET',
+                url: '/mobiles'
             }
         }
     }

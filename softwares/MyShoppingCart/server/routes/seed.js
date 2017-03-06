@@ -51,7 +51,6 @@ fs.readFile('../../client/app/module/mobileModule/Mobiles.json', 'utf8', functio
             if (err) {
                 console.log("error");
             } else {
-
                 // object of all the users
                 console.log(products);
             }

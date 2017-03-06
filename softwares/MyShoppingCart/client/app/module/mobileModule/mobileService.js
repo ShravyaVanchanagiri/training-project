@@ -6,17 +6,17 @@
         .service("MobileService", MobileService);
 
 
-    MobileService.$inject = ['$http', '$rootScope','uitService'];
+    MobileService.$inject = ['$http','api','$q', '$rootScope','uitService'];
 
-    function MobileService($http, $rootScope,uitService) {
+    function MobileService($http,api,$q,$rootScope,uitService) {
         var MobileService = {
             getAllData: getAllData,
-            getMobiles: getMobiles,
-            getProducts:getProducts,
+            getMobiles: getMobiles
+            /*getProducts:getProducts,
             getBrands: getBrands,
             filterMobiles: filterMobiles,
             getDiscounts: getDiscounts,
-            filterProductsByDiscountType: filterProductsByDiscountType,
+            filterProductsByDiscountType: filterProductsByDiscountType,*/
         };
         return MobileService;
 
@@ -26,8 +26,11 @@
             console.log(data);
             console.log("data");
         }
+        function getMobiles(){
+            return api.getAllMobiles().$promise;
+        }
         var mobiles=[];
-        function getMobiles(type){
+        /*function getMobiles(type){
             mobiles=[];
             for(i=0;i<$rootScope.jsonData.length;i++){
                 if($rootScope.jsonData[i].subType == "mobile"){
@@ -35,7 +38,7 @@
                 }
             }
             return mobiles;
-        }
+        }*/
         function  getProducts(min,max,data){
             var filteredProducts = [];
             for(var i=0;i<data.length;i++)

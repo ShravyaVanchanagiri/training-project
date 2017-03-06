@@ -13,19 +13,20 @@
 
         var productService = {
             getSelectedProduct: getSelectedProduct,
-            /*getSimilarProduct: getSimilarProducts,
-            getRating: getRating*/
+            getSimilarProducts: getSimilarProducts
+            /*getRating: getRating*/
         };
         return productService;
 
         function getSelectedProduct(id) {
-            /*for (var i = 0; i < $rootScope.jsonData.length; i++) {
-                if ($rootScope.jsonData[i].id == id) {
-                    return $rootScope.jsonData[i];
-                    console.log($rootScope.jsonData[i]);
-                }
-            }*/
             return api.getSelectedProduct({id:id}).$promise;
+        }
+        function getSimilarProducts(subtype,name){
+            console.log("%%%%%%%%%%%%%%%%%%%%%%%")
+            var query={};
+            query.subType=subtype;
+            query.name=name;
+            return api.getSimilarProducts({q: query}).$promise;
         }
 
         /*function getSimilarProducts(productType, productName) {

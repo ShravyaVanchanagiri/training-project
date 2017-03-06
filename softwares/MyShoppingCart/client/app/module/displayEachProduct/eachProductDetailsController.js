@@ -20,8 +20,7 @@
         /*vm.numberOfPages=10;*/
         vm.productDetails = productDetails;
         vm.productDetails();
-        /*vm.similarProducts = productDetailsService.getSimilarProduct(vm.productDetails.subType, vm.productDetails.name);
-        vm.rating=productDetailsService.getRating($stateParams.id);
+        /*vm.rating=productDetailsService.getRating($stateParams.id);
         console.log(vm.similarProducts.name);*/
        /* vm.numberOfPages=vm.similarProducts.length/vm.pageSize;
 
@@ -35,17 +34,16 @@
             productDetailsService.getSelectedProduct($stateParams.id).then(success).catch(failure);
 
             function success(response){
-                vm.selectedProduct = response.data;
-                console.log('vm.selectedProduct')
-                console.log(vm.selectedProduct)
-                console.log('vm.selectedProduct')
+                vm.selectedProduct = response.data
             }
 
             function failure(failure){
 
             }
         }
-       /* function paginationLimit(data) {
+       //vm.similarProducts = productDetailsService.getSimilarProducts(vm.selectedProduct.subType, vm.selectedProduct.name);
+        /*  console.log("$$$$$$$$$$$$$$$$$$$$$$$$$")
+       *//* function paginationLimit(data) {
             console.log("in pagination limit function");
             return vm.pageSize1 * vm.pagesShown;
         };

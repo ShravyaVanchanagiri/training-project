@@ -9,11 +9,14 @@
 
     function MobileController($http, homeService, $rootScope, uitService, MobileService, searchService) {
         var vm = this;
-        vm.checkBoxes = true;
+        vm.mobiles=[];
+     /*   vm.checkBoxes = true;
         vm.getCheckedProducts=getCheckedProducts;
-        vm.getProductsFilterByDisc=getProductsFilterByDisc;
+        vm.getProductsFilterByDisc=getProductsFilterByDisc;*/
+        vm.getAllMobiles=getAllMobiles;
+        vm.getAllMobiles();
         //load mobiles from server
-        vm.loadMobiles= loadMobiles;
+       /* vm.loadMobiles= loadMobiles;
         loadMobiles();
 
         vm.model = [];
@@ -45,8 +48,8 @@
         vm.mobiles=[];
         vm.mobileBrands=[];
         vm.mobileDiscounts=[];
-
-        function getJsonData(){
+*/
+        /*function getJsonData(){
             uitService.returnJson().then(gettingSuccess).catch(gettingError);
             function gettingSuccess(response){
                 $rootScope.jsonData=response.data;
@@ -59,9 +62,21 @@
             function gettingError(error){
                 console.log(error);
             }
+        }*/
+        function getAllMobiles(){
+            MobileService.getMobiles().then(success).catch(failure);
+
+            function success(response){
+                vm.mobiles = response.data;
+            }
+
+            function failure(failure){
+
+            }
         }
 
-        function getCheckedProducts(checkedProd){
+
+        /*function getCheckedProducts(checkedProd){
             vm.brands = [];
             angular.forEach(checkedProd, function(eachSelect, index) {
                 vm.brands.push(eachSelect.id);
@@ -79,7 +94,7 @@
 
 
             vm.mobiles = MobileService.filterMobiles(vm.slider.min, vm.slider.max, vm.brands, vm.discounts);
-        }
+        }*/
 
         /*function loadMobiles() {
             searchService.getProducts({type:"electronics",subType:"mobile"}).then(function(response){

@@ -114,6 +114,63 @@ var productRouter={
             console.log("Error...",error);
         }
     },
+    displayMobiles:function(req,res){
+        console.log("getting");
+        try {
+            productModel.find({subType:"mobile"}, function (err, products) {
+                console.log("inside function");
+                if (err) {
+                    console.log("error");
+                    res.send({status:500})
+                } else {
+                    // object of rating gt 5
+                    console.log(products);
+                    res.json({status:200, data:products})
+                }
+            });
+        } catch(error) {
+            console.log("Error...",error);
+        }
+    },
+    displayLaptops:function(req,res){
+        console.log("getting");
+        try {
+            productModel.find({subType:"laptop"}, function (err, products) {
+                console.log("inside function");
+                if (err) {
+                    console.log("error");
+                    res.send({status:500})
+                } else {
+                    // object of rating gt 5
+                    console.log(products);
+                    res.json({status:200, data:products})
+                }
+            });
+        } catch(error) {
+            console.log("Error...",error);
+        }
+    },
+    displaySimilarProducts:function(req,res){
+        console.log("inside function");
+        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        var query= {subtype : queryParam.subtype,name : queryParam.name};
+        try {
+            productModel.find(query, function (err, products) {
+                console.log("inside function");
+
+                if (err) {
+                    console.log("error");
+                    res.send({status:500})
+                } else {
+                    // object of rating gt 5
+                    console.log(products);
+                    res.json({status:200, data:products})
+                }
+            });
+        } catch(error) {
+            console.log("Error...",error);
+        }
+    },
     searchProducts:function(req,res){
         var query = {};
         try {

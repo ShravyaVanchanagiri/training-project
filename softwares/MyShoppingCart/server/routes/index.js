@@ -18,6 +18,9 @@ var router= function(app){
   app.get('/eachProduct',productRotes.displayEachProduct);
   app.get('/products', productRotes.searchProducts);
   app.get('/getProducts/:id',productRotes.getProductsById);
+  app.get('/similarProducts/',productRotes.displaySimilarProducts);
+  app.get('/mobiles',productRotes.displayMobiles);
+  app.get('/laptops',productRotes.displayLaptops);
 
 };
 /*var products=require('../../product');*/
