@@ -16,11 +16,16 @@ var router= function(app){
   app.get('/topComics',productRotes.listComics);
   app.get('/topFictions',productRotes.listFictions);
   app.get('/eachProduct',productRotes.displayEachProduct);
-  app.get('/products', productRotes.searchProducts);
+  //app.get('/products', productRotes.searchProducts);
   app.get('/getProducts/:id',productRotes.getProductsById);
-  app.get('/similarProducts/',productRotes.displaySimilarProducts);
+  app.get('/similarProducts',productRotes.displaySimilarProducts);
   app.get('/mobiles',productRotes.displayMobiles);
   app.get('/laptops',productRotes.displayLaptops);
+  app.get('/comics',productRotes.displayComics);
+  app.get('/fictions',productRotes.displayFictions);
+  app.get('/getFilteredMobile',productRotes.getFilteredMobile);
+  app.get('/getAllNames',productRotes.searchProducts);
+  app.get('/getAllBrandNames',productRotes.getAllBrands)
 
 };
 /*var products=require('../../product');*/

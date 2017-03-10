@@ -6,38 +6,24 @@
         .service("laptopService", laptopService);
 
 
-    laptopService.$inject = ['$http', '$rootScope','uitService'];
+    laptopService.$inject = ['$http','api','$q', '$rootScope','uitService'];
 
-    function laptopService($http, $rootScope,uitService) {
+    function laptopService($http,api,$q, $rootScope,uitService) {
         var laptopService = {
-            getAllData: getAllData,
-            getLaptops: getLaptops,
-            getProducts: getProducts,
+            getLaptops: getLaptops
+            /*getProducts: getProducts,
             getBrands: getBrands,
             filterLaptops: filterLaptops,
             getDiscounts: getDiscounts,
-            filterProductsByDiscountType: filterProductsByDiscountType,
+            filterProductsByDiscountType: filterProductsByDiscountType,*/
         };
         return laptopService;
 
-
-        function getAllData() {
-            var data = uitService.returnJson();
-            console.log(data);
-            console.log("data");
+        function getLaptops() {
+            return api.getAllLaptops().$promise;
         }
 
-        function getLaptops(type) {
-            var laptops = [];
-            for (i = 0; i < $rootScope.jsonData.length; i++) {
-                if ($rootScope.jsonData[i].subType == "laptop") {
-                    laptops.push($rootScope.jsonData[i]);
-                }
-            }
-            return laptops;
-        }
-
-        function  getProducts(min,max,data){
+        /*function  getProducts(min,max,data){
             $rootScope.min = min;
             console.log("min value");
             console.log($rootScope.min);
@@ -123,7 +109,7 @@
             laptops =  filterProductsByDiscountType(laptops, discType);
 
             return laptops;
-        }
+        }*/
     }
 })();
 

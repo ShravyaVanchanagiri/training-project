@@ -11,11 +11,12 @@
     function MobileService($http,api,$q,$rootScope,uitService) {
         var MobileService = {
             getAllData: getAllData,
-            getMobiles: getMobiles
-            /*getProducts:getProducts,
-            getBrands: getBrands,
+            getMobiles: getMobiles,
             filterMobiles: filterMobiles,
-            getDiscounts: getDiscounts,
+            getProducts:getProducts,
+           getBrands: getBrands
+
+            /*  getDiscounts: getDiscounts,
             filterProductsByDiscountType: filterProductsByDiscountType,*/
         };
         return MobileService;
@@ -29,40 +30,19 @@
         function getMobiles(){
             return api.getAllMobiles().$promise;
         }
-        var mobiles=[];
-        /*function getMobiles(type){
-            mobiles=[];
-            for(i=0;i<$rootScope.jsonData.length;i++){
-                if($rootScope.jsonData[i].subType == "mobile"){
-                    mobiles.push($rootScope.jsonData[i]);
-                }
-            }
-            return mobiles;
-        }*/
+
         function  getProducts(min,max,data){
-            var filteredProducts = [];
-            for(var i=0;i<data.length;i++)
-            {
-                var eachProduct = data[i];
-                if(eachProduct.price >= min && eachProduct.price <= max)
-                {
-                    filteredProducts.push(eachProduct);
-                }
-            }
-            return filteredProducts;
+            var query={
+                minPrice:min,
+                maxPrice:max,
+                subType:data
+            };
+            return api.getFilteredMobiles(query).$promise;
         }
 
-        function getBrands(mobile){
-            var brands=[], brandsList=[];
-            for(var i=0;i<mobile.length;i++){
+        function getBrands(query){
 
-                if (brandsList.indexOf(mobile[i].brand) < 0 ){
-                    var brandObj  = {id:mobile[i].brand, label:mobile[i].brand};
-                    brandsList.push(mobile[i].brand);
-                    brands.push(brandObj);
-                }
-            }
-            return brands;
+            return api.getAllBrandNames(query).$promise;
         }
 
         function getDiscounts(mobile){
@@ -119,6 +99,7 @@
 
             return mobiles;
         }
+
     }
 })();
 

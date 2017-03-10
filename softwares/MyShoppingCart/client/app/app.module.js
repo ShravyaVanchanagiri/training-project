@@ -7,6 +7,7 @@
         "mobiles",
         "search",
         "ui.select",
+        "ui.bootstrap",
         "ngSanitize",
         "home",
         "ngRoute",

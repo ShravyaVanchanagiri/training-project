@@ -21,12 +21,12 @@
         function getSelectedProduct(id) {
             return api.getSelectedProduct({id:id}).$promise;
         }
-        function getSimilarProducts(subtype,name){
-            console.log("%%%%%%%%%%%%%%%%%%%%%%%")
+        function getSimilarProducts(subtype,brand){
             var query={};
             query.subType=subtype;
-            query.name=name;
-            return api.getSimilarProducts({q: query}).$promise;
+            query.brand=brand;
+            //query.name=name;
+            return api.getSimilarProducts(query).$promise;
         }
 
         /*function getSimilarProducts(productType, productName) {

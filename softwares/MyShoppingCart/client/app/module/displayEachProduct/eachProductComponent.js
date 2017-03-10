@@ -11,20 +11,24 @@
                 rating:'=',
                 paginationLimit:'&',
                 hasMoreItemsToShow:'&',
-                showMoreItems:'&'
+                showMoreItems:'&',
+                testObj:'='
             },
             templateUrl: 'partials/eachProduct.html',
             controller: productDetailsController,
-            controllerAs: 'spc'
+            controllerAs: 'epc'
         });
     productDetailsController.$inject = [];
     function productDetailsController() {
 
         var vm = this;
         vm.productDetails;
-        vm.rating;
         //vm.showMoreItems;
-
+        getProducts();
+        function getProducts() {
+            console.log('testing..obj');
+            console.log(vm.productDetails);
+        }
 
     }
 }());

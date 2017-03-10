@@ -17,15 +17,16 @@
         vm.readOnly = true;
         vm.currentPage = 0;
         vm.pageSize = 4;
+        vm.testObj = "testing.."
         /*vm.numberOfPages=10;*/
         vm.productDetails = productDetails;
         vm.productDetails();
         /*vm.rating=productDetailsService.getRating($stateParams.id);
         console.log(vm.similarProducts.name);*/
-       /* vm.numberOfPages=vm.similarProducts.length/vm.pageSize;
+        //vm.numberOfPages=vm.similarProducts.length/vm.pageSize;
 
 
-        vm.pagesShown = 1;
+       /* vm.pagesShown = 1;
         vm.pageSize1 = 3;
         vm.paginationLimit=paginationLimit;
         vm.hasMoreItemsToShow=hasMoreItemsToShow;
@@ -34,14 +35,30 @@
             productDetailsService.getSelectedProduct($stateParams.id).then(success).catch(failure);
 
             function success(response){
-                vm.selectedProduct = response.data
+                vm.selectedProduct = response.data;
             }
 
             function failure(failure){
 
             }
         }
-       //vm.similarProducts = productDetailsService.getSimilarProducts(vm.selectedProduct.subType, vm.selectedProduct.name);
+      /* vm.similarProducts = similarProducts;
+        vm.similarProducts();
+
+        function similarProducts(){
+            console.log('.....................getting')
+            productDetailsService.getSimilarProducts(vm.selectedProduct.subType, vm.selectedProduct.name).then(success).catch(failure);
+            function success(response){
+                console.log('response')
+                console.log(response)
+                console.log('response')
+                vm.similarProduct = response.data
+            }
+
+            function failure(failure){
+
+            }
+        }*/
         /*  console.log("$$$$$$$$$$$$$$$$$$$$$$$$$")
        *//* function paginationLimit(data) {
             console.log("in pagination limit function");

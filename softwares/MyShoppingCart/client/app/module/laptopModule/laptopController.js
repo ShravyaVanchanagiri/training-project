@@ -9,7 +9,22 @@
 
     function laptopController($http, homeService, $rootScope, uitService,laptopService) {
         var vm = this;
-        vm.checkBoxes = true;
+        vm.laptops=[];
+        vm.getAllLaptops=getAllLaptops;
+        vm.getAllLaptops();
+
+        function getAllLaptops(){
+            laptopService.getLaptops().then(success).catch(failure);
+
+            function success(response){
+                vm.laptops = response.data;
+            }
+
+            function failure(failure){
+
+            }
+        }
+        /*vm.checkBoxes = true;
         vm.getCheckedProducts=getCheckedProducts;
         vm.getProductsFilterByDisc=getProductsFilterByDisc;
         vm.model = [];
@@ -80,6 +95,6 @@
 
 
             vm.laptops = laptopService.filterLaptops(vm.slider.min, vm.slider.max, vm.brands, vm.discounts);
-        }
+        }*/
     }
 })();

@@ -7,24 +7,19 @@
             .service("searchService",searchService);
 
 
-        searchService.$inject=['$http','$rootScope','uitService'];
+        searchService.$inject=['$http','api','$q','$rootScope','uitService'];
 
-        function searchService($http,$rootScope,uitService){
+        function searchService($http,api,$q,$rootScope,uitService){
             var searchService={
-                getAllData:getAllData,
                 getProducts:getProducts
             };
             return searchService;
 
-            function getAllData(){
-                var data= uitService.returnJson();
+            function getProducts(valueEntered){
+                var query={}
+                query.keyword=valueEntered
 
-            }
-
-            function getProducts(query){
-                //url
-                var data= uitService.returnJson();
-
+                return api.getAllNames(query).$promise;
             }
         }
     }

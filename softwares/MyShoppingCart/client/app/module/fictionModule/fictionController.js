@@ -9,8 +9,23 @@
 
     function fictionController($http, homeService, $rootScope, uitService, fictionService) {
         var vm = this;
+        vm.fictions=[];
+        vm.getAllFictions=getAllFictions;
+        vm.getAllFictions();
 
-        vm.slider = {
+        function getAllFictions(){
+            fictionService.getFictions().then(success).catch(failure);
+
+            function success(response){
+                vm.fictions = response.data;
+                console.log(vm.fictions);
+            }
+
+            function failure(failure){
+
+            }
+        }
+       /* vm.slider = {
             min: 100,
             max: 300,
             options: {
@@ -45,6 +60,6 @@
             function gettingError(error) {
                 console.log(error);
             }
-        }
+        }*/
     }
 })();

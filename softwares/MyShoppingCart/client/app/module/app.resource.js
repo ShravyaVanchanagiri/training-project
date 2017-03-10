@@ -48,13 +48,36 @@
                 method : 'GET',
                 url: '/getProducts/:id'
             },
-            'getSimilarProduct':{
+            'getSimilarProducts':{
                 method : 'GET',
                 url: '/similarProducts'
             },
             'getAllMobiles':{
                 method : 'GET',
                 url: '/mobiles'
+            },
+            'getAllLaptops':{
+                method : 'GET',
+                url: '/laptops'
+            },
+            'getAllComics':{
+                method : 'GET',
+                url: '/comics'
+            },'getAllFictions':{
+                method : 'GET',
+                url: '/fictions'
+            },
+            'getFilteredMobiles':{
+                method : 'GET',
+                url: '/getFilteredMobile'
+            },
+            'getAllNames':{
+                method : 'GET',
+                url: '/getAllNames'
+            },
+            'getAllBrandNames':{
+                method : 'GET',
+                url: '/getAllBrandNames'
             }
         }
     }

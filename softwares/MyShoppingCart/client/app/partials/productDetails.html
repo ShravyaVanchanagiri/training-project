@@ -1,11 +1,11 @@
-<br><br>
 <each-product product-details="pc.selectedProduct" rating="pc.rating"
               has-more-items-to-show="pc.hasMoreItemsToShow()" show-more-items="pc.showMoreItems()"
               pagination-limit="pc.paginationLimit()"></each-product>
 <hr>
-<center><h2><i><font color="#00008b">PRODUCTS SIMILAR TO THE ABOVE {{pc.productDetails.subType | uppercase}}</font></i>
+<center><h2><i><font color="#00008b">PRODUCTS SIMILAR TO THE ABOVE {{pc.selectedProduct.subType | uppercase}}</font></i>
 </h2></center>
 <br>
-<!--<each-product eachProductData="pc.productDetails"></each-product>-->
-<similar-products similar="pc.similarProducts" current-page='pc.currentPage' page-size='pc.pageSize'
-                  number-of-pages="pc.similarProducts.length/pc.pageSize"></similar-products>
+<sim-prod ng-if="pc.selectedProduct"  pro="pc.selectedProduct"></sim-prod>
+
+<!--similar="pc.similarProducts" current-page='pc.currentPage' page-size='pc.pageSize'
+                  number-of-pages="pc.similarProducts.length/pc.pageSize"-->

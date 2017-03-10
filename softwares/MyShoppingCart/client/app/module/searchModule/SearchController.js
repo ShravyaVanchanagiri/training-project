@@ -11,31 +11,18 @@
         function SearchController($http,searchService,$rootScope, $state){
             var vm = this;
 
-            console.log("dataaaaa from seach controller");
-            searchService.getAllData();
-            vm.selectedData=selectedData;
-
-            function selectedData(selectedValue){
-               /* $state.go(state,selectedValue);*/
-                console.log(selectedValue);
-            }
-            //vm.products = $rootScope.jsonData;
+            vm.searchedData=[];
             vm.refreshProds = function(valueEntered)
             {
-                vm.productList = [];
-                console.log("in refresh" +valueEntered);
-                if(valueEntered != "")
-                {
-                    for(var i=0;i<$rootScope.jsonData.length;i++)
-                    {
-                        if($rootScope.jsonData[i].name.toUpperCase().includes(valueEntered.toLocaleUpperCase())) {
-                            vm.productList.push($rootScope.jsonData[i]);
-                            //console.log("in loop refresh");
-                        }
-                    }
+                console.log("refresh products")
+                searchService.getProducts(valueEntered).then(success).catch(failure);
+
+                function success(response){
+                    vm.searchedData = response.data;
                 }
-                else {
-                    vm.productList=[];
+
+                function failure(failure){
+
                 }
             }
         }

@@ -1,30 +1,31 @@
+epc.testObj=={{epc.testObj}}
 <div class="row">
     <div class="col-sm-7">
-        <zoom src="{{spc.productDetails.image}}" frame="example1" img="image1" zoomlvl="1.5" class="imageInProductViewPage"></zoom>
+        <zoom src="{{epc.productDetails.image}}" frame="example1" img="image1" zoomlvl="1.5" class="imageInProductViewPage"></zoom>
     </div>
     <div class="col-sm-5">
-        <h2><i class="text-uppercase">{{spc.productDetails.name}}</i></h2>
-        <h4>Price: {{spc.productDetails.price | currency : '&#8377;'}}</h4>
+        <h2><i class="text-uppercase">{{epc.productDetails.name}}</i></h2>
+        <h4>Price: {{epc.productDetails.price | currency : '&#8377;'}}</h4>
 
-        <div ng-if="spc.productDetails.type == 'electronics'">
-            <h4>RAM:{{spc.productDetails.RAM}}</h4>
-            <h4>Color:{{spc.productDetails.color}}</h4>
-            <h4>Battery:{{spc.productDetails.battery}}</h4>
-            <h4>Model name:{{spc.productDetails.description}}</h4>
-            <h4>Brand:{{spc.productDetails.brand}}</h4>
+        <div ng-if="epc.productDetails.type == 'electronics'">
+            <h4>RAM:{{epc.productDetails.RAM}}</h4>
+            <h4>Color:{{epc.productDetails.color}}</h4>
+            <h4>Battery:{{epc.productDetails.battery}}</h4>
+            <h4>Model name:{{epc.productDetails.description}}</h4>
+            <h4>Brand:{{epc.productDetails.brand}}</h4>
         </div>
-        <div ng-if="spc.productDetails.type == 'books'">
-            <h4>Author:{{spc.productDetails.Author}}</h4>
-            <h4>Language:{{spc.productDetails.Features.Language}}</h4>
-            <h4>ISBN: {{spc.productDetails.Features.ISBN}}</h4>
-            <h4>Number of pages:{{spc.productDetails.Features.Pages}}</h4>
-            <h4>Publication Year: {{spc.productDetails.Features.PublicationYear}}</h4>
+        <div ng-if="epc.productDetails.type == 'books'">
+            <h4>Author:{{epc.productDetails.Author}}</h4>
+            <h4>Language:{{epc.productDetails.Features.Language}}</h4>
+            <h4>ISBN: {{epc.productDetails.Features.ISBN}}</h4>
+            <h4>Number of pages:{{epc.productDetails.Features.Pages}}</h4>
+            <h4>Publication Year: {{epc.productDetails.Features.PublicationYear}}</h4>
         </div>
-        <h5>Rating:{{spc.rating | number}}</h5>
-        <ng-rate-it ng-model="spc.ratingProduct" read-only="true"></ng-rate-it>
+        <h5>Rating:{{epc.rating | number}}</h5>
+        <ng-rate-it ng-model="epc.ratingProduct" read-only="true"></ng-rate-it>
         <h3>People comments and ratings given by them</h3>
         <div class="nav">
-            <div ng-repeat="comment in spc.productDetails.comments | limitTo : spc.paginationLimit()">
+            <div ng-repeat="comment in epc.productDetails.comments | limitTo : epc.paginationLimit()">
                 <div class="media">
                     <div class="media-left">
                         <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
@@ -35,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <button class="show-more-btn btn btn-success" ng-show="spc.hasMoreItemsToShow()" ng-click="spc.showMoreItems()">Show more</button>
+            <button class="show-more-btn btn btn-success" ng-show="epc.hasMoreItemsToShow()" ng-click="epc.showMoreItems()">Show more</button>
         </div>
     </div>
 </div>

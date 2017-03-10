@@ -1,5 +1,6 @@
+<span ng-init="epc.loadSimilarProds()"></span>
 <div class="row">
-    <div ng-repeat="data in spc.similar | navigationFilter:spc.currentPage*spc.pageSize | limitTo: spc.pageSize" class="col-md-3" >
+    <div ng-repeat="data in epc.similarProduct | navigationFilter:epc.currentPage*spc.pageSize | limitTo: epc.pageSize" class="col-md-3" >
         <div class="col-md-7">
             <div class="circle">
                 <a ui-sref="productDetails({id:data.id})">
@@ -14,14 +15,14 @@
 </div>
 <button class="fa fa-chevron-circle-left fa-2x pull-left"
         aria-hidden="true"
-        ng-disabled="spc.currentPage == 0"
-        ng-click="spc.currentPage=spc.currentPage-1">
+        ng-disabled="epc.currentPage == 0"
+        ng-click="epc.currentPage=epc.currentPage-1">
 </button>
 <span ng-show="spc.numberOfPages > 0"></span>
 <button class="fa fa-chevron-circle-right fa-2x pull-right"
         aria-hidden="true"
-        ng-disabled="spc.currentPage >= spc.similar.length/spc.pageSize - 1"
-        ng-click="spc.currentPage=spc.currentPage+1">
+        ng-disabled="epc.currentPage >= epc.similar.length/epc.pageSize - 1"
+        ng-click="epc.currentPage=epc.currentPage+1">
 </button>
 <!--
 <i class="fa fa-chevron-circle-left fa-2x pull-left"

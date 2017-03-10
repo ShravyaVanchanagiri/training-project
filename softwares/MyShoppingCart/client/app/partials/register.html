@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Register Here</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && (userForm.name.$dirty || submitted)}">
+        <label>First Name</label>
+        <input type="text" name="fname" class="form-control" ng-model="user.fname" placeholder="Your First Name" ng-required="true">
+        <p ng-show="userForm.name.$invalid && (userForm.name.$dirty || submitted)" class="help-block">You First name is required.</p>
+        <label>Last Name</label>
+        <input type="text" name="lname" class="form-control" ng-model="user.lname" placeholder="Your Last Name" ng-required="true">
+        <p ng-show="userForm.name.$invalid && (userForm.name.$dirty || submitted)" class="help-block">You Last name is required.</p>
+        <label>Email:</label>
+        <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Enter email here" ng-required="true">
+        <p ng-show="userForm.name.$invalid && (userForm.name.$dirty || submitted)" class="help-block">You Last name is required.</p>
+        <label>Password:</label>
+        <input type="password" name="pass" class="form-control" ng-model="user.pass" placeholder="password here" ng-required="true">
+        <p ng-show="userForm.name.$invalid && (userForm.name.$dirty || submitted)" class="help-block">You password is required.</p>
+        <label>Mobile:</label>
+        <input type="text" name="mobile" class="form-control" ng-model="user.mobile" placeholder="mobile number here" ng-required="true">
+        <p ng-show="userForm.name.$invalid && (userForm.name.$dirty || submitted)" class="help-block">Mobile number is required.</p>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="h.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="h.cancel()">Cancel</button>
+</div>

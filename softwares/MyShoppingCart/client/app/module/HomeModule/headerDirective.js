@@ -3,13 +3,34 @@
  */
 (function () {
     angular.module('home')
-        .directive('headerDirective',headerDirective);
-    headerDirective.$inject=[];
+        .component('headerDirective', {
 
-    function headerDirective(){
-            var directive = {
-                templateUrl: 'views/header.html'
-            };
-            return directive;
+            bindings: {
+
+            },
+            templateUrl: 'views/header.html',
+            controller: headerController,
+            controllerAs: 'h'
+        });
+    headerController.$inject = ['$uibModal','$scope'];
+    function headerController($uibModal,$scope) {
+        var vm=this;
+        vm.tets="Test";
+        vm.openRegistrationModel=openRegistrationModel;
+        vm.open=open;
+        function openRegistrationModel(){
+            $uibModal.open({
+                templateUrl: 'partials/register.html',
+                //controller: 'RandomController'
+            });
         }
-})();
+
+        $scope.ok = function() {
+            $scope.showModal = false;
+        };
+
+        $scope.cancel = function() {
+            $scope.showModal = false;
+        };
+    }
+}());

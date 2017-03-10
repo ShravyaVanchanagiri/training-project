@@ -9,8 +9,23 @@
 
     function comicController($http, homeService, $rootScope, uitService,comicService) {
         var vm = this;
+        vm.comics=[];
+        vm.getAllComics=getAllComics;
+        vm.getAllComics();
 
-        vm.slider = {
+
+        function getAllComics(){
+            vm.comics=comicService.getComics().then(success).catch(failure);
+
+            function success(response){
+                vm.comics = response.data;
+            }
+
+            function failure(failure){
+
+            }
+        }
+        /*vm.slider = {
             min: 100,
             max: 500,
             options: {
@@ -37,6 +52,6 @@
             function gettingError(error){
                 console.log(error);
             }
-        }
+        }*/
     }
 })();

@@ -16,7 +16,7 @@ var productRouter={
                     res.send({status:500})
                 } else {
                     // object of rating gt 5
-                    console.log(products);
+
                     res.json({status:200, data:products})
                 }
             }).limit(5);
@@ -35,7 +35,7 @@ var productRouter={
                     res.send({status:500})
                 } else {
                     // object of rating gt 5
-                    console.log(products);
+
                     res.json({status:200, data:products})
                 }
             }).limit(5).pretty();
@@ -53,7 +53,7 @@ var productRouter={
                     res.send({status:500})
                 } else {
                     // object of rating gt 5
-                    console.log(products);
+
                     res.json({status:200, data:products})
                 }
             }).limit(5).pretty();
@@ -71,7 +71,7 @@ var productRouter={
                     res.send({status:500})
                 } else {
                     // object of rating gt 5
-                    console.log(products);
+
                     res.json({status:200, data:products})
                 }
             }).limit(5).pretty();
@@ -89,7 +89,7 @@ var productRouter={
                     res.send({status:500})
                 } else {
                     // object of rating gt 5
-                    console.log(products);
+
                     res.json({status:200, data:products})
                 }
             }).limit(5).pretty();
@@ -106,7 +106,7 @@ var productRouter={
                     res.send({status:500})
                 } else {
                     // object of rating gt 5
-                    console.log(products);
+
                     res.json({status:200, data:products})
                 }
             }).limit(5).pretty();
@@ -124,7 +124,6 @@ var productRouter={
                     res.send({status:500})
                 } else {
                     // object of rating gt 5
-                    console.log(products);
                     res.json({status:200, data:products})
                 }
             });
@@ -142,7 +141,40 @@ var productRouter={
                     res.send({status:500})
                 } else {
                     // object of rating gt 5
-                    console.log(products);
+                    res.json({status:200, data:products})
+                }
+            });
+        } catch(error) {
+            console.log("Error...",error);
+        }
+    },
+    displayComics:function(req,res){
+        console.log("getting");
+        try {
+            productModel.find({subType:"comic"}, function (err, products) {
+                console.log("inside function");
+                if (err) {
+                    console.log("error");
+                    res.send({status:500})
+                } else {
+                    // object of rating gt 5
+                    res.json({status:200, data:products})
+                }
+            });
+        } catch(error) {
+            console.log("Error...",error);
+        }
+    },
+    displayFictions:function(req,res){
+        console.log("getting");
+        try {
+            productModel.find({subType:"fiction"}, function (err, products) {
+                console.log("inside function");
+                if (err) {
+                    console.log("error");
+                    res.send({status:500})
+                } else {
+                    // object of rating gt 5
                     res.json({status:200, data:products})
                 }
             });
@@ -152,8 +184,8 @@ var productRouter={
     },
     displaySimilarProducts:function(req,res){
         console.log("inside function");
-        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        var query= {subtype : queryParam.subtype,name : queryParam.name};
+        //var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        var query= {subtype : req.query.subtype, brand:req.query.brand};
         try {
             productModel.find(query, function (err, products) {
                 console.log("inside function");
@@ -163,7 +195,6 @@ var productRouter={
                     res.send({status:500})
                 } else {
                     // object of rating gt 5
-                    console.log(products);
                     res.json({status:200, data:products})
                 }
             });
@@ -173,6 +204,12 @@ var productRouter={
     },
     searchProducts:function(req,res){
         var query = {};
+        if(req.query.keyword){
+            var regExp= new RegExp(req.query.keyword, "i");
+            query.name=regExp;
+        }else if(req.query.keyword===''){
+            query.name='';
+        }
         try {
             productModel.find(query, function (err, products) {
                 if (err) {
@@ -180,7 +217,6 @@ var productRouter={
                     res.send({status:500})
                 } else {
                     // object of rating gt 5
-                    console.log(products);
                     res.json({status:200, data:products})
                 }
             });
@@ -200,6 +236,54 @@ var productRouter={
                     // object of rating gt 5
                     console.log(product);
                     res.json({status: 200, data: product})
+                }
+            });
+        } catch (error) {
+            console.log("Error...", error);
+        }
+    },
+    getFilteredMobile:function(req,res){
+        console.log('req.query.')
+        console.log(req.query)
+        try {
+            productModel.find({
+                price: { $gt: req.query.minPrice, $lt: req.query.maxPrice },
+                subType:req.query.subType
+            }, function (err, product) {
+                if (err) {
+                    console.log("error");
+                    res.send({status: 500})
+                } else {
+                    // object of rating gt 5
+                    res.json({status: 200, data: product})
+                }
+            });
+        } catch (error) {
+            console.log("Error...", error);
+        }
+    },
+    getAllBrands:function(req,res) {
+        var query = {subType: req.query.subType};
+        console.log('***************************************');
+        console.log(req.query.subType);
+        try {
+            /*productModel.find(query).distinct('brand', function (err, products) {
+                if (err) {
+                    console.log("error");
+                    res.send({status: 500})
+                } else {
+                    console.log(products);
+                    res.json({status: 200, data: products})
+                }
+            });*/
+
+            productModel.distinct('brand',query, function (err, products) {
+                if (err) {
+                    console.log("error");
+                    res.send({status: 500})
+                } else {
+                    console.log(products);
+                    res.json({status: 200, data: products})
                 }
             });
         } catch (error) {

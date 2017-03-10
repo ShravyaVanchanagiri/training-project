@@ -6,13 +6,13 @@
         .service("comicService", comicService);
 
 
-    comicService.$inject = ['$http', '$rootScope','uitService'];
+    comicService.$inject = ['$http','api','$q', '$rootScope','uitService'];
 
-    function comicService($http, $rootScope,uitService) {
+    function comicService($http,api,$q, $rootScope,uitService) {
         var comicService = {
             getAllData: getAllData,
-            getComics: getComics,
-            getProducts: getProducts,
+            getComics: getComics
+            /*getProducts: getProducts,*/
         };
         return comicService;
 
@@ -22,16 +22,10 @@
             console.log(data);
             console.log("data");
         }
-        function getComics(type){
-            var comics=[];
-            for(i=0;i<$rootScope.jsonData.length;i++){
-                if($rootScope.jsonData[i].subType == "comic"){
-                    comics.push($rootScope.jsonData[i]);
-                }
-            }
-            return comics;
+        function getComics(){
+            return api.getAllComics().$promise;
         }
-        function getProducts(min,max,data){
+        /*function getProducts(min,max,data){
             $rootScope.min = min;
             console.log("min value");
             console.log($rootScope.min);
@@ -48,7 +42,7 @@
                 }
             }
             return filteredProducts;
-        }
+        }*/
     }
 })();
 

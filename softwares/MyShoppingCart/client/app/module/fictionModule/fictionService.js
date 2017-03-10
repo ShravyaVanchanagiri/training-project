@@ -9,13 +9,13 @@
         .service("fictionService", fictionService);
 
 
-    fictionService.$inject = ['$http', '$rootScope','uitService'];
+    fictionService.$inject = ['$http','api','$q', '$rootScope','uitService'];
 
-    function fictionService($http, $rootScope,uitService) {
+    function fictionService($http,api,$q, $rootScope,uitService) {
         var fictionService = {
             getAllData: getAllData,
-            getFictions: getFictions,
-            getProducts:getProducts,
+            getFictions: getFictions
+           /* getProducts:getProducts,*/
         };
         return fictionService;
 
@@ -25,17 +25,11 @@
             console.log(data);
             console.log("data");
         }
-        var fictions=[];
-        function getFictions(type){
-            fictions=[];
-            for(i=0;i<$rootScope.jsonData.length;i++){
-                if($rootScope.jsonData[i].subType == "fiction"){
-                    fictions.push($rootScope.jsonData[i]);
-                }
-            }
-            return fictions;
+
+        function getFictions(){
+           return api.getAllFictions().$promise;
         }
-        function  getProducts(min,max,data){
+        /*function  getProducts(min,max,data){
             $rootScope.min = min;
             console.log("min value");
             console.log($rootScope.min);
@@ -52,6 +46,6 @@
                 }
             }
             return filteredProducts;
-        }
+        }*/
     }
 })();
