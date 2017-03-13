@@ -2,25 +2,27 @@
     <h3 class="modal-title" id="modal-title">Register Here</h3>
 </div>
 <div class="modal-body" id="modal-body">
-    <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && (userForm.name.$dirty || submitted)}">
-        <label>First Name</label>
+    <form name="userForm">
+    <div class="form-group">
+        <label>First Name:</label>
         <input type="text" name="fname" class="form-control" ng-model="user.fname" placeholder="Your First Name" ng-required="true">
-        <p ng-show="userForm.name.$invalid && (userForm.name.$dirty || submitted)" class="help-block">You First name is required.</p>
-        <label>Last Name</label>
+        <span style="color:red" ng-show="userForm.fname.$touched && userForm.fname.$invalid">You First name is required.<br/></span>
+        <label>Last Name:</label>
         <input type="text" name="lname" class="form-control" ng-model="user.lname" placeholder="Your Last Name" ng-required="true">
-        <p ng-show="userForm.name.$invalid && (userForm.name.$dirty || submitted)" class="help-block">You Last name is required.</p>
+        <span style="color:red" ng-show="userForm.lname.$touched && userForm.lname.$invalid">You Last name is required.<br/></span>
         <label>Email:</label>
-        <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Enter email here" ng-required="true">
-        <p ng-show="userForm.name.$invalid && (userForm.name.$dirty || submitted)" class="help-block">You Last name is required.</p>
+        <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Your Email id" ng-required="true">
+        <span style="color:red" ng-show="userForm.email.$touched && userForm.email.$invalid">You Email id is required.<br/></span>
         <label>Password:</label>
-        <input type="password" name="pass" class="form-control" ng-model="user.pass" placeholder="password here" ng-required="true">
-        <p ng-show="userForm.name.$invalid && (userForm.name.$dirty || submitted)" class="help-block">You password is required.</p>
-        <label>Mobile:</label>
-        <input type="text" name="mobile" class="form-control" ng-model="user.mobile" placeholder="mobile number here" ng-required="true">
-        <p ng-show="userForm.name.$invalid && (userForm.name.$dirty || submitted)" class="help-block">Mobile number is required.</p>
+        <input type="password" name="pass" class="form-control" ng-model="user.pass" placeholder="Your password" ng-required="true">
+        <span style="color:red" ng-show="userForm.pass.$touched && userForm.pass.$invalid">You Password is required.<br/></span>
+        <label>Phone:</label>
+        <input type="number" name="phone" class="form-control" ng-model="user.phone" placeholder="Your Phone number" ng-required="true">
+        <span style="color:red" ng-show="userForm.phone.$touched && userForm.phone.$invalid">You Phone number is required.<br/></span>
     </div>
+    </form>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="h.ok()">OK</button>
-    <button class="btn btn-warning" type="button" ng-click="h.cancel()">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="funOk()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="$close()">Cancel</button>
 </div>

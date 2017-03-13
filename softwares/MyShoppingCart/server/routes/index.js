@@ -16,7 +16,6 @@ var router= function(app){
   app.get('/topComics',productRotes.listComics);
   app.get('/topFictions',productRotes.listFictions);
   app.get('/eachProduct',productRotes.displayEachProduct);
-  //app.get('/products', productRotes.searchProducts);
   app.get('/getProducts/:id',productRotes.getProductsById);
   app.get('/similarProducts',productRotes.displaySimilarProducts);
   app.get('/mobiles',productRotes.displayMobiles);
@@ -25,7 +24,8 @@ var router= function(app){
   app.get('/fictions',productRotes.displayFictions);
   app.get('/getFilteredMobile',productRotes.getFilteredMobile);
   app.get('/getAllNames',productRotes.searchProducts);
-  app.get('/getAllBrandNames',productRotes.getAllBrands)
+  app.get('/getAllBrandNames',productRotes.getAllBrands);
+  app.post('/registerUser',productRotes.registerUser)
 
 };
 /*var products=require('../../product');*/

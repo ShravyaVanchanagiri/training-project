@@ -2,6 +2,7 @@
  * Created by shravya on 2/3/17.
  */
 var productModel= require('../models/productModel');
+var userModel = require('../models/usersModel');
 //var commentModel= require('../models/commentModel');
 
 var productRouter={
@@ -38,7 +39,7 @@ var productRouter={
 
                     res.json({status:200, data:products})
                 }
-            }).limit(5).pretty();
+            }).limit(5);
         } catch(error) {
             console.log("Error...",error);
         }
@@ -56,7 +57,7 @@ var productRouter={
 
                     res.json({status:200, data:products})
                 }
-            }).limit(5).pretty();
+            }).limit(5);
         } catch(error) {
             console.log("Error...",error);
         }
@@ -74,7 +75,7 @@ var productRouter={
 
                     res.json({status:200, data:products})
                 }
-            }).limit(5).pretty();
+            }).limit(5);
         } catch(error) {
             console.log("Error...",error);
         }
@@ -92,7 +93,7 @@ var productRouter={
 
                     res.json({status:200, data:products})
                 }
-            }).limit(5).pretty();
+            }).limit(5);
         } catch(error) {
             console.log("Error...",error);
         }
@@ -109,7 +110,7 @@ var productRouter={
 
                     res.json({status:200, data:products})
                 }
-            }).limit(5).pretty();
+            }).limit(5);
         } catch(error) {
             console.log("Error...",error);
         }
@@ -248,7 +249,8 @@ var productRouter={
         try {
             productModel.find({
                 price: { $gt: req.query.minPrice, $lt: req.query.maxPrice },
-                subType:req.query.subType
+                subType:req.query.subType,
+                brand: {$in:req.query.brands}
             }, function (err, product) {
                 if (err) {
                     console.log("error");
@@ -264,20 +266,9 @@ var productRouter={
     },
     getAllBrands:function(req,res) {
         var query = {subType: req.query.subType};
-        console.log('***************************************');
         console.log(req.query.subType);
         try {
-            /*productModel.find(query).distinct('brand', function (err, products) {
-                if (err) {
-                    console.log("error");
-                    res.send({status: 500})
-                } else {
-                    console.log(products);
-                    res.json({status: 200, data: products})
-                }
-            });*/
-
-            productModel.distinct('brand',query, function (err, products) {
+             productModel.distinct('brand',query, function (err, products) {
                 if (err) {
                     console.log("error");
                     res.send({status: 500})
@@ -289,55 +280,32 @@ var productRouter={
         } catch (error) {
             console.log("Error...", error);
         }
+    },
+    registerUser:function(req,res){
+        var queryParam=req.body;
+        userModel.findOne({email:queryParam.email},function(err,user){
+            if(!user){
+                new userModel({
+                    firstName:queryParam.fname,
+                    lastName:queryParam.lname,
+                    email:queryParam.email,
+                    password:queryParam.pass,
+                    mobile:queryParam.phone
+                }).save(function(err,data){
+                    if(err){
+                        console.log("Error",err);
+                    }
+                    else {
+                        console.log("data",data);
+                    }
+                })
+
+            }
+            else {
+                console.log("user is all ready availabel");
+            }
+        })
     }
-}
+};
 module.exports=productRouter;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-topRatedProducts1: function(req,res){
-    console.log('asd');
-    products.aggregate([
-        {$match : {"rating" :{$gt :4} } },
-        {$group: {_id:"$subType", docs:{$push : "$$ROOT"}
-        }},
-        {$project : {
-            docs : {$slice : ["$docs" ,0,5 ]}
-
-        }
-        }
-    ]).exec(function (err, prods) {
-        console.log(prods);
-        if (err) {
-            res.send(err);
-        } else {
-            res.send(prods);
-            res.end();
-        }
-    });
-},*/

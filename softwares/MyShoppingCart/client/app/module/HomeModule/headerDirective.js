@@ -12,25 +12,30 @@
             controller: headerController,
             controllerAs: 'h'
         });
-    headerController.$inject = ['$uibModal','$scope'];
-    function headerController($uibModal,$scope) {
+    headerController.$inject = ['$uibModal','api','homeService'];
+    function headerController($uibModal,api,homeService) {
         var vm=this;
-        vm.tets="Test";
         vm.openRegistrationModel=openRegistrationModel;
-        vm.open=open;
         function openRegistrationModel(){
             $uibModal.open({
                 templateUrl: 'partials/register.html',
-                //controller: 'RandomController'
+                controller: function($scope){
+                    $scope.funOk=function(){
+                        console.log($scope.user);
+
+                        homeService.register($scope.user).then(success).catch(failure);
+
+                        function success(response){
+                            console.log("000000000000000000000");
+                        }
+
+                        function failure(failure){
+
+                        }
+                    }
+                },
             });
         }
 
-        $scope.ok = function() {
-            $scope.showModal = false;
-        };
-
-        $scope.cancel = function() {
-            $scope.showModal = false;
-        };
     }
 }());

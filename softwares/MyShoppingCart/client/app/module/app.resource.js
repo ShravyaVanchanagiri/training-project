@@ -78,6 +78,10 @@
             'getAllBrandNames':{
                 method : 'GET',
                 url: '/getAllBrandNames'
+            },
+            'registerUser':{
+                method : 'POST',
+                url: '/registerUser'
             }
         }
     }

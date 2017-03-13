@@ -12,8 +12,10 @@
     "debug": "~2.6.0",
     "express": "~4.14.1",
     "jade": "~1.11.0",
+    "jwt-simple": "^0.5.1",
     "mongoose": "^4.8.5",
     "mongoose-double": "0.0.1",
+    "mongoose-intl-phone-number": "^1.0.2",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2"
   }

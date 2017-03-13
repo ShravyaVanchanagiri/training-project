@@ -12,7 +12,7 @@
         var MobileService = {
             getAllData: getAllData,
             getMobiles: getMobiles,
-            filterMobiles: filterMobiles,
+            //filterMobiles: filterMobiles,
             getProducts:getProducts,
            getBrands: getBrands
 
@@ -31,11 +31,12 @@
             return api.getAllMobiles().$promise;
         }
 
-        function  getProducts(min,max,data){
+        function  getProducts(min,max,data,brand){
             var query={
                 minPrice:min,
                 maxPrice:max,
-                subType:data
+                subType:data,
+                brands: brand
             };
             return api.getFilteredMobiles(query).$promise;
         }
@@ -44,40 +45,7 @@
 
             return api.getAllBrandNames(query).$promise;
         }
-
-        function getDiscounts(mobile){
-            var discounts=[], discountList=[];
-            for(var i=0;i<mobile.length;i++){
-                var product = mobile[i];
-                for(var j=0;j<product.offers.length;j++){
-                    if (discountList.indexOf(product.offers[j].type) < 0 ){
-                        var discountObj  = {id:product.offers[j].type, label:product.offers[j].type};
-                        discountList.push(product.offers[j].type);
-                        discounts.push(discountObj);
-
-                    }
-                }
-            }
-            return discounts;
-        }
-        function filterProductsByDiscountType(mobile,discountType){
-            var data=[];
-            if(discountType.length){
-                for(var i=0;i<mobile.length;i++){
-                    for(var j=0;j<mobile[i].offers.length;j++){
-                        if(discountType.indexOf(mobile[i].offers[j].type)>=0){
-                            data.push(mobile[i]);
-                        }
-                    }
-                }
-            }else{
-                data = mobile;
-            }
-
-            return data;
-        }
-
-        function filterMobiles(min, max, brands, discType) {
+       /* function filterMobiles(min, max, brands) {
             var mobiles = [];
             //Fiter for brands
             if(brands.length) {
@@ -98,7 +66,7 @@
             mobiles =  filterProductsByDiscountType(mobiles, discType);
 
             return mobiles;
-        }
+        }*/
 
     }
 })();

@@ -12,7 +12,7 @@
         vm.mobiles=[];
         vm.mobileBrands=[];
         vm.checkBoxes = true;
-        //vm.getCheckedProducts=getCheckedProducts;
+        vm.getCheckedProducts=getCheckedProducts;
         //vm.getProductsFilterByDisc=getProductsFilterByDisc;
         vm.getAllMobiles=getAllMobiles;
         vm.getAllMobiles();
@@ -44,7 +44,7 @@
 
         //selected brands
         vm.brands = [];
-        vm.discounts=[];
+        //vm.discounts=[];
 
         vm.slider = {
             min: 500,
@@ -53,32 +53,10 @@
                 floor: 500,
                 ceil: 50000,
                     onChange: function() {
-                        vm.filterData(vm.slider.min, vm.slider.max,'mobile',null);
+                        vm.filterData(vm.slider.min, vm.slider.max,'mobile',vm.brands);
                     }
             }
         };
-
-       /* vm.test = "Coming here";
-        vm.getJsonData=getJsonData;
-        vm.getJsonData();
-        vm.mobiles=[];
-
-        vm.mobileDiscounts=[];
-*/
-        /*function getJsonData(){
-            uitService.returnJson().then(gettingSuccess).catch(gettingError);
-            function gettingSuccess(response){
-                $rootScope.jsonData=response.data;
-                vm.data=response.data;
-                $rootScope.listMobiles = homeService.getMobiles(vm.data.subType);
-                vm.mobiles = $rootScope.listMobiles;
-                vm.mobileBrands = MobileService.getBrands(vm.mobiles);
-                vm.mobileDiscounts = MobileService.getDiscounts(vm.mobiles);
-            }
-            function gettingError(error){
-                console.log(error);
-            }
-        }*/
         function getAllMobiles(){
             MobileService.getMobiles().then(success).catch(failure);
 
@@ -98,7 +76,7 @@
 
             function success(response){
                 var brandsList = [];
-                if ( response.data.length ) {
+                if (response.data.length ) {
                     angular.forEach(response.data, function(eachBrand, index){
                         var brandObj  = {id:index+1, label:eachBrand};
                         brandsList.push(brandObj);
@@ -115,23 +93,27 @@
 
         function getCheckedProducts(checkedProd){
             vm.brands = [];
-            angular.forEach(checkedProd, function(eachSelect, index) {
-                vm.brands.push(eachSelect.id);
-            });
+            for(var i=0; i<checkedProd.length;i++){
 
-            vm.mobiles = MobileService.filterMobiles(vm.slider.min, vm.slider.max, vm.brands, vm.discounts);
+                vm.brands.push(getLabelBrand(checkedProd[i]));
+            }
+            console.log(vm.brands);
+            vm.filterData(vm.slider.min, vm.slider.max,'mobile',vm.brands);
+
         }
+        function getLabelBrand(idBrand){
+            for(var i=0;i<vm.mobileBrands.length;i++){
+                var eachBrand = vm.mobileBrands[i];
+                console.log(idBrand.id)
 
-        /*function getProductsFilterByDisc(checkedProd){
-            vm.discounts=[];
-            angular.forEach(checkedProd, function(eachSelect, index) {
-                vm.discounts.push(eachSelect.id);
-            });
-
-
-
-            vm.mobiles = MobileService.filterMobiles(vm.slider.min, vm.slider.max, vm.brands, vm.discounts);
-        }*/
+                if(eachBrand.id == idBrand.id){
+                    console.log("label");
+                    console.log(eachBrand)
+                    return eachBrand.label;
+                }
+            }
+            return null;
+        }
     }
 })();
 
