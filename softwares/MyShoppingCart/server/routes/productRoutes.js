@@ -2,7 +2,7 @@
  * Created by shravya on 2/3/17.
  */
 var productModel= require('../models/productModel');
-var userModel = require('../models/usersModel');
+
 //var commentModel= require('../models/commentModel');
 
 var productRouter={
@@ -280,31 +280,6 @@ var productRouter={
         } catch (error) {
             console.log("Error...", error);
         }
-    },
-    registerUser:function(req,res){
-        var queryParam=req.body;
-        userModel.findOne({email:queryParam.email},function(err,user){
-            if(!user){
-                new userModel({
-                    firstName:queryParam.fname,
-                    lastName:queryParam.lname,
-                    email:queryParam.email,
-                    password:queryParam.pass,
-                    mobile:queryParam.phone
-                }).save(function(err,data){
-                    if(err){
-                        console.log("Error",err);
-                    }
-                    else {
-                        console.log("data",data);
-                    }
-                })
-
-            }
-            else {
-                console.log("user is all ready availabel");
-            }
-        })
     }
 };
 module.exports=productRouter;

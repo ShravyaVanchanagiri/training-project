@@ -38,15 +38,20 @@
                 templateUrl: 'partials/productDetails.html',
                 controller: 'productDetailsController',
                 controllerAs: 'pc'
-            })
-                .state('search',{
+            }).state('search',{
                 url:'/home/:id',
                 templateUrl: 'partials/productDetails.html',
                 controller: 'productDetailsController',
                 controllerAs: 'sc'
+            }).state('confirmRegistration',{
+                url:"/confirmRegistration/:token",
+                controller: 'registrationController',
+                controllerAs: 'rgc',
+                templateUrl: 'partials/registration.html'
             });
 
             $urlRouterProvider.otherwise('/home');
 
         })
 })();
+

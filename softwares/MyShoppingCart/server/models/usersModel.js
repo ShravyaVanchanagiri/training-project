@@ -2,7 +2,6 @@
  * Created by shravya on 13/3/17.
  */
 var mongoose = require('mongoose');
-var crypto = require('crypto');
 var Schema = mongoose.Schema;
 var userSchema = new Schema({
     firstName : {
@@ -23,5 +22,6 @@ var userSchema = new Schema({
 },
     {collection : 'users'}
 );
+
 var userModel = mongoose.model('user', userSchema);
 module.exports=userModel;

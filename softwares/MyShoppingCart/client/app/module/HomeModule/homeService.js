@@ -15,7 +15,8 @@
             getLaptops: getLaptops,
             getComics: getComics,
             getFictions: getFictions,
-            register: register
+            register: register,
+            confirmReg: confirmReg
         };
         return homeService;
 
@@ -37,6 +38,9 @@
         }
         function register(query){
             return api.registerUser(query).$promise;
+        }
+        function confirmReg(query){
+            return api.confirmReg({token:query}).$promise;
         }
     }
 })();

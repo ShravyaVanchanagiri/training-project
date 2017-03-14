@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var productRotes= require('./productRoutes');
+var userRotes= require('./userRotes');
 var router= function(app){
   app.get('/', function(req, res, next) {
     //res.render('index', { title: 'Express' });
@@ -25,12 +26,7 @@ var router= function(app){
   app.get('/getFilteredMobile',productRotes.getFilteredMobile);
   app.get('/getAllNames',productRotes.searchProducts);
   app.get('/getAllBrandNames',productRotes.getAllBrands);
-  app.post('/registerUser',productRotes.registerUser)
-
+  app.post('/registerUser',userRotes.registerUser);
+  app.get('/ConfirmReg',userRotes.confirmReg);
 };
-/*var products=require('../../product');*/
-
-/* GET home page. */
-
-
 module.exports = router;

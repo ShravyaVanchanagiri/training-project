@@ -82,6 +82,10 @@
             'registerUser':{
                 method : 'POST',
                 url: '/registerUser'
+            },
+            'confirmReg':{
+                method : 'GET',
+                url: '/ConfirmReg/:tokens'
             }
         }
     }

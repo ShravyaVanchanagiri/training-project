@@ -4,23 +4,23 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var tokenSchema = new Schema({
-        firstName : {
+        token : {
             type : String
         },
-        lastName : {
+        type : {
             type : String
         },
         email : {
             type : String
         },
-        password : {
-            type : String
+        startDate : {
+            type : Date
         },
-        mobile : {
-            type : Number
+        updatedDate : {
+            type : Date
         },
     },
-    {collection : 'users'}
+    {collection : 'tokens'}
 );
-var userModel = mongoose.model('user', userSchema);
-module.exports=userModel;
+var tokenModel = mongoose.model('token', tokenSchema);
+module.exports=tokenModel;
