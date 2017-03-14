@@ -19,6 +19,10 @@ var userSchema = new Schema({
     mobile : {
         type : Number
     },
+    isActive :{
+        type: Boolean,
+        default: false
+    }
 },
     {collection : 'users'}
 );

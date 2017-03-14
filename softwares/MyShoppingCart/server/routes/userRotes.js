@@ -57,7 +57,7 @@ var userRouter={
                                         from: config.mailer.auth.user,
                                         to: queryParam.email, // receiver
                                         subject: "Activate Registration", // subject
-                                        text: "hieee"+serverAddress+"/#!/confirmRegistration/:"+newToken.token
+                                        text: "hieee"+serverAddress+"/#!/confirmRegistration/"+newToken.token
                                     }, function(error, response){  //callback
                                         if(error){
                                             console.log("Error",error);
@@ -82,19 +82,32 @@ var userRouter={
             }
         })
     },
-    confirmReg:function(req,res){
+    confirmReg : function(req,res){
         console.log(req.query);
-        var token = req.query;
+        var token = req.query.token;
+        /*console.log(token);*/
         var tokenType = tokenEnums.REGISTRATION.code;
-        tokenModel.findOne({token : token},function(err, res){
+        tokenModel.findOne({token : token},function(err,resp){
             if(err){
                 console.log("error",err);
             }else{
-                res.send({status:200});
+                console.log(resp);
+                userModel.findOneAndUpdate({email : resp.email},{$set:{isActive : true}},function(error,response){
+                    if(error){
+                        console.log(error);
+                    }else{
+                        console.log(token);
+                        tokenModel.remove({token : token},function(err1,res1){
+                            if(err1){
+                                console.log(err1);
+                            }else{
+                                res.send({status:200})
+                            }
+                        });
+                    }
+                })
             }
-
         })
-
     }
 };
 module.exports=userRouter;
