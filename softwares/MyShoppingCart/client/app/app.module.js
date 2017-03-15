@@ -23,6 +23,7 @@
         "fictions",
         "angularjs-dropdown-multiselect",
         "zoomPanApp",
-        "ngResource"
+        "ngResource",
+        "ngStorage",
     ])
 })();

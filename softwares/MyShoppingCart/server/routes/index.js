@@ -28,5 +28,7 @@ var router= function(app){
   app.get('/getAllBrandNames',productRotes.getAllBrands);
   app.post('/registerUser',userRotes.registerUser);
   app.get('/ConfirmReg',userRotes.confirmReg);
+  app.get('/login',userRotes.login);
+  app.get('/logOut',userRotes.logOut);
 };
 module.exports = router;

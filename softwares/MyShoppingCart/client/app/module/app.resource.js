@@ -86,6 +86,14 @@
             'confirmReg':{
                 method : 'GET',
                 url: '/ConfirmReg/:tokens'
+            },
+            'login':{
+                method : 'GET',
+                url: '/login'
+            },
+            'logOut':{
+                method: 'GET',
+                url: '/logOut'
             }
         }
     }

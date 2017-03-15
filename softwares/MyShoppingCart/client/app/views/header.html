@@ -21,9 +21,20 @@
                     <a href="#">Biographies</a>
                 </div>
             </div>
+            <span ng-if="h.currentUserSignedIn == false">
+            <button class="dropbtn" style="float: right" ng-click="h.openRegistrationModel()">Register</button>
+            <button class="dropbtn" style="float: right" ng-click="h.openLoginModel()">Login</button>
+            </span>
+            <div class="dropdown" style="float: right">
+                <span ng-if="h.currentUserSignedIn == true">
+                <button class="dropbtn">Hello {{h.fname}} {{h.lname}}</button>
+                    <div class="dropdown-content" style="float: right">
+                        <a>Profile</a>
+                        <a ng-click="h.logOut()">Logout</a>
+                    </div>
+                </span>
+            </div>
 
-        <button class="dropbtn" style="float: right" ng-click="h.openRegistrationModel()">Register</button>
-        <button class="dropbtn" style="float: right">Login</button>
     </nav>
     <center>
     <!--<div ng-include="'partials/search.html'"></div>-->

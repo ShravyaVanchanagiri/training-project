@@ -5,9 +5,9 @@
     angular.module('home')
         .controller("registrationController", registrationController);
 
-    registrationController.$inject = ['$scope','homeService','$stateParams'];
+    registrationController.$inject = ['$scope','homeService','$stateParams','$state'];
 
-    function registrationController($scope,homeService,$stateParams) {
+    function registrationController($scope,homeService,$stateParams,$state) {
         var vm = this;
         vm.confirmRegistration = confirmRegistration;
 
@@ -17,8 +17,7 @@
             homeService.confirmReg(token).then(success).catch(failure);
 
             function success(response){
-                /*vm.topProducts = response.data;*/
-                //console.log(response.data);
+                $state.go('home');
             }
 
             function failure(failure){

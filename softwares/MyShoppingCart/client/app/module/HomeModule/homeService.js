@@ -16,7 +16,9 @@
             getComics: getComics,
             getFictions: getFictions,
             register: register,
-            confirmReg: confirmReg
+            confirmReg: confirmReg,
+            login: login,
+            logOut: logOut
         };
         return homeService;
 
@@ -41,6 +43,13 @@
         }
         function confirmReg(query){
             return api.confirmReg({token:query}).$promise;
+        }
+        function login(query){
+            console.log(query);
+            return api.login(query).$promise;
+        }
+        function logOut(query){
+            return api.logOut(query).$promise;
         }
     }
 })();

@@ -8,6 +8,7 @@ var jwt = require('jwt-simple');
 var tokenEnums = require('../enums/tokenEnums');
 var nodemailer = require("nodemailer");
 var config = require("../config/config");
+var prepareRes = require("../apiUtils/prepareRes");
 var emailTemplates = require('email-templates');
 
 
@@ -57,7 +58,7 @@ var userRouter={
                                         from: config.mailer.auth.user,
                                         to: queryParam.email, // receiver
                                         subject: "Activate Registration", // subject
-                                        text: "hieee"+serverAddress+"/#!/confirmRegistration/"+newToken.token
+                                        text: "Hi user.."+serverAddress+"/#!/confirmRegistration/"+newToken.token
                                     }, function(error, response){  //callback
                                         if(error){
                                             console.log("Error",error);
@@ -65,7 +66,7 @@ var userRouter={
                                             console.log("Message sent: " + response.message);
                                         }
 
-                                        smtpTransport.close(); // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
+                                        smtpTransport.close();
                                     });
                                 }
                             })
@@ -101,13 +102,85 @@ var userRouter={
                             if(err1){
                                 console.log(err1);
                             }else{
-                                res.send({status:200})
+                                var newToken=new tokenModel();
+
+                                res.send({status:200});
                             }
                         });
                     }
                 })
             }
         })
+    },
+    login : function(req,res){
+        console.log(req.query);
+        try {
+            userModel.findOne({email : req.query.email}, function (error, response) {
+                if (error) {
+                    response.send(error);
+                } else {
+                    if(response){
+                        console.log(response);
+                        console.log(response.password);
+                        var comparePass = passwordHash.verify(req.query.pass,response.password);
+                        console.log(req.query.pass);
+                        //console.log(response);
+                        console.log(response.password);
+                        if(comparePass == true){
+                            console.log("in password compare");
+                            var newToken=new tokenModel();
+                            newToken.token=jwt.encode(req.query.email,'xxx');
+                            if (newToken.token) {
+                                newToken.type = tokenEnums.AUTH.code;
+                                newToken.email = req.query.email;
+                                newToken.startDate = Date.now();
+                                newToken.updatedDate = Date.now();
+                                /*newToken.save(function (err) {*/
+                                newToken.save(function (err, data) {
+                                    if (err) {
+                                        console.log(err);
+                                    } else {
+                                        //console.log(data);
+                                        var details={};
+                                        details.email = response.email;
+                                        details._id=response._id;
+                                        details.firstName=response.firstName;
+                                        details.lastName=response.lastName;
+                                        details.isActive=response.isActive;
+                                        details.tokenId = newToken._id;
+                                        res.send(prepareRes(200,details,"OK"));
+                                    }
+                                })
+
+                                /*response.send({status: 200})*/
+                            }
+                        }
+                    }
+
+                }
+            });
+        } catch(error) {
+            console.log("Error...",error);
+        }
+    },
+    logOut: function(req,res){
+        console.log("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        try{
+            console.log(req.query);
+            tokenModel.remove({_id : req.query.token,email : req.query.email},function(error,response){
+                if(error){
+                    console.log("error");
+                    response.send(error);
+                }else {
+                        console.log("rrrrrrrrrrrrrrrrrrrr");
+                    console.log(response);
+                    res.send(prepareRes(200,"","OK"));
+                }
+            });
+
+        }catch(error){
+            console.log("Error:",error);
+        }
     }
 };
 module.exports=userRouter;
