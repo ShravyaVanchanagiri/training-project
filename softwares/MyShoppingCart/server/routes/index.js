@@ -30,5 +30,7 @@ var router= function(app){
   app.get('/ConfirmReg',userRotes.confirmReg);
   app.get('/login',userRotes.login);
   app.get('/logOut',userRotes.logOut);
+  app.post('/forgot',userRotes.forgot);
+  app.get('/restPass',userRotes.resetPass)
 };
 module.exports = router;

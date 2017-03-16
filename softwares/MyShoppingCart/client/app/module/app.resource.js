@@ -94,6 +94,14 @@
             'logOut':{
                 method: 'GET',
                 url: '/logOut'
+            },
+            'forgot':{
+                method: 'POST',
+                url: '/forgot'
+            },
+            'restPass':{
+                method:'GET',
+                url: '/restPass/:tokens'
             }
         }
     }

@@ -48,6 +48,11 @@
                 controller: 'registrationController',
                 controllerAs: 'rgc',
                 templateUrl: 'partials/registration.html'
+            }).state('resetPass',{
+                url:"/resetPass/:token",
+                templateUrl: 'partials/resetPassword.html',
+                controller: 'resetController',
+                controllerAs: 'rsc'
             });
 
             $urlRouterProvider.otherwise('/home');

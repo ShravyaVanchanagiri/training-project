@@ -29,7 +29,7 @@
                 <span ng-if="h.currentUserSignedIn == true">
                 <button class="dropbtn">Hello {{h.fname}} {{h.lname}}</button>
                     <div class="dropdown-content" style="float: right">
-                        <a>Profile</a>
+                        <a ng-click="">Profile</a>
                         <a ng-click="h.logOut()">Logout</a>
                     </div>
                 </span>

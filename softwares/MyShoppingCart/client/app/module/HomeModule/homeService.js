@@ -18,7 +18,9 @@
             register: register,
             confirmReg: confirmReg,
             login: login,
-            logOut: logOut
+            logOut: logOut,
+            forgot: forgot,
+            restPass: restPass
         };
         return homeService;
 
@@ -45,11 +47,16 @@
             return api.confirmReg({token:query}).$promise;
         }
         function login(query){
-            console.log(query);
             return api.login(query).$promise;
         }
         function logOut(query){
             return api.logOut(query).$promise;
+        }
+        function forgot(query){
+            return api.forgot({q:query}).$promise;
+        }
+        function restPass(query){
+            return api.restPass(query).$promise;
         }
     }
 })();

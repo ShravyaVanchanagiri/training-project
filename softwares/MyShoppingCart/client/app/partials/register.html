@@ -5,19 +5,19 @@
     <form name="userForm">
     <div class="form-group">
         <label>First Name:</label>
-        <input type="text" name="fname" class="form-control" ng-model="user.fname" placeholder="Your First Name" ng-required="true">
+        <input type="text" name="fname" class="form-control" ng-model="user.fname" placeholder="Your First Name" required>
         <span style="color:red" ng-show="userForm.fname.$touched && userForm.fname.$invalid">You First name is required.<br/></span>
         <label>Last Name:</label>
-        <input type="text" name="lname" class="form-control" ng-model="user.lname" placeholder="Your Last Name" ng-required="true">
+        <input type="text" name="lname" class="form-control" ng-model="user.lname" placeholder="Your Last Name" required>
         <span style="color:red" ng-show="userForm.lname.$touched && userForm.lname.$invalid">You Last name is required.<br/></span>
         <label>Email:</label>
-        <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Your Email id" ng-required="true">
+        <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Your Email id" required>
         <span style="color:red" ng-show="userForm.email.$touched && userForm.email.$invalid">You Email id is required.<br/></span>
         <label>Password:</label>
-        <input type="password" name="pass" class="form-control" ng-model="user.pass" placeholder="Your password" ng-required="true">
+        <input type="password" name="pass" class="form-control" ng-model="user.pass" placeholder="Your password" required>
         <span style="color:red" ng-show="userForm.pass.$touched && userForm.pass.$invalid">You Password is required.<br/></span>
         <label>Phone:</label>
-        <input type="number" name="phone" class="form-control" ng-model="user.phone" placeholder="Your Phone number" ng-required="true">
+        <input type="number" name="phone" class="form-control" ng-model="user.phone" pattern="[7-9]{1}[0-9]{9}" placeholder="Your Phone number" required>
         <span style="color:red" ng-show="userForm.phone.$touched && userForm.phone.$invalid">You Phone number is required.<br/></span>
     </div>
     </form>

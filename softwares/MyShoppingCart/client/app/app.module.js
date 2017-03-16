@@ -25,5 +25,6 @@
         "zoomPanApp",
         "ngResource",
         "ngStorage",
+        "validation.match"
     ])
 })();

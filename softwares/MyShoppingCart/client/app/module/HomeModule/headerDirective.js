@@ -17,17 +17,11 @@
         var vm=this;
         console.log($localStorage)
         displayUser();
-        /*if($localStorage.userDetails) {
-         vm.currentUserSignedIn=true;
-         }
-         else
-         vm.currentUserSignedIn=false;
-         */
         vm.openRegistrationModel=openRegistrationModel;
         function openRegistrationModel(){
             $uibModal.open({
                 templateUrl: 'partials/register.html',
-                controller: function($scope){
+                controller: function($scope,$uibModalInstance){
                     $scope.funOk=function(){
                         console.log($scope.user);
 
@@ -36,6 +30,7 @@
                         function success(response){
                             console.log("response",response);
                             //$uibModalInstance.close();
+                            $uibModalInstance.close();
                         }
 
                         function failure(failure){
@@ -48,13 +43,16 @@
         vm.openLoginModel=openLoginModel;
         function openLoginModel(){
             var vm1=this;
-
             $uibModal.open({
                 templateUrl: 'partials/login.html',
-                controller: function($scope,$uibModalInstance){
-                    $scope.funOk1=function(){
-                        console.log($scope.user.email);
-                        var query={email:$scope.user.email,pass:$scope.user.pass};
+                controller: function($uibModalInstance){
+                    var vm2=this;
+                    vm2.openForgotPassModel=openForgotPassModel;
+                    vm2.user={}
+                    console.log(vm2.user)
+                    vm2.funOk1=function(){
+                        console.log(vm2.user.email);
+                        var query={email:vm2.user.email,pass:vm2.user.pass};
                         console.log(query);
                         homeService.login(query).then(success).catch(failure);
                         function success(response){
@@ -71,7 +69,29 @@
                             console.log("failure............",failure);
                         }
                     }
+                    function openForgotPassModel(){
+                        var vm3=this;
+                        $uibModal.open({
+                            templateUrl: 'partials/forgotPassword.html',
+                            controller: function($scope,$uibModalInstance){
+                                $scope.funOk=function(){
+                                    console.log($scope.user.email);
+                                    homeService.forgot($scope.user.email).then(success).catch(failure);
+                                    function success(response){
+                                        console.log("response",response);
+                                        //$uibModalInstance.close();
+                                        $uibModalInstance.close();
+                                    }
+
+                                    function failure(failure){
+
+                                    }
+                                }
+                            },
+                        });
+                    }
                 },
+                controllerAs: 'l'
             });
 
         }

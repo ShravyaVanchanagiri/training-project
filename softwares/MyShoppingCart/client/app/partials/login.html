@@ -5,15 +5,16 @@
     <form name="userForm">
         <div class="form-group">
             <label>Email:</label>
-            <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Your Email id" ng-required="true">
+            <input type="email" name="email" class="form-control" ng-model="l.user.email" placeholder="Your Email id" ng-required="true">
             <span style="color:red" ng-show="userForm.email.$touched && userForm.email.$invalid">You Email id is required.<br/></span>
             <label>Password:</label>
-            <input type="password" name="pass" class="form-control" ng-model="user.pass" placeholder="Your password" ng-required="true">
+            <input type="password" name="pass" class="form-control" ng-model="l.user.pass" placeholder="Your password" ng-required="true">
             <span style="color:red" ng-show="userForm.pass.$touched && userForm.pass.$invalid">You Password is required.<br/></span>
         </div>
     </form>
+    <a ng-click="l.openForgotPassModel()">Forgot Password? </a>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="funOk1()">OK</button>
+    <button class="btn btn-primary" type="button" ng-click="l.funOk1()">OK</button>
     <button class="btn btn-warning" type="button" ng-click="$close()">Cancel</button>
 </div>

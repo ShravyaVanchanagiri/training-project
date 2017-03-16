@@ -135,7 +135,6 @@ var userRouter={
                                 newToken.email = req.query.email;
                                 newToken.startDate = Date.now();
                                 newToken.updatedDate = Date.now();
-                                /*newToken.save(function (err) {*/
                                 newToken.save(function (err, data) {
                                     if (err) {
                                         console.log(err);
@@ -151,8 +150,6 @@ var userRouter={
                                         res.send(prepareRes(200,details,"OK"));
                                     }
                                 })
-
-                                /*response.send({status: 200})*/
                             }
                         }
                     }
@@ -164,7 +161,6 @@ var userRouter={
         }
     },
     logOut: function(req,res){
-        console.log("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
         try{
             console.log(req.query);
             tokenModel.remove({_id : req.query.token,email : req.query.email},function(error,response){
@@ -172,8 +168,6 @@ var userRouter={
                     console.log("error");
                     response.send(error);
                 }else {
-                        console.log("rrrrrrrrrrrrrrrrrrrr");
-                    console.log(response);
                     res.send(prepareRes(200,"","OK"));
                 }
             });
@@ -181,7 +175,84 @@ var userRouter={
         }catch(error){
             console.log("Error:",error);
         }
-    }
+    },
+    forgot: function(req,res){
+        var queryParams=req.body ? req.body : req.query;
+        var emailId=queryParams.q;
+        try{
+            console.log("In try");
+            console.log(emailId);
+            var serverAddress = req.protocol + '://' + req.get('host');
+            userModel.findOne({email : emailId},function(error,response){
+                if(error){
+                    response.send(error);
+                }else{
+                    console.log(response);
+                    if(response!=null){
+                        var newToken=new tokenModel();
+                        newToken.token=jwt.encode(emailId,'xxx');
+                        if(newToken.token) {
+                            newToken.type = tokenEnums.OTP.code
+                            newToken.email = emailId;
+                            newToken.startDate = new Date();
+                            newToken.updatedDate = new Date();
+                            newToken.save(function(err,data){
+                                if(err){
+                                    console.log(err);
+                                }else{
+                                    smtpTransport.sendMail({  //email options
+                                        from: config.mailer.auth.user,
+                                        to: emailId, // receiver
+                                        subject: "Forgot Password", // subject
+                                        text: "Hi user..You requested to reset you password click on below link to reset password "+serverAddress+"/#!/resetPass/"+newToken.token
+                                    }, function(error, response){  //callback
+                                        if(error){
+                                            console.log("Error",error);
+                                        }else{
+                                            console.log("Message sent: " + response.message);
+                                        }
+
+                                        smtpTransport.close();
+                                    });
+                                }
+                            })
+                        }
+                    }
+                }
+            });
+        }catch(error){
+            console.log("error:"+error);
+        }
+    },
+    resetPass : function(req,res){
+        console.log(req.query);
+        var token = req.query.token;
+        var pass = passwordHash.generate(req.query.pass);
+        var tokenType = tokenEnums.OTP.code;
+        tokenModel.findOne({token : token},function(err,resp){
+            if(err){
+                console.log("error",err);
+            }else{
+                console.log(resp);
+                userModel.findOneAndUpdate({email : resp.email},{$set:{password : pass}},function(error,response){
+                    if(error){
+                        console.log(error);
+                    }else{
+                        console.log(token);
+                        tokenModel.remove({token : token},function(err1,res1){
+                            if(err1){
+                                console.log(err1);
+                            }else{
+                                var newToken=new tokenModel();
+                                res.send({status:200});
+                            }
+                        });
+                    }
+                })
+            }
+        })
+
+    },
 };
 module.exports=userRouter;
 
