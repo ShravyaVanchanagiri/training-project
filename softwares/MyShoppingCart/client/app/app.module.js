@@ -25,6 +25,7 @@
         "zoomPanApp",
         "ngResource",
         "ngStorage",
-        "validation.match"
+        "validation.match",
+        'ngTable'
     ])
 })();

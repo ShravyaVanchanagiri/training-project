@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var productRotes= require('./productRoutes');
+var addressRoutes= require('./addressRoutes');
 var userRotes= require('./userRotes');
 var router= function(app){
   app.get('/', function(req, res, next) {
@@ -31,6 +32,8 @@ var router= function(app){
   app.get('/login',userRotes.login);
   app.get('/logOut',userRotes.logOut);
   app.post('/forgot',userRotes.forgot);
-  app.get('/restPass',userRotes.resetPass)
+  app.get('/restPass',userRotes.resetPass);
+  app.get('/getProfile',userRotes.getProfile);
+  app.post('/storeAddress',addressRoutes.storeAddress);
 };
 module.exports = router;

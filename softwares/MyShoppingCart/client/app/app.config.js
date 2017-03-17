@@ -53,6 +53,11 @@
                 templateUrl: 'partials/resetPassword.html',
                 controller: 'resetController',
                 controllerAs: 'rsc'
+            }).state('profile',{
+                url:"/profile",
+                templateUrl: 'partials/profile.html',
+                controller: 'profileController',
+                controllerAs: 'pfc'
             });
 
             $urlRouterProvider.otherwise('/home');

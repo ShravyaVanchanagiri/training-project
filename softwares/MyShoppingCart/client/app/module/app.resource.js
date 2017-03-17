@@ -102,6 +102,14 @@
             'restPass':{
                 method:'GET',
                 url: '/restPass/:tokens'
+            },
+            'getProfile':{
+                method: 'GET',
+                url: '/getProfile'
+            },
+            'storeAddress':{
+                method: 'POST',
+                url: '/storeAddress'
             }
         }
     }

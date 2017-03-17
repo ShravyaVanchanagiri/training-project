@@ -20,7 +20,9 @@
             login: login,
             logOut: logOut,
             forgot: forgot,
-            restPass: restPass
+            restPass: restPass,
+            getProfile: getProfile,
+            storeAddress: storeAddress
         };
         return homeService;
 
@@ -57,6 +59,14 @@
         }
         function restPass(query){
             return api.restPass(query).$promise;
+        }
+        function getProfile(query){
+            console.log("In home service",query);
+            return api.getProfile({q:query}).$promise;
+        }
+        function storeAddress(query){
+            console.log(query);
+            return api.storeAddress(query).$promise;
         }
     }
 })();

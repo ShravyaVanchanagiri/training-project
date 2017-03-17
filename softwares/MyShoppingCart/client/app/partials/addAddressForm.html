@@ -1,0 +1,44 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Add Your Address Here</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form name="addressForm">
+        <div class="form-group" ng-controller="profileController as pfc">
+            <label>Select Type:</label>
+            <select ng-model="pf.address.atype" name="atype" ng-options="x for x in pfc.types">
+            </select><br/>
+
+            <label>Address Line1:</label>
+            <input type="text" name="al1" class="form-control" ng-model="pf.address.al1" placeholder="Your Address lane 1 here" required="required">
+            <span style="color:red" ng-show="addressForm.al1.$touched && addressForm.al1.$invalid">Address Lane is required.<br/></span>
+
+            <label>Address Line2:</label>
+            <input type="text" name="al2" class="form-control" ng-model="pf.address.al2" placeholder="Your Address lane 1 here" required>
+            <span style="color:red" ng-show="addressForm.al2.$touched && addressForm.al2.$invalid">You Last name is required.<br/></span>
+
+            <label>Street:</label>
+            <input type="text" name="street" class="form-control" ng-model="pf.address.street" placeholder="Your street here" required>
+            <span style="color:red" ng-show="addressForm.street.$touched && addressForm.street.$invalid">You street is required.<br/></span>
+
+            <label>City:</label>
+            <input type="text" name="city" class="form-control" ng-model="pf.address.city" placeholder="Your city here" required>
+            <span style="color:red" ng-show="addressForm.city.$touched && addressForm.city.$invalid">You city is required.<br/></span>
+
+            <label>State:</label>
+            <input type="text" name="state" class="form-control" ng-model="pf.address.state" placeholder="Your state here" required>
+            <span style="color:red" ng-show="addressForm.state.$touched && addressForm.state.$invalid">You state is required.<br/></span>
+
+            <label>Country:</label>
+            <input type="text" name="country" class="form-control" ng-model="pf.address.country" placeholder="Your country here" required>
+            <span style="color:red" ng-show="addressForm.country.$touched && addressForm.country.$invalid">Your country is required.<br/></span>
+
+            <label>ZipCode:</label>
+            <input type="number" name="zip" class="form-control" ng-model="pf.address.zip" placeholder="Your zip" required>
+            <span style="color:red" ng-show="addressForm.zip.$touched && addressForm.zip.$invalid">Your zip is required.<br/></span>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="pf.funOk()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="$close()">Cancel</button>
+</div>

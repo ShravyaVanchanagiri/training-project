@@ -3,6 +3,7 @@
  */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var SchemaTypes = mongoose.Schema.Types;
 var userSchema = new Schema({
     firstName : {
         type : String
@@ -22,7 +23,11 @@ var userSchema = new Schema({
     isActive :{
         type: Boolean,
         default: false
-    }
+    },
+    addresses :[{
+        type : SchemaTypes.ObjectId,
+        ref : "addresses"
+    }],
 },
     {collection : 'users'}
 );

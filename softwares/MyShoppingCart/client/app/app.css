@@ -198,4 +198,16 @@ input{
     outline:none;
 }
 
+.f1{
+    border-radius: 10px;
+    background: whitesmoke;
+    margin: 20px auto;
+    text-align:center;
+    display:block;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    width:50%;
+    border: 2px groove threedface;
+}
+
 

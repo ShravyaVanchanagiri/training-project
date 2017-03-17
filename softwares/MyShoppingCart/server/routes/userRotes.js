@@ -253,6 +253,22 @@ var userRouter={
         })
 
     },
+    getProfile: function(req,res){
+        console.log(req.query.q);
+        var userId = req.query.q;
+        userModel.findOne({_id : userId},function(error,response){
+            if(error){
+                res.send(error);
+            }else{
+                var details={};
+                details.email = response.email;
+                details._id=response._id;
+                details.firstName=response.firstName;
+                details.lastName=response.lastName;
+                res.send(prepareRes(200,details,"OK"));
+            }
+        })
+    }
 };
 module.exports=userRouter;
 

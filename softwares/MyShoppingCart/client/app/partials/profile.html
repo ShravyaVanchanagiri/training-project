@@ -1,0 +1,21 @@
+<span class="text-center"><h2>{{pfc.fname}}'s Profile</h2></span>
+<form>
+    <fieldset class="f1">
+        <label>First Name: </label>{{pfc.fname}} <br/>
+        <label> Last Name: </label>{{pfc.lname}}<br/>
+        <label>Email :</label> {{pfc.email}}
+    </fieldset>
+</form>
+<span class="text-center"><h2>Addresses of {{pfc.fname}}</h2></span>
+
+<fieldset>
+    <legend><i class="fa fa-plus fa-2x" aria-hidden="true" ng-click="pfc.openAddressModel()"></i></legend>
+</fieldset>
+<table ng-table="pfc.tableParams" class="table" show-filter="true">
+    <tr ng-repeat="user in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+            {{user.name}}</td>
+        <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
+            {{user.age}}</td>
+    </tr>
+</table>
