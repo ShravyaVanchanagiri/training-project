@@ -22,7 +22,8 @@
             forgot: forgot,
             restPass: restPass,
             getProfile: getProfile,
-            storeAddress: storeAddress
+            storeAddress: storeAddress,
+            getAddress : getAddress
         };
         return homeService;
 
@@ -67,6 +68,12 @@
         function storeAddress(query){
             console.log(query);
             return api.storeAddress(query).$promise;
+        }
+        function getAddress(q){
+            console.log("in home service *********************")
+            var query=q;
+            console.log(query)
+            return api.getAddress(query).$promise;
         }
     }
 })();

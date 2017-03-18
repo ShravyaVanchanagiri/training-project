@@ -35,5 +35,6 @@ var router= function(app){
   app.get('/restPass',userRotes.resetPass);
   app.get('/getProfile',userRotes.getProfile);
   app.post('/storeAddress',addressRoutes.storeAddress);
+  app.get('/getAddress',addressRoutes.getAddress);
 };
 module.exports = router;

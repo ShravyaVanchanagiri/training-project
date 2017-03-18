@@ -11,11 +11,20 @@
 <fieldset>
     <legend><i class="fa fa-plus fa-2x" aria-hidden="true" ng-click="pfc.openAddressModel()"></i></legend>
 </fieldset>
-<table ng-table="pfc.tableParams" class="table" show-filter="true">
-    <tr ng-repeat="user in $data">
-        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
-            {{user.name}}</td>
-        <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
-            {{user.age}}</td>
+test {{pfc.tableParams.data}}
+<table ng-table="pfc.tableParams" class="table table-condensed table-bordered table-striped">
+    <tr ng-repeat="row in $data">
+        <td data-title="'Type'" filter="{type: 'text'}" sortable="'type'" >{{row.type}}</td>
+        <!--<td data-title="'Address Line 1'" filter="{addressLine1: 'text'}" sortable="'addressLine1'" ng-bind="row.addressLine1"></td>
+        <td data-title="'Address Line 2'" filter="{addressLine2: 'text'}" sortable="'addressLine2'" ng-bind="row.addressLine2"></td>
+        <td data-title="'Street'" filter="{street: 'text'}" sortable="'street'" ng-bind="row.street"></td>
+        <td data-title="'City'" filter="{city: 'text'}" sortable="'city'" ng-bind="row.city"></td>
+        <td data-title="'State'" filter="{state: 'text'}" sortable="'state'" ng-bind="row.state"></td>
+        <td data-title="'Country'" filter="{country: 'text'}" sortable="'country'"ng-bind="row.country"></td>
+        <td data-title="'Zipcode'" filter="{zip: 'number'}" sortable="'zip'"ng-bind="row.zip"></td>-->
+        <!--<td data-title="'Actions'">
+            <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" ng-click="pc.editRow(row)"></i>
+            <i class="fa fa-trash-o fa-lg" aria-hidden="true" ng-click="pc.deleteRow(row)"></i>
+        </td>-->
     </tr>
 </table>

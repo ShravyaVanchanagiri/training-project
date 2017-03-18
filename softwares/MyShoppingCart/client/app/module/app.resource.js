@@ -110,6 +110,10 @@
             'storeAddress':{
                 method: 'POST',
                 url: '/storeAddress'
+            },
+            'getAddress' : {
+                method : "GET",
+                url : '/getAddress'
             }
         }
     }

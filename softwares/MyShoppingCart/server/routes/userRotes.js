@@ -10,13 +10,10 @@ var nodemailer = require("nodemailer");
 var config = require("../config/config");
 var prepareRes = require("../apiUtils/prepareRes");
 var emailTemplates = require('email-templates');
-
-
 var smtpTransport = nodemailer.createTransport({
     service: "Gmail",
     auth: config.mailer.auth
 });
-
 var userRouter={
     registerUser:function(req,res){
         var queryParam=req.body;

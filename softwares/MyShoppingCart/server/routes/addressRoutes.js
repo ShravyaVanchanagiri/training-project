@@ -45,6 +45,35 @@ var addressRouter={
                 })
             }
         })
+    },
+    getAddress :function(req,res){
+        console.log(req.query);
+        var queryParam =  req.query;
+        console.log(queryParam);
+        var query = {_id: queryParam.id};
+        userModel.findOne(query).populate('addresses').exec(function (err, results) {
+            console.log(results)
+            if (err) {
+                res.send(err);
+            }
+            console.log("*********** after response")
+            console.log(results);
+            res.send({dat : results})
+            /*  users.findOne(query).populate('addresses').exec(function (err,response) {
+             if(err){
+             res.send(err);
+             }
+             else{
+             var pagination={};
+             pagination.total=response.addresses.length;
+             console.log("*********** after response")
+             console.log(responsse)
+             res.send(response);
+             }
+             });
+             */
+
+        });
     }
 };
 module.exports=addressRouter;
